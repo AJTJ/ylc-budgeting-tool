@@ -4,11 +4,11 @@ import { Pie } from "@nivo/pie";
 
 let pieData = [
   {
-    id: "dogs",
+    id: "income",
     value: 45
   },
   {
-    id: "cats",
+    id: "expenses",
     value: 55
   }
 ];
@@ -21,7 +21,7 @@ class App extends Component {
           <Row>YLC Budgeting tool!!!</Row>
           <Row>
             <div>
-              <Pie data={pieData} height={300} width={300} />
+              <Pie data={pieData} height={300} width={300} innerRadius={0.5} />
             </div>
           </Row>
         </Container>

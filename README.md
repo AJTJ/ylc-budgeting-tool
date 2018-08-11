@@ -3,6 +3,8 @@ Project Stack
 Structure
 - React
 - Redux
+- Reactions
+- Preact?
 
 Styling
 - emotion
