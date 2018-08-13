@@ -1,8 +1,14 @@
 Project Stack
 
+TODO
+- figure out numbered breadcrumb system
+
 Structure
 - React
+  - react-router-dom
 - Redux
+  - redux-actions
+  - redux-logic (if necessary)
 - Reactions
 - Preact?
 

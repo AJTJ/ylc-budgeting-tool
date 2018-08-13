@@ -1,5 +1,7 @@
 import React, { Component } from "react";
-import { Container, Row } from "reactstrap";
+import { connect } from "react-redux";
+
+import { Container, Row, Button, Col } from "reactstrap";
 import { Pie } from "@nivo/pie";
 
 let pieData = [
@@ -15,11 +17,21 @@ let pieData = [
 
 class App extends Component {
   render() {
+    console.log(333, this.props);
     return (
       <div>
         <Container>
           <Row>YLC Budgeting tool!!!</Row>
           <Row>
+            <Col>
+              <Button onClick={this.props.increment} id="increment">
+                Inc
+              </Button>
+              <Button onClick={this.props.decrement} id="decrement">
+                Dec
+              </Button>
+              <div>{this.props.counter}</div>
+            </Col>
             <div>
               <Pie data={pieData} height={300} width={300} innerRadius={0.5} />
             </div>
@@ -30,4 +42,26 @@ class App extends Component {
   }
 }
 
-export default App;
+const mapStateToProps = state => {
+  console.log(state);
+  return {
+    counter: state.counterReducer.counter
+  };
+};
+
+const mapDispatchToProps = dispatch => {
+  console.log(dispatch);
+  return {
+    increment: () => {
+      dispatch(increment());
+    },
+    decrement: () => {
+      dispatch(increment());
+    }
+  };
+};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(App);
