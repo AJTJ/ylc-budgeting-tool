@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 
 import { actions } from "./redux/reducers/index";
 
-import { Button, Col, Row } from "reactstrap";
+import { Button, Col } from "reactstrap";
 import { Pie } from "@nivo/pie";
 
 class App extends Component {
@@ -32,7 +32,7 @@ class App extends Component {
           </Button>
           <div>{this.props.counter}</div>
         </Col>
-        <Row>
+        <Col>
           <Pie
             fit={true}
             data={pieData}
@@ -40,7 +40,7 @@ class App extends Component {
             width={300}
             innerRadius={0.5}
           />
-        </Row>
+        </Col>
       </div>
     );
   }
