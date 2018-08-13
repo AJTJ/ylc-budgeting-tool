@@ -4,4 +4,8 @@ const reducers = {
   ...counter.reducers
 };
 
-export { reducers };
+const actions = {
+  ...counter.actions
+};
+
+export { reducers, actions };

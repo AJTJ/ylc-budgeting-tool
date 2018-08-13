@@ -1,5 +1,10 @@
 import React, { Component } from "react";
+
 import { connect } from "react-redux";
+
+import actions from "./redux/index";
+
+console.log(222, actions);
 
 import { Container, Row, Button, Col } from "reactstrap";
 import { Pie } from "@nivo/pie";
@@ -17,7 +22,6 @@ let pieData = [
 
 class App extends Component {
   render() {
-    console.log(333, this.props);
     return (
       <div>
         <Container>
@@ -43,21 +47,15 @@ class App extends Component {
 }
 
 const mapStateToProps = state => {
-  console.log(state);
   return {
     counter: state.counterReducer.counter
   };
 };
 
 const mapDispatchToProps = dispatch => {
-  console.log(dispatch);
   return {
-    increment: () => {
-      dispatch(increment());
-    },
-    decrement: () => {
-      dispatch(increment());
-    }
+    increment: dispatch("INCREMENT"),
+    decrement: dispatch("DECREMENT")
   };
 };
 

@@ -24,3 +24,8 @@ const counterReducer = handleActions(
 export const reducers = {
   counterReducer
 };
+
+export const actions = {
+  increment,
+  decrement
+};
