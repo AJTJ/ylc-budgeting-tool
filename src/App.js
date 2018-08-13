@@ -2,45 +2,45 @@ import React, { Component } from "react";
 
 import { connect } from "react-redux";
 
-import actions from "./redux/index";
+import { actions } from "./redux/reducers/index";
 
-console.log(222, actions);
-
-import { Container, Row, Button, Col } from "reactstrap";
+import { Button, Col, Row } from "reactstrap";
 import { Pie } from "@nivo/pie";
-
-let pieData = [
-  {
-    id: "income",
-    value: 45
-  },
-  {
-    id: "expenses",
-    value: 55
-  }
-];
 
 class App extends Component {
   render() {
+    let pieData = [
+      {
+        id: "income",
+        label: "income",
+        value: this.props.counter
+      },
+      {
+        id: "expenses",
+        label: "expenses",
+        value: 55
+      }
+    ];
     return (
       <div>
-        <Container>
-          <Row>YLC Budgeting tool!!!</Row>
-          <Row>
-            <Col>
-              <Button onClick={this.props.increment} id="increment">
-                Inc
-              </Button>
-              <Button onClick={this.props.decrement} id="decrement">
-                Dec
-              </Button>
-              <div>{this.props.counter}</div>
-            </Col>
-            <div>
-              <Pie data={pieData} height={300} width={300} innerRadius={0.5} />
-            </div>
-          </Row>
-        </Container>
+        <Col>
+          <Button onClick={() => this.props.increment(5)} id="increment">
+            Inc
+          </Button>
+          <Button onClick={() => this.props.decrement(25)} id="decrement">
+            Dec
+          </Button>
+          <div>{this.props.counter}</div>
+        </Col>
+        <Row>
+          <Pie
+            fit={true}
+            data={pieData}
+            height={300}
+            width={300}
+            innerRadius={0.5}
+          />
+        </Row>
       </div>
     );
   }
@@ -52,11 +52,11 @@ const mapStateToProps = state => {
   };
 };
 
-const mapDispatchToProps = dispatch => {
-  return {
-    increment: dispatch("INCREMENT"),
-    decrement: dispatch("DECREMENT")
-  };
+const { increment, decrement } = actions;
+
+const mapDispatchToProps = {
+  increment,
+  decrement
 };
 
 export default connect(

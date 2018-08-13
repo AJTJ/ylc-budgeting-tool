@@ -1,7 +1,7 @@
 import { createActions, handleActions, combineActions } from "redux-actions";
 
 const defaultState = {
-  counter: 0
+  counter: 35
 };
 
 const { increment, decrement } = createActions({
