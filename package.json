@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@nivo/pie": "^0.42.1",
+    "@reach/router": "^1.1.1",
     "@react-pdf/renderer": "^1.0.0-alpha.14",
     "@reactions/component": "^2.0.2",
     "bootstrap": "^4.1.1",

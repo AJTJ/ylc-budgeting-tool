@@ -1,65 +1,16 @@
-import React, { Component } from "react";
+import React from "react";
+import { Router } from "@reach/router";
 
-import { connect } from "react-redux";
+import Pie from "./views/dashboard/Pie";
+import { Form } from "./views/Form";
 
-import { actions } from "./redux/index";
+import { Container } from "reactstrap";
 
-import { Button, Col } from "reactstrap";
-import { Pie } from "@nivo/pie";
-
-class App extends Component {
-  render() {
-    let pieData = [
-      {
-        id: "income",
-        label: "income",
-        value: this.props.counter
-      },
-      {
-        id: "expenses",
-        label: "expenses",
-        value: 55
-      }
-    ];
-    return (
-      <div>
-        <Col>
-          <Button onClick={() => this.props.increment(5)} id="increment">
-            Inc
-          </Button>
-          <Button onClick={() => this.props.decrement(25)} id="decrement">
-            Dec
-          </Button>
-          <div>{this.props.counter}</div>
-        </Col>
-        <Col>
-          <Pie
-            fit={true}
-            data={pieData}
-            height={300}
-            width={300}
-            innerRadius={0.5}
-          />
-        </Col>
-      </div>
-    );
-  }
-}
-
-const mapStateToProps = state => {
-  return {
-    counter: state.counterReducer.counter
-  };
-};
-
-const { increment, decrement } = actions;
-
-const mapDispatchToProps = {
-  increment,
-  decrement
-};
-
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(App);
+export default () => (
+  <Container fluid>
+    <Pie />
+    <Router>
+      <Form path="/" />
+    </Router>
+  </Container>
+);

@@ -6,10 +6,12 @@ TODO
 Structure
 - React
   - react-router-dom
+  - @reach/router
 - Redux
   - redux-actions
-  - redux-logic (if necessary)
-- Reactions
+  - redux-logic?
+  - thunk?
+- @Reactions?
 - Preact?
 
 Styling
