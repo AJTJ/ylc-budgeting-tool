@@ -1,6 +1,6 @@
 import React from "react";
-import { Router } from "@reach/router";
-
+import { BrowserRouter as Router } from "react-router-dom";
+// Route, Link
 import Pie from "./views/dashboard/Pie";
 import { Form } from "./views/Form";
 
@@ -10,7 +10,7 @@ export default () => (
   <Container fluid>
     <Pie />
     <Router>
-      <Form path="/" />
+      <Form path=":formType" />
     </Router>
   </Container>
 );

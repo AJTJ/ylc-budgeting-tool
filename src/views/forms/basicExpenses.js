@@ -4,17 +4,16 @@ import { Form } from "reactstrap";
 import { BasicInput } from "./components/index";
 
 export const defaultFormValues = {
-  primary_income: ""
+  rent_mortgage: ""
 };
 
 export const FormComponent = ({ values, handleChange, handleSubmit }) => {
-  console.log(11, values);
   return (
     <Form onSubmit={handleSubmit}>
       <BasicInput
-        name="Primary Income"
-        id="primary_income"
-        value={values.primary_income}
+        name="Rent/Mortgage"
+        id="rent_mortgage"
+        value={values.rent_mortgage}
         onChange={handleChange}
       />
     </Form>
