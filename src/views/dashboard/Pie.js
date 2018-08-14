@@ -26,7 +26,7 @@ const Pie = props => {
         <Button onClick={() => props.increment(5)} id="increment">
           Inc
         </Button>
-        <Button onClick={() => props.decrement(25)} id="decrement">
+        <Button onClick={() => props.decrement(5)} id="decrement">
           Dec
         </Button>
         <div>{props.counter}</div>
