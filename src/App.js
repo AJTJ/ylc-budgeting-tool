@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 import { connect } from "react-redux";
 
-import { actions } from "./redux/reducers/index";
+import { actions } from "./redux/index";
 
 import { Button, Col } from "reactstrap";
 import { Pie } from "@nivo/pie";

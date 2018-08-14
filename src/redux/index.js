@@ -1,9 +1,11 @@
-import { createStore, combineReducers } from "redux";
+import * as counter from "./counter/index";
 
-import { reducers } from "./reducers/index";
+const reducers = {
+  ...counter.reducer
+};
 
-const store = createStore(combineReducers(reducers));
+const actions = {
+  ...counter.actions
+};
 
-window.store = store;
-
-export default store;
+export { reducers, actions };
