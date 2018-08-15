@@ -2,14 +2,13 @@ import React from "react";
 
 import { Formik } from "formik";
 import formTypes from "./forms/index";
-// import { Container, Row, Col } from "reactstrap";
 
-export const Form = () => {
-  const { basicIncome } = formTypes;
+export const Form = formType => {
+  const curForm = formTypes[formType.match.params.formType];
   return (
     <Formik
-      component={basicIncome.FormComponent}
-      initialValues={basicIncome.defaultFormValues}
+      component={curForm.FormComponent}
+      initialValues={curForm.defaultFormValues}
     />
   );
 };
