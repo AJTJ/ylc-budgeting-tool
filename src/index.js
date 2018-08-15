@@ -14,11 +14,11 @@ const store = createStore(combineReducers(reducers));
 window.store = store;
 
 render(
-  <BrowserRouter>
-    <Provider store={store}>
+  <Provider store={store}>
+    <BrowserRouter>
       <App />
-    </Provider>
-  </BrowserRouter>,
+    </BrowserRouter>
+  </Provider>,
   document.getElementById("root")
 );
 registerServiceWorker();
