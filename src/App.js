@@ -1,7 +1,8 @@
 import React from "react";
-import { BrowserRouter as Router } from "react-router-dom";
+import { Route } from "react-router-dom";
 // Route, Link
 import Pie from "./views/dashboard/Pie";
+import Trail from "./views/dashboard/Trail";
 import { Form } from "./views/Form";
 
 import { Container } from "reactstrap";
@@ -9,8 +10,7 @@ import { Container } from "reactstrap";
 export default () => (
   <Container fluid>
     <Pie />
-    <Router>
-      <Form path=":formType" />
-    </Router>
+    <Trail />
+    <Route path="/basicIncome" component={Form} />
   </Container>
 );

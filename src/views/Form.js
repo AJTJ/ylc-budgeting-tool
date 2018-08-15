@@ -4,7 +4,7 @@ import { Formik } from "formik";
 import formTypes from "./forms/index";
 // import { Container, Row, Col } from "reactstrap";
 
-export const Form = ({ formType }) => {
+export const Form = () => {
   const { basicIncome } = formTypes;
   return (
     <Formik
