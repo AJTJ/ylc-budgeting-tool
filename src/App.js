@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from "react";
 import { Route } from "react-router-dom";
 
 import Pie from "./views/dashboard/Pie";
@@ -8,11 +8,26 @@ import { Form } from "./views/Form";
 
 import { Container } from "reactstrap";
 
-export default () => (
-  <Container fluid>
-    <Trail />
-    <MiniBudget />
-    <Pie />
-    <Route path="/Form/:formType" component={Form} />
-  </Container>
-);
+class App extends Component {
+  state = {
+    income: 345,
+    expenses: 555
+  };
+
+  handleChange = (id, amount) => {
+    return this.setState({ [id]: [amount] });
+  };
+
+  render() {
+    return (
+      <Container fluid>
+        <Trail />
+        <MiniBudget {...this.state} />
+        <Pie {...this.state} />
+        <Route path="/Form/:formType" handleChange component={Form} />
+      </Container>
+    );
+  }
+}
+
+export default App;
