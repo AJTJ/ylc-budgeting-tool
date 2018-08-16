@@ -14,7 +14,6 @@ export const FormComponent = ({
   handleSubmit,
   ...props
 }) => {
-  console.log("all props", props);
   return (
     <Form onSubmit={handleSubmit}>
       <BasicInput

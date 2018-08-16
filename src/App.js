@@ -15,24 +15,13 @@ class App extends Component {
     rent_mortgage: 0
   };
 
-  updateDashboard = formObject => {
-    console.log("formObject", formObject);
-    Object.keys(formObject).forEach(key => {
-      if (formObject[key] === this.state[key]) {
-        this.setState({ [key]: formObject[key] });
-      }
-    });
-  };
-
   render() {
     const MyForm = props => {
-      return <Form {...props} updateDashboard={this.updateDashboard} />;
+      return <Form {...props} />;
     };
     return (
       <Container fluid>
         <Trail />
-        <MiniBudget {...this.state} />
-        <Pie {...this.state} />
         <Route path="/Form/:formType" component={MyForm} />
       </Container>
     );

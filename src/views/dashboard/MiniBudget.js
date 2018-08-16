@@ -1,22 +1,38 @@
-import React from "react";
+import React, { Component } from "react";
 
 import { Container, Row, Col } from "reactstrap";
 
-export default props => {
-  console.log(props);
-  return (
-    <Container>
-      <Row>Current Budget</Row>
+class MiniBudget extends Component {
+  state = {
+    primary_income: "",
+    rent_mortgage: ""
+  };
 
-      <Row>
-        <Col>Income</Col>
-        <Col>{props.primary_income}</Col>
-      </Row>
+  componentDidUpdate = props => {
+    const values = props.values;
+    Object.keys(values).forEach(key => {
+      console.log(key);
+      // this.setState({ [key]: values[key] });
+    });
+  };
 
-      <Row>
-        <Col>Expenses</Col>
-        <Col>{props.rent_mortgage}</Col>
-      </Row>
-    </Container>
-  );
-};
+  render() {
+    return (
+      <Container>
+        <Row>Current Budget</Row>
+
+        <Row>
+          <Col>Income</Col>
+          <Col>{this.state.primary_income}</Col>
+        </Row>
+
+        <Row>
+          <Col>Expenses</Col>
+          <Col>{this.state.rent_mortgage}</Col>
+        </Row>
+      </Container>
+    );
+  }
+}
+
+export default MiniBudget;
