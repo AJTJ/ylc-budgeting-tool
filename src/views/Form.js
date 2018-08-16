@@ -10,6 +10,7 @@ export const Form = props => {
   const curForm = formTypes[props.match.params.formType];
   const FormComponent = curForm.FormComponent;
   const values = curForm.defaultFormValues;
+  console.log("values", values);
   const updateDashboard = props.updateDashboard;
   return (
     <Formik
