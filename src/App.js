@@ -10,21 +10,30 @@ import { Container } from "reactstrap";
 
 class App extends Component {
   state = {
-    income: 345,
-    expenses: 555
+    primary_income: 0,
+    secondary_income: 0,
+    rent_mortgage: 0
   };
 
-  handleChange = (id, amount) => {
-    return this.setState({ [id]: [amount] });
+  updateDashboard = formObject => {
+    console.log("formObject", formObject);
+    Object.keys(formObject).forEach(key => {
+      if (formObject[key] === this.state[key]) {
+        this.setState({ [key]: formObject[key] });
+      }
+    });
   };
 
   render() {
+    const MyForm = props => {
+      return <Form {...props} updateDashboard={this.updateDashboard} />;
+    };
     return (
       <Container fluid>
         <Trail />
         <MiniBudget {...this.state} />
         <Pie {...this.state} />
-        <Route path="/Form/:formType" handleChange component={Form} />
+        <Route path="/Form/:formType" component={MyForm} />
       </Container>
     );
   }

@@ -7,7 +7,12 @@ export const defaultFormValues = {
   rent_mortgage: ""
 };
 
-export const FormComponent = ({ values, handleChange, handleSubmit }) => {
+export const FormComponent = ({
+  values,
+  handleChange,
+  handleSubmit,
+  ...props
+}) => {
   return (
     <Form onSubmit={handleSubmit}>
       <BasicInput

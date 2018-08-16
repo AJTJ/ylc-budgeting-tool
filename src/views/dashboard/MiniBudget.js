@@ -10,12 +10,12 @@ export default props => {
 
       <Row>
         <Col>Income</Col>
-        <Col>25235</Col>
+        <Col>{props.primary_income}</Col>
       </Row>
 
       <Row>
         <Col>Expenses</Col>
-        <Col>{props.expenses}</Col>
+        <Col>{props.rent_mortgage}</Col>
       </Row>
     </Container>
   );

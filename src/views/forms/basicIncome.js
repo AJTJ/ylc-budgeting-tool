@@ -4,11 +4,17 @@ import { Form } from "reactstrap";
 import { BasicInput } from "./components/index";
 
 export const defaultFormValues = {
-  primary_income: ""
+  primary_income: "",
+  secondary_income: ""
 };
 
-export const FormComponent = ({ values, handleChange, handleSubmit }) => {
-  console.log(11, values);
+export const FormComponent = ({
+  values,
+  handleChange,
+  handleSubmit,
+  ...props
+}) => {
+  console.log("all props", props);
   return (
     <Form onSubmit={handleSubmit}>
       <BasicInput
