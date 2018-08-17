@@ -2,11 +2,11 @@ import React from "react";
 
 import { Pie as NivoPie } from "@nivo/pie";
 // import { Button, Col } from "reactstrap";
-
 // import { actions } from "../../redux/index";
 // import { connect } from "react-redux";
 
 const Pie = props => {
+  console.log(555, props);
   const { values } = props;
 
   const doesExist = id => {
@@ -21,7 +21,7 @@ const Pie = props => {
     {
       id: "primary_income",
       label: "Income",
-      value: doesExist("primary_income")
+      value: Number(values.primary_income)
     },
     {
       id: "rent_mortgage",

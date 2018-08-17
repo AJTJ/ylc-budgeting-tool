@@ -3,10 +3,6 @@ import { Form } from "reactstrap";
 
 import { BasicInput } from "./components/index";
 
-export const defaultFormValues = {
-  rent_mortgage: ""
-};
-
 export const FormComponent = ({
   values,
   handleChange,

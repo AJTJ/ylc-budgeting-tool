@@ -3,11 +3,6 @@ import { Form } from "reactstrap";
 
 import { BasicInput } from "./components/index";
 
-export const defaultFormValues = {
-  primary_income: "",
-  secondary_income: ""
-};
-
 export const FormComponent = ({
   values,
   handleChange,
@@ -17,7 +12,7 @@ export const FormComponent = ({
   return (
     <Form onSubmit={handleSubmit}>
       <BasicInput
-        name="Primary Income"
+        name="Income"
         id="primary_income"
         value={values.primary_income}
         onChange={handleChange}

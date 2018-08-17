@@ -9,7 +9,12 @@ import { MiniBudget } from "./dashboard/MiniBudget";
 export const Form = props => {
   const curForm = formTypes[props.match.params.formType];
   const FormComponent = curForm.FormComponent;
-  const values = curForm.defaultFormValues;
+
+  const values = {
+    primary_income: "",
+    rent_mortgage: ""
+  };
+
   return (
     <Formik
       initialValues={values}
