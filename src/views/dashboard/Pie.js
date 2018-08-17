@@ -1,63 +1,65 @@
 import React from "react";
 
 import { Pie as NivoPie } from "@nivo/pie";
-import { Button, Col } from "reactstrap";
+// import { Button, Col } from "reactstrap";
 
-import { actions } from "../../redux/index";
-import { connect } from "react-redux";
+// import { actions } from "../../redux/index";
+// import { connect } from "react-redux";
 
 const Pie = props => {
+  const { values } = props;
+
+  const doesExist = id => {
+    if (values[id] === undefined) {
+      return 0;
+    } else {
+      return Number(values[id]);
+    }
+  };
+
   const PieData = [
     {
-      id: "income",
-      label: "income",
-      value: props.counter
+      id: "primary_income",
+      label: "Income",
+      value: doesExist("primary_income")
     },
     {
-      id: "expenses",
-      label: "expenses",
-      value: 55
+      id: "rent_mortgage",
+      label: "rent/mortgage",
+      value: doesExist("rent_mortgage")
     }
   ];
 
   return (
-    <div>
-      <Col>
-        <Button onClick={() => props.increment(5)} id="increment">
-          Inc
-        </Button>
-        <Button onClick={() => props.decrement(5)} id="decrement">
-          Dec
-        </Button>
-        <div>{props.counter}</div>
-      </Col>
-      <Col>
-        <NivoPie
-          fit={true}
-          data={PieData}
-          height={300}
-          width={300}
-          innerRadius={0.5}
-        />
-      </Col>
-    </div>
+    <NivoPie
+      enableSlicesLabels={false}
+      borderWidth={0.5}
+      sortByValue={true}
+      fit={true}
+      data={PieData}
+      height={300}
+      width={300}
+      innerRadius={0.5}
+    />
   );
 };
 
-const mapStateToProps = state => {
-  return {
-    counter: state.counterReducer.counter
-  };
-};
+export default Pie;
 
-const { increment, decrement } = actions;
+// const mapStateToProps = state => {
+//   return {
+//     counter: state.counterReducer.counter
+//   };
+// };
 
-const mapDispatchToProps = {
-  increment,
-  decrement
-};
+// const { increment, decrement } = actions;
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(Pie);
+// const mapDispatchToProps = {
+//   increment,
+//   decrement
+// };
+
+// export default connect(
+//   mapStateToProps,
+//   mapDispatchToProps
+// )(Pie);
