@@ -9,12 +9,6 @@ import { Form } from "./views/Form";
 import { Container } from "reactstrap";
 
 class App extends Component {
-  state = {
-    primary_income: 0,
-    secondary_income: 0,
-    rent_mortgage: 0
-  };
-
   render() {
     return (
       <Container fluid>

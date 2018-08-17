@@ -1,32 +1,46 @@
 import React from "react";
 
 import { Pie as NivoPie } from "@nivo/pie";
+
+import {
+  income,
+  housing,
+  transportation,
+  living,
+  personal
+} from "../formData/computation";
 // import { Button, Col } from "reactstrap";
 // import { actions } from "../../redux/index";
 // import { connect } from "react-redux";
 
 const Pie = props => {
-  console.log(555, props);
   const { values } = props;
-
-  const doesExist = id => {
-    if (values[id] === undefined) {
-      return 0;
-    } else {
-      return Number(values[id]);
-    }
-  };
 
   const PieData = [
     {
-      id: "primary_income",
+      id: "Income",
       label: "Income",
-      value: Number(values.primary_income)
+      value: income(values)
     },
     {
-      id: "rent_mortgage",
-      label: "rent/mortgage",
-      value: doesExist("rent_mortgage")
+      id: "Housing",
+      label: "Housing",
+      value: housing(values)
+    },
+    {
+      id: "Transportation",
+      label: "Transportation",
+      value: transportation(values)
+    },
+    {
+      id: "Living Expenses",
+      label: "Living Expenses",
+      value: living(values)
+    },
+    {
+      id: "Personal Expenses",
+      label: "Personal Expenses",
+      value: personal(values)
     }
   ];
 
@@ -37,8 +51,8 @@ const Pie = props => {
       sortByValue={true}
       fit={true}
       data={PieData}
-      height={300}
-      width={300}
+      height={400}
+      width={400}
       innerRadius={0.5}
     />
   );

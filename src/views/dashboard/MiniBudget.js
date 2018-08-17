@@ -1,5 +1,13 @@
 import React from "react";
 
+import {
+  income,
+  housing,
+  transportation,
+  living,
+  personal
+} from "../formData/computation";
+
 import { Container, Row, Col } from "reactstrap";
 
 export const MiniBudget = props => {
@@ -10,12 +18,27 @@ export const MiniBudget = props => {
 
       <Row>
         <Col>Income</Col>
-        <Col>{values.primary_income}</Col>
+        <Col>${income(values)}</Col>
       </Row>
 
       <Row>
-        <Col>Expenses</Col>
-        <Col>{values.rent_mortgage}</Col>
+        <Col>Housing Expenses</Col>
+        <Col>${housing(values)}</Col>
+      </Row>
+
+      <Row>
+        <Col>Transportation Expenses</Col>
+        <Col>${transportation(values)}</Col>
+      </Row>
+
+      <Row>
+        <Col>Living Expenses</Col>
+        <Col>${living(values)}</Col>
+      </Row>
+
+      <Row>
+        <Col>Personal Expenses</Col>
+        <Col>${personal(values)}</Col>
       </Row>
     </Container>
   );

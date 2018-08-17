@@ -4,8 +4,11 @@ import { Link } from "react-router-dom";
 export default () => {
   return (
     <React.Fragment>
-      <Link to="/Form/basicIncome">Basic Income</Link>
-      <Link to="/Form/basicExpenses">Basic Expenses</Link>
+      <Link to="/Form/income">Income</Link>
+      <Link to="/Form/housing">Housing</Link>
+      <Link to="/Form/transportation">Transportation</Link>
+      <Link to="/Form/living">Living</Link>
+      <Link to="/Form/personal">Personal</Link>
     </React.Fragment>
   );
 };
