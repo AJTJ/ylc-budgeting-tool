@@ -9,9 +9,6 @@ import {
   living,
   personal
 } from "../formData/computation";
-// import { Button, Col } from "reactstrap";
-// import { actions } from "../../redux/index";
-// import { connect } from "react-redux";
 
 const Pie = props => {
   const { values } = props;
