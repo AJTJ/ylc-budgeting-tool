@@ -3,9 +3,10 @@ import React from "react";
 import { Pie as NivoPie } from "@nivo/pie";
 
 // import { Card } from "reactstrap";
-
-import colors from "../../style/colors";
 // import toHslString from "tinycolor2";
+
+import styled from "react-emotion";
+import colors from "../../style/colors";
 
 import {
   income,
@@ -17,6 +18,13 @@ import {
 
 const Pie = props => {
   const { values } = props;
+
+  const PieHolder = styled("div")`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  `;
 
   const dynamicIncome =
     income(values) -
@@ -69,18 +77,20 @@ const Pie = props => {
 
   return (
     <React.Fragment>
-      <NivoPie
-        enableSlicesLabels={false}
-        borderWidth={0.5}
-        sortByValue={true}
-        fit={true}
-        data={income(values) === 0 ? PlaceholderPie : PieData}
-        height={200}
-        width={200}
-        innerRadius={0.5}
-        colorBy={d => d.color}
-      />
-      <h1>${dynamicIncome}</h1>
+      <PieHolder>
+        <NivoPie
+          enableSlicesLabels={false}
+          borderWidth={0.5}
+          sortByValue={true}
+          fit={true}
+          data={income(values) === 0 ? PlaceholderPie : PieData}
+          height={200}
+          width={200}
+          innerRadius={0.5}
+          colorBy={d => d.color}
+        />
+        <h3>Available Income: ${dynamicIncome}</h3>
+      </PieHolder>
     </React.Fragment>
   );
 };

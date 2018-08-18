@@ -15,8 +15,9 @@ import { Container, Row, Col } from "reactstrap";
 
 const ColorCube = styled("span")`
   align-self: center;
-  height: 10px;
-  width: 10px;
+  height: 12px;
+  width: 12px;
+  border-radius: 20px;
   background-color: ${props => props.bgcolor};
 `;
 
