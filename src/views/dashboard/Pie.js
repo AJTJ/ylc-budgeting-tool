@@ -96,21 +96,3 @@ const Pie = props => {
 };
 
 export default Pie;
-
-// const mapStateToProps = state => {
-//   return {
-//     counter: state.counterReducer.counter
-//   };
-// };
-
-// const { increment, decrement } = actions;
-
-// const mapDispatchToProps = {
-//   increment,
-//   decrement
-// };
-
-// export default connect(
-//   mapStateToProps,
-//   mapDispatchToProps
-// )(Pie);

@@ -10,7 +10,7 @@ export const FormComponent = ({
   ...props
 }) => {
   return (
-    <Form onSubmit={handleSubmit}>
+    <Form>
       <BasicInput
         name="Rent/Mortgage"
         id="rent_mortgage"

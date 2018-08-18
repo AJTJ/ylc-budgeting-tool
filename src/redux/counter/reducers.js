@@ -3,7 +3,7 @@ import { handleActions, combineActions } from "redux-actions";
 // import { combineReducers } from "redux";
 
 const defaultState = {
-  counter: 35
+  counter: 0
 };
 
 const counterReducer = handleActions(

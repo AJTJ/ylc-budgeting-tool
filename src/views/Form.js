@@ -7,17 +7,24 @@ import { values } from "./formData/values";
 import Pie from "./dashboard/Pie";
 import { MiniBudget } from "./dashboard/MiniBudget";
 
-import { Col, Row } from "reactstrap";
+import { connect } from "react-redux";
+import { actions } from "../redux/index";
 
-export const Form = props => {
-  const curForm = formTypes[props.match.params.formType];
-  const FormComponent = curForm.FormComponent;
+import { Col, Row, Button } from "reactstrap";
+
+const Form = props => {
+  const curForm = props.match.params.formType;
+  const FormComponent = formTypes[curForm].FormComponent;
+  console.log(props.newBudget);
 
   return (
     <Formik
       initialValues={values}
-      render={({ ...props }) => (
-        <React.Fragment>
+      onSubmit={values => {
+        props.addBudget({ values });
+      }}
+      render={({ ...props }) => {
+        return (
           <Row>
             <Col xs={5} sm={5} md={5} lg={5}>
               <MiniBudget {...props} />
@@ -26,9 +33,31 @@ export const Form = props => {
             <Col xs={7} sm={7} md={7} lg={7}>
               <FormComponent {...props} />
             </Col>
+            {curForm === "personal" && (
+              <Button onClick={props.handleSubmit}>
+                Turn your budget into a printable PDF
+              </Button>
+            )}
           </Row>
-        </React.Fragment>
-      )}
+        );
+      }}
     />
   );
 };
+
+const mapStateToProps = state => {
+  return {
+    newBudget: state.budgetReducer
+  };
+};
+
+const { addBudget } = actions;
+
+const mapDispatchToProps = {
+  addBudget
+};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Form);
