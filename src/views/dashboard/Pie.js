@@ -2,6 +2,11 @@ import React from "react";
 
 import { Pie as NivoPie } from "@nivo/pie";
 
+// import { Card } from "reactstrap";
+
+import colors from "../../style/colors";
+// import toHslString from "tinycolor2";
+
 import {
   income,
   housing,
@@ -13,45 +18,70 @@ import {
 const Pie = props => {
   const { values } = props;
 
+  const dynamicIncome =
+    income(values) -
+    housing(values) -
+    transportation(values) -
+    living(values) -
+    personal(values);
+
+  const PlaceholderPie = [
+    {
+      id: "Start by adding your income!",
+      label: "Start by adding your income!",
+      value: 1,
+      color: "yellow"
+    }
+  ];
+
   const PieData = [
     {
-      id: "Income",
-      label: "Income",
-      value: income(values)
+      id: "Remaining Income",
+      label: "Remaining Income",
+      value: dynamicIncome,
+      color: colors.color1
     },
     {
       id: "Housing",
-      label: "Housing",
-      value: housing(values)
+      label: "Housing Expenses",
+      value: housing(values),
+      color: colors.color2
     },
     {
       id: "Transportation",
-      label: "Transportation",
-      value: transportation(values)
+      label: "Transportation Expenses",
+      value: transportation(values),
+      color: colors.color3
     },
     {
       id: "Living Expenses",
       label: "Living Expenses",
-      value: living(values)
+      value: living(values),
+      color: colors.color4
     },
     {
       id: "Personal Expenses",
       label: "Personal Expenses",
-      value: personal(values)
+      value: personal(values),
+      color: colors.color5
     }
   ];
 
   return (
-    <NivoPie
-      enableSlicesLabels={false}
-      borderWidth={0.5}
-      sortByValue={true}
-      fit={true}
-      data={PieData}
-      height={400}
-      width={400}
-      innerRadius={0.5}
-    />
+    <React.Fragment>
+      <NivoPie
+        enableSlicesLabels={false}
+        borderWidth={0.5}
+        sortByValue={true}
+        fit={true}
+        data={income(values) === 0 ? PlaceholderPie : PieData}
+        height={200}
+        width={200}
+        innerRadius={0.5}
+        colorBy={d => d.color}
+      />
+      <h1>${dynamicIncome}</h1>
+    </React.Fragment>
   );
 };
 
