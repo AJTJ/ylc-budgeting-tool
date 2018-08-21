@@ -1,4 +1,5 @@
 import React from "react";
+// import ReactDOM from "react-dom";
 
 import { Formik } from "formik";
 import formTypes from "./formData/inputFields/index";
@@ -9,13 +10,18 @@ import { MiniBudget } from "./dashboard/MiniBudget";
 
 import { connect } from "react-redux";
 import { actions } from "../redux/index";
+// import { store } from "../index";
 
 import { Col, Row, Button } from "reactstrap";
+
+// import BudgetPDF from "./pdf/BudgetPDF";
+// import ReactPDF from "@react-pdf/renderer";
+// import "regenerator-runtime/runtime";
 
 const Form = props => {
   const curForm = props.match.params.formType;
   const FormComponent = formTypes[curForm].FormComponent;
-  const newBudget = props.newBudget;
+  // const newBudget = props.newBudget;
 
   return (
     <Formik
@@ -24,10 +30,8 @@ const Form = props => {
         props.addBudget({ values });
       }}
       render={({ ...props }) => {
-        console.log(newBudget);
         return (
           <React.Fragment>
-            <Col>Hello</Col>
             <Row>
               <Col xs={5} sm={5} md={5} lg={5}>
                 <MiniBudget {...props} />
@@ -48,6 +52,8 @@ const Form = props => {
     />
   );
 };
+
+// ReactDOM.render(<BudgetPDF />, document.getElementById("pdf"));
 
 const mapStateToProps = state => {
   return {

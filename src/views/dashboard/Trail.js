@@ -9,7 +9,7 @@ export default () => {
       <Link to="/Form/transportation">Transportation</Link>
       <Link to="/Form/living">Living</Link>
       <Link to="/Form/personal">Personal</Link>
-      <Link to="/budgetPDF">BudgetPDF</Link>
+      <Link to="/budgetPDF.pdf">BudgetPDF</Link>
     </React.Fragment>
   );
 };

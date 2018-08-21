@@ -4,9 +4,8 @@ import { Route } from "react-router-dom";
 import Trail from "./views/dashboard/Trail";
 import Form from "./views/Form";
 
-import { BudgetPDF } from "./views/pdf/budgetPDF";
-
 import { Container } from "reactstrap";
+import BudgetPDF from "./views/pdf/BudgetPDF";
 
 class App extends Component {
   render() {
@@ -15,7 +14,7 @@ class App extends Component {
         <Trail />
         {/* <Route path="/Form/:formType" render={MyForm} /> */}
         <Route path="/Form/:formType" component={Form} />
-        <Route path="/budget" component={BudgetPDF} />
+        <Route path="/BudgetPDF" component={BudgetPDF} />
       </Container>
     );
   }
