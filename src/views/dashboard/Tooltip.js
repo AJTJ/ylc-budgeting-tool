@@ -1,30 +1,30 @@
 import React from "react";
-import { Tooltip } from "reactstrap";
+import { Tooltip as RSTooltip } from "reactstrap";
 
 import Component from "@reactions/component";
 
 export const Tooltip = props => {
   return (
-    <Component state={{ toolTipOpen: false }}>
-      {({ setState, state, ...props }) => {
-        console.log("hello!");
+    <Component initialState={{ toolTipOpen: false }}>
+      {({ setState, state }) => {
+        console.log(555, state);
 
         const toggle = () => {
           setState({
-            tooltipOpen: !state.tooltipOpen
+            toolTipOpen: !state.toolTipOpen
           });
         };
 
         return (
-          <Tooltip
+          <RSTooltip
             placement="right"
-            isOpen={state.tooltipOpen}
+            isOpen={state.toolTipOpen}
             target={props.target}
             toggle={() => toggle()}
           >
             {props.text}
             HELLO!
-          </Tooltip>
+          </RSTooltip>
         );
       }}
     </Component>

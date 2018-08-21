@@ -14,6 +14,7 @@ export const FormComponent = ({
       <BasicInput
         name="Wage Income"
         id="wage_income"
+        text="tooltip text here"
         value={values.wage_income}
         onChange={handleChange}
       />

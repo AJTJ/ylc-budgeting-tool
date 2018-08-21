@@ -8,6 +8,8 @@ import {
   InputGroupAddon
 } from "reactstrap";
 
+import { Tooltip } from "../../dashboard/Tooltip";
+
 const Input = ({ name, id, type = "number", ...props }) => (
   <InputGroup>
     <InputGroupAddon addonType="prepend">$</InputGroupAddon>
@@ -20,6 +22,13 @@ export default ({ Component = Input, ...props }) => (
   <FormGroup row>
     <Col>
       <Label>{props.name}</Label>
+      {props.text ? (
+        <React.Fragment>
+          {/* <img src="../../../assets/question-mark.svg" id={props.id} alt="" /> */}
+          <span id={props.id}>TOOLTIP</span>
+          <Tooltip target={props.id} text={props.text} />{" "}
+        </React.Fragment>
+      ) : null}
     </Col>
     <Col>
       <Component {...props} />
