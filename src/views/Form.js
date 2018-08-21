@@ -15,7 +15,7 @@ import { Col, Row, Button } from "reactstrap";
 const Form = props => {
   const curForm = props.match.params.formType;
   const FormComponent = formTypes[curForm].FormComponent;
-  console.log(props.newBudget);
+  const newBudget = props.newBudget;
 
   return (
     <Formik
@@ -24,21 +24,25 @@ const Form = props => {
         props.addBudget({ values });
       }}
       render={({ ...props }) => {
+        console.log(newBudget);
         return (
-          <Row>
-            <Col xs={5} sm={5} md={5} lg={5}>
-              <MiniBudget {...props} />
-              <Pie {...props} />
-            </Col>
-            <Col xs={7} sm={7} md={7} lg={7}>
-              <FormComponent {...props} />
-            </Col>
-            {curForm === "personal" && (
-              <Button onClick={props.handleSubmit}>
-                Turn your budget into a printable PDF
-              </Button>
-            )}
-          </Row>
+          <React.Fragment>
+            <Col>Hello</Col>
+            <Row>
+              <Col xs={5} sm={5} md={5} lg={5}>
+                <MiniBudget {...props} />
+                <Pie {...props} />
+              </Col>
+              <Col xs={7} sm={7} md={7} lg={7}>
+                <FormComponent {...props} />
+              </Col>
+              {curForm === "personal" && (
+                <Button onClick={props.handleSubmit}>
+                  Turn your budget into a printable PDF
+                </Button>
+              )}
+            </Row>
+          </React.Fragment>
         );
       }}
     />

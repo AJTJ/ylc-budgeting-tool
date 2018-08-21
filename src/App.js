@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import { Route } from "react-router-dom";
 
-// import Pie from "./views/dashboard/Pie";
 import Trail from "./views/dashboard/Trail";
-// import MiniBudget from "./views/dashboard/MiniBudget";
 import Form from "./views/Form";
+
+import { BudgetPDF } from "./views/pdf/budgetPDF";
 
 import { Container } from "reactstrap";
 
@@ -15,6 +15,7 @@ class App extends Component {
         <Trail />
         {/* <Route path="/Form/:formType" render={MyForm} /> */}
         <Route path="/Form/:formType" component={Form} />
+        <Route path="/budget" component={BudgetPDF} />
       </Container>
     );
   }

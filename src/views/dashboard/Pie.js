@@ -88,11 +88,6 @@ const Pie = props => {
           width={200}
           innerRadius={0.5}
           colorBy={d => d.color}
-          tooltip={d => (
-            <div>
-              {d.label}: ${d.value}
-            </div>
-          )}
         />
         <h3>Available Income: ${dynamicIncome}</h3>
       </PieHolder>
