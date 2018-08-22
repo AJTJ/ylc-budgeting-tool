@@ -13,7 +13,6 @@ const styles = StyleSheet.create({
 });
 
 const BudgetPDF = props => {
-  console.log(props);
   return (
     <Document>
       <Page size="A4">

@@ -7,8 +7,6 @@ export const Tooltip = props => {
   return (
     <Component initialState={{ toolTipOpen: false }}>
       {({ setState, state }) => {
-        console.log(555, state);
-
         const toggle = () => {
           setState({
             toolTipOpen: !state.toolTipOpen
@@ -23,7 +21,6 @@ export const Tooltip = props => {
             toggle={() => toggle()}
           >
             {props.text}
-            HELLO!
           </RSTooltip>
         );
       }}

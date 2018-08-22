@@ -14,7 +14,7 @@ export const FormComponent = ({
       <BasicInput
         name="Wage Income"
         id="wage_income"
-        text="tooltip text here"
+        text="If you have a regular paycheck, or some sort of regular pay, this is where you input that information."
         value={values.wage_income}
         onChange={handleChange}
       />

@@ -6,10 +6,13 @@ const color3 = "olive";
 const color4 = "yellowgreen";
 const color5 = "rosybrown";
 
+const softBorder = "lightgray";
+
 export default {
   color1,
   color2,
   color3,
   color4,
-  color5
+  color5,
+  softBorder
 };

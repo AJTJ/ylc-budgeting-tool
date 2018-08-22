@@ -8,7 +8,17 @@ import {
   InputGroupAddon
 } from "reactstrap";
 
+import styled from "react-emotion";
+
+import help from "../../../assets/help.svg";
+
 import { Tooltip } from "../../dashboard/Tooltip";
+
+const Question = styled("img")`
+  height: 20px;
+  width: 20px;
+  margin: 5px;
+`;
 
 const Input = ({ name, id, type = "number", ...props }) => (
   <InputGroup>
@@ -20,13 +30,12 @@ const Input = ({ name, id, type = "number", ...props }) => (
 
 export default ({ Component = Input, ...props }) => (
   <FormGroup row>
-    <Col>
-      <Label>{props.name}</Label>
+    <Col className="d-flex align-items-center">
+      <Label className="m-0">{props.name}</Label>
       {props.text ? (
         <React.Fragment>
-          {/* <img src="../../../assets/question-mark.svg" id={props.id} alt="" /> */}
-          <span id={props.id}>TOOLTIP</span>
-          <Tooltip target={props.id} text={props.text} />{" "}
+          <Question src={help} alt="Question Mark Icon" id={props.id} />
+          <Tooltip target={props.id} text={props.text} />
         </React.Fragment>
       ) : null}
     </Col>

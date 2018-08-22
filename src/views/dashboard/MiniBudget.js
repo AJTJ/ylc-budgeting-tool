@@ -11,7 +11,9 @@ import {
   personal
 } from "../formData/computation";
 
-import { Container, Row, Col } from "reactstrap";
+import { Col } from "reactstrap";
+
+import { Container, Row } from "../../components/layout";
 
 const ColorCube = styled("span")`
   align-self: center;
@@ -30,31 +32,41 @@ export const MiniBudget = props => {
       <Row>
         <ColorCube bgcolor={colors.color1} />
         <Col>Income</Col>
-        <Col>${income(values)}</Col>
+        <Col xs={4} sm={4} md={4} lg={4}>
+          ${income(values)}
+        </Col>
       </Row>
 
       <Row>
         <ColorCube bgcolor={colors.color2} />
         <Col>Housing Expenses</Col>
-        <Col>${housing(values)}</Col>
+        <Col xs={4} sm={4} md={4} lg={4}>
+          ${housing(values)}
+        </Col>
       </Row>
 
       <Row>
         <ColorCube bgcolor={colors.color3} />
         <Col>Transportation Expenses</Col>
-        <Col>${transportation(values)}</Col>
+        <Col xs={4} sm={4} md={4} lg={4}>
+          ${transportation(values)}
+        </Col>
       </Row>
 
       <Row>
         <ColorCube bgcolor={colors.color4} />
         <Col>Living Expenses</Col>
-        <Col>${living(values)}</Col>
+        <Col xs={4} sm={4} md={4} lg={4}>
+          ${living(values)}
+        </Col>
       </Row>
 
       <Row>
         <ColorCube bgcolor={colors.color5} />
         <Col>Personal Expenses</Col>
-        <Col>${personal(values)}</Col>
+        <Col xs={4} sm={4} md={4} lg={4}>
+          ${personal(values)}
+        </Col>
       </Row>
     </Container>
   );
