@@ -12,7 +12,8 @@ import {
   housing,
   transportation,
   living,
-  personal
+  personal,
+  totalExpenses
 } from "../formData/computation";
 
 const Pie = props => {
@@ -87,7 +88,11 @@ const Pie = props => {
           enableRadialLabels={false}
           radialLabelsLinkDiagonalLength={0}
           fit={true}
-          data={income(values) === 0 ? PlaceholderPie : PieData}
+          data={
+            income(values) === 0 && totalExpenses(values) === 0
+              ? PlaceholderPie
+              : PieData
+          }
           height={250}
           width={250}
           innerRadius={0.2}
