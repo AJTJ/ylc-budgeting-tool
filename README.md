@@ -4,13 +4,9 @@ Goal: An accessible, user-friendly personal budgeting tool. Focus on accessibili
 
 Project Stack
 
-TODO
-- figure out numbered breadcrumb system
-
 Structure
 - React
   - react-router-dom
-  - @reach/router
 - Redux
   - redux-actions
   - redux-logic?
@@ -30,6 +26,8 @@ Data visualization
 
 PDF creation
 - react-pdf
+
+...
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 

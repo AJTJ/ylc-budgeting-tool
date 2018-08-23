@@ -15,7 +15,7 @@ import { Col, Row as RSRow, Button } from "reactstrap";
 import { Container } from "../components/layout";
 
 const Form = props => {
-  const curForm = props.match.params.formType;
+  let curForm = props.match.params.formType;
   const FormComponent = formTypes[curForm].FormComponent;
 
   return (
