@@ -1,7 +1,5 @@
-import styled, { css } from "react-emotion";
+import styled from "react-emotion";
 import colors from "../style/colors";
-
-import { Row } from "reactstrap";
 
 export const H5Underline = styled("h5")`
   border-bottom: 1px solid ${colors.softBorder};

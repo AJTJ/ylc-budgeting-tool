@@ -11,7 +11,7 @@ import Trail from "../views/dashboard/Trail";
 import { connect } from "react-redux";
 import { actions } from "../redux/index";
 
-import { Col, Row, Button } from "reactstrap";
+import { Col, Row } from "reactstrap";
 import { Container } from "../components/layout";
 
 const Form = props => {
@@ -22,6 +22,8 @@ const Form = props => {
     <Formik
       initialValues={values}
       onSubmit={values => {
+        console.log("submitting");
+        console.log(values);
         props.addBudget({ values });
       }}
       render={({ ...props }) => {
@@ -39,14 +41,6 @@ const Form = props => {
                   <FormComponent {...props} />
                 </Container>
               </Col>
-              {curForm === "personal" && (
-                <Button onClick={props.handleSubmit}>
-                  Turn your budget into a printable PDF
-                </Button>
-              )}
-            </Row>
-            <Row>
-              <Button>Print out a blank budget.</Button>
             </Row>
           </React.Fragment>
         );
