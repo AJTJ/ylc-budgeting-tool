@@ -1,7 +1,7 @@
 import React from "react";
 import { Form } from "reactstrap";
 
-import { BasicInput } from "../components/index";
+import { BasicInput, LinkButton } from "../components/index";
 
 export const FormComponent = ({
   values,
@@ -59,6 +59,7 @@ export const FormComponent = ({
         value={values.saving_goals}
         onChange={handleChange}
       />
+      <LinkButton to="/Form/living" name="PREVIOUS" />
     </Form>
   );
 };

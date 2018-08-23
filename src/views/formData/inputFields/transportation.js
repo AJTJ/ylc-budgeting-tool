@@ -1,7 +1,7 @@
 import React from "react";
 import { Form } from "reactstrap";
 
-import { BasicInput } from "../components/index";
+import { BasicInput, LinkButton } from "../components/index";
 
 export const FormComponent = ({
   values,
@@ -47,6 +47,8 @@ export const FormComponent = ({
         value={values.other_transport}
         onChange={handleChange}
       />
+      <LinkButton to="/Form/housing" name="PREVIOUS" />
+      <LinkButton to="/Form/living" name="NEXT" />
     </Form>
   );
 };

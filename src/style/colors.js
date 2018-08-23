@@ -6,6 +6,9 @@ const color3 = "olive";
 const color4 = "yellowgreen";
 const color5 = "rosybrown";
 
+const color6 = "brown";
+const color7 = "sienna";
+
 const softBorder = "lightgray";
 
 export default {
@@ -14,5 +17,7 @@ export default {
   color3,
   color4,
   color5,
+  color6,
+  color7,
   softBorder
 };

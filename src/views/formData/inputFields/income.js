@@ -1,7 +1,7 @@
 import React from "react";
 import { Form } from "reactstrap";
 
-import { BasicInput } from "../components/index";
+import { BasicInput, LinkButton } from "../components/index";
 
 export const FormComponent = ({
   values,
@@ -42,6 +42,7 @@ export const FormComponent = ({
         value={values.other_income_2}
         onChange={handleChange}
       />
+      <LinkButton to="/Form/housing" name="NEXT" />
     </Form>
   );
 };
