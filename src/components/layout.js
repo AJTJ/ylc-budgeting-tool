@@ -12,5 +12,8 @@ export const Container = styled(RSContainer)`
 `;
 
 export const Row = styled(RSRow)`
-  padding-left: 15px;
+  margin: 5px 10px 0;
+  padding-bottom: 5px;
+  border-bottom: ${props =>
+    props.underline ? `1px solid ${colors.softBorder}` : "none"};
 `;

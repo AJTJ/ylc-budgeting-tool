@@ -43,3 +43,6 @@ export const personal = values =>
   Number(values.gifts_donations) +
   Number(values.vacation_travel) +
   Number(values.saving_goals);
+
+export const totalExpenses = values =>
+  housing(values) + transportation(values) + living(values) + personal(values);

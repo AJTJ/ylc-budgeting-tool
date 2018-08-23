@@ -11,7 +11,7 @@ import Trail from "../views/dashboard/Trail";
 import { connect } from "react-redux";
 import { actions } from "../redux/index";
 
-import { Col, Row as RSRow, Button } from "reactstrap";
+import { Col, Row, Button } from "reactstrap";
 import { Container } from "../components/layout";
 
 const Form = props => {
@@ -29,7 +29,7 @@ const Form = props => {
           <React.Fragment>
             <h1>YLC BUDGETING APP</h1>
             <Trail {...props} curForm={curForm} />
-            <RSRow>
+            <Row>
               <Col xs={4} sm={4} md={4} lg={4}>
                 <MiniBudget {...props} />
                 <Pie {...props} />
@@ -44,10 +44,10 @@ const Form = props => {
                   Turn your budget into a printable PDF
                 </Button>
               )}
-            </RSRow>
-            <RSRow>
+            </Row>
+            <Row>
               <Button>Print out a blank budget.</Button>
-            </RSRow>
+            </Row>
           </React.Fragment>
         );
       }}

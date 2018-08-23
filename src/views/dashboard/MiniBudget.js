@@ -8,14 +8,17 @@ import {
   housing,
   transportation,
   living,
-  personal
+  personal,
+  totalExpenses
 } from "../formData/computation";
 
 import { Col } from "reactstrap";
 
 import { Container, Row } from "../../components/layout";
 
-const ColorCube = styled("span")`
+import { H5Underline } from "../../components/typography";
+
+const ColorIdentifier = styled("span")`
   align-self: center;
   height: 12px;
   width: 12px;
@@ -27,18 +30,20 @@ export const MiniBudget = props => {
   const { values } = props;
   return (
     <Container>
-      <Row>Current Budget</Row>
+      <Row className="justify-content-center">
+        <H5Underline>Monthly Budget</H5Underline>
+      </Row>
 
-      <Row>
-        <ColorCube bgcolor={colors.color1} />
-        <Col>Income</Col>
+      <Row underline="true" className="font-weight-bold">
+        <ColorIdentifier bgcolor={colors.color1} />
+        <Col>Monthly Income</Col>
         <Col xs={4} sm={4} md={4} lg={4}>
           ${income(values)}
         </Col>
       </Row>
 
       <Row>
-        <ColorCube bgcolor={colors.color2} />
+        <ColorIdentifier bgcolor={colors.color2} />
         <Col>Housing Expenses</Col>
         <Col xs={4} sm={4} md={4} lg={4}>
           ${housing(values)}
@@ -46,7 +51,7 @@ export const MiniBudget = props => {
       </Row>
 
       <Row>
-        <ColorCube bgcolor={colors.color3} />
+        <ColorIdentifier bgcolor={colors.color3} />
         <Col>Transportation Expenses</Col>
         <Col xs={4} sm={4} md={4} lg={4}>
           ${transportation(values)}
@@ -54,18 +59,26 @@ export const MiniBudget = props => {
       </Row>
 
       <Row>
-        <ColorCube bgcolor={colors.color4} />
+        <ColorIdentifier bgcolor={colors.color4} />
         <Col>Living Expenses</Col>
         <Col xs={4} sm={4} md={4} lg={4}>
           ${living(values)}
         </Col>
       </Row>
 
-      <Row>
-        <ColorCube bgcolor={colors.color5} />
+      <Row underline="true">
+        <ColorIdentifier bgcolor={colors.color5} />
         <Col>Personal Expenses</Col>
         <Col xs={4} sm={4} md={4} lg={4}>
           ${personal(values)}
+        </Col>
+      </Row>
+
+      <Row className="font-weight-bold">
+        <ColorIdentifier bgcolor={"white"} />
+        <Col>Monthly Expenses</Col>
+        <Col xs={4} sm={4} md={4} lg={4}>
+          ${totalExpenses(values)}
         </Col>
       </Row>
     </Container>

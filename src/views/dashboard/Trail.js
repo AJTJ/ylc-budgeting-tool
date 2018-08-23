@@ -1,17 +1,23 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import { Progress } from "reactstrap";
+import { Progress as RSProgress } from "reactstrap";
 import styled from "react-emotion";
 
 import colors from "../../style/colors";
 
 const StyledLink = styled(Link)`
   color: white;
+  font-size: 16px;
   &:hover {
     color: black;
     text-decoration: none;
   }
+`;
+
+const Progress = styled(RSProgress)`
+  height: 30px;
+  background-color: ${props => props.color};
 `;
 
 export default props => {
@@ -30,7 +36,7 @@ export default props => {
       <Progress
         className={identifier(curForm, "income")}
         bar
-        color="#FF0000"
+        color={colors.color1}
         value="20"
       >
         <StyledLink to="/Form/income">Income</StyledLink>
