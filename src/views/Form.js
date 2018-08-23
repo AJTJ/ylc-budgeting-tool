@@ -13,7 +13,7 @@ import { actions } from "../redux/index";
 
 import { Col, Row } from "reactstrap";
 import { Container } from "../components/layout";
-import { H1Title } from "../components/typography";
+import { H1Title } from "../style/typography";
 import styled from "react-emotion";
 
 const MainContainer = styled(Container)`

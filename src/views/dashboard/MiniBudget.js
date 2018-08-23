@@ -16,7 +16,7 @@ import { Col } from "reactstrap";
 
 import { Container, Row } from "../../components/layout";
 
-import { H5Underline } from "../../components/typography";
+import { H5Underline } from "../../style/typography";
 
 const ColorIdentifier = styled("span")`
   align-self: center;
@@ -44,7 +44,7 @@ export const MiniBudget = props => {
 
       <Row>
         <ColorIdentifier bgcolor={colors.color2} />
-        <Col>Housing Expenses</Col>
+        <Col>Housing</Col>
         <Col xs={4} sm={4} md={4} lg={4}>
           ${housing(values)}
         </Col>
@@ -52,7 +52,7 @@ export const MiniBudget = props => {
 
       <Row>
         <ColorIdentifier bgcolor={colors.color3} />
-        <Col>Transportation Expenses</Col>
+        <Col>Transportation</Col>
         <Col xs={4} sm={4} md={4} lg={4}>
           ${transportation(values)}
         </Col>
@@ -60,7 +60,7 @@ export const MiniBudget = props => {
 
       <Row>
         <ColorIdentifier bgcolor={colors.color4} />
-        <Col>Living Expenses</Col>
+        <Col>Living</Col>
         <Col xs={4} sm={4} md={4} lg={4}>
           ${living(values)}
         </Col>
@@ -68,7 +68,7 @@ export const MiniBudget = props => {
 
       <Row underline="true">
         <ColorIdentifier bgcolor={colors.color5} />
-        <Col>Personal Expenses</Col>
+        <Col>Personal</Col>
         <Col xs={4} sm={4} md={4} lg={4}>
           ${personal(values)}
         </Col>

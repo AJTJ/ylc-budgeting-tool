@@ -30,7 +30,7 @@ const Input = ({ name, id, type = "number", ...props }) => (
 
 export default ({ Component = Input, ...props }) => (
   <FormGroup row>
-    <Col className="d-flex align-items-center">
+    <Col className="d-flex align-items-center" xs={5} sm={5} md={5} lg={5}>
       <Label className="m-0">{props.name}</Label>
       {props.text ? (
         <React.Fragment>
@@ -39,7 +39,7 @@ export default ({ Component = Input, ...props }) => (
         </React.Fragment>
       ) : null}
     </Col>
-    <Col>
+    <Col xs={7} sm={7} md={7} lg={7}>
       <Component {...props} />
     </Col>
   </FormGroup>
