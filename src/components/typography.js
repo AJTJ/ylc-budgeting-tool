@@ -9,16 +9,3 @@ export const H5Underline = styled("h5")`
   padding: 5px;
   text-align: center;
 `;
-
-// export const underlinedText = css({
-//   borderBottomColor: colors.softBorder,
-//   borderBottomWidth: "1px",
-//   borderBottomStyle: "solid",
-//   width: "100%",
-//   padding: "5px",
-//   textAlign: "center"
-// });
-
-export const TextUnderlined = styled(Row)`
-  border-bottom: 1px solid ${colors.softBorder};
-`;
