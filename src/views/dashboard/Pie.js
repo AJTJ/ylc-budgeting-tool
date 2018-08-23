@@ -43,7 +43,7 @@ const Pie = props => {
 
   const PieData = [
     {
-      id: "Remaining Income",
+      id: "Income",
       label: "Remaining Income",
       value: dynamicIncome,
       color: colors.color1
@@ -61,13 +61,13 @@ const Pie = props => {
       color: colors.color3
     },
     {
-      id: "Living Expenses",
+      id: "Living",
       label: "Living Expenses",
       value: living(values),
       color: colors.color4
     },
     {
-      id: "Personal Expenses",
+      id: "Personal",
       label: "Personal Expenses",
       value: personal(values),
       color: colors.color5
@@ -78,13 +78,19 @@ const Pie = props => {
     <Container>
       <PieHolder>
         <NivoPie
-          enableSlicesLabels={false}
-          // sortByValue={true}
+          padAngle={0.2}
+          cornerRadius={10}
+          sliceLabel={d => `${d.id} $${d.value}`}
+          enableSlicesLabels={income(values) === 0 ? false : true}
+          slicesLabelsSkipAngle={80}
+          slicesLabelsTextColor={"white"}
+          enableRadialLabels={false}
+          radialLabelsLinkDiagonalLength={0}
           fit={true}
           data={income(values) === 0 ? PlaceholderPie : PieData}
-          height={150}
-          width={150}
-          innerRadius={0.5}
+          height={250}
+          width={250}
+          innerRadius={0.2}
           colorBy={d => d.color}
         />
         <h3>Available Income: ${dynamicIncome}</h3>
