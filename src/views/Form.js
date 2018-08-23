@@ -13,6 +13,14 @@ import { actions } from "../redux/index";
 
 import { Col, Row } from "reactstrap";
 import { Container } from "../components/layout";
+import { H1Title } from "../components/typography";
+import styled from "react-emotion";
+
+const MainContainer = styled(Container)`
+  border: none;
+  margin: 10px auto;
+  padding: none;
+`;
 
 const Form = props => {
   let curForm = props.match.params.formType;
@@ -28,10 +36,10 @@ const Form = props => {
       }}
       render={({ ...props }) => {
         return (
-          <React.Fragment>
-            <h1>YLC BUDGETING APP</h1>
+          <MainContainer>
+            <H1Title className="text-center">YLC BUDGETING APP</H1Title>
             <Trail {...props} curForm={curForm} />
-            <Row>
+            <Row className="justify-content-center">
               <Col xs={4} sm={4} md={4} lg={4}>
                 <MiniBudget {...props} />
                 <Pie {...props} />
@@ -42,7 +50,7 @@ const Form = props => {
                 </Container>
               </Col>
             </Row>
-          </React.Fragment>
+          </MainContainer>
         );
       }}
     />

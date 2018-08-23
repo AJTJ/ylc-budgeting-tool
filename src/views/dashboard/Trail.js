@@ -20,6 +20,10 @@ const Progress = styled(RSProgress)`
   background-color: ${props => props.color};
 `;
 
+const MainProgress = styled(Progress)`
+  margin: 20px 0;
+`;
+
 export default props => {
   const curForm = props.curForm;
 
@@ -32,7 +36,7 @@ export default props => {
   };
 
   return (
-    <Progress multi>
+    <MainProgress multi>
       <Progress
         className={identifier(curForm, "income")}
         bar
@@ -73,6 +77,6 @@ export default props => {
       >
         <StyledLink to="/Form/personal">Personal</StyledLink>
       </Progress>
-    </Progress>
+    </MainProgress>
   );
 };
