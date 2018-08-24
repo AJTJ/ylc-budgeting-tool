@@ -77,6 +77,14 @@ export default props => {
       >
         <StyledLink to="/Form/personal">Personal</StyledLink>
       </Progress>
+      <Progress
+        className={identifier(curForm, "review")}
+        bar
+        color={colors.color6}
+        value="20"
+      >
+        <StyledLink to="/Form/review">Review</StyledLink>
+      </Progress>
     </MainProgress>
   );
 };

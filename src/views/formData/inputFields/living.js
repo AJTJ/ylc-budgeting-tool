@@ -1,5 +1,5 @@
 import React from "react";
-import { Form, Row } from "reactstrap";
+import { Form } from "reactstrap";
 
 import { BasicInput, LinkButton } from "../components/index";
 

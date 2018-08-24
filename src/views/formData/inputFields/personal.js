@@ -59,17 +59,8 @@ export const FormComponent = ({
         value={values.saving_goals}
         onChange={handleChange}
       />
-      <Row
-        className="d-flex justify-content-between"
-        style={{ paddingLeft: "15px" }}
-      >
-        <LinkButton to="/Form/living" name="PREVIOUS" />
-        <SubmitButton
-          handleSubmit={handleSubmit}
-          name="Print a PDF of your budget!"
-          values={values}
-        />
-      </Row>
+      <LinkButton to="/Form/living" name="PREVIOUS" />
+      <LinkButton to="/Form/review" name="NEXT" />
     </Form>
   );
 };

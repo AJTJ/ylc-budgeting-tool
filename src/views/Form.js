@@ -35,23 +35,48 @@ const Form = props => {
         props.addBudget({ values });
       }}
       render={({ ...props }) => {
-        return (
-          <MainContainer>
-            <H1Title className="text-center">YLC BUDGETING APP</H1Title>
-            <Trail {...props} curForm={curForm} />
-            <Row className="justify-content-center">
-              <Col xs={4} sm={4} md={4} lg={4}>
-                <MiniBudget {...props} />
-                <Pie {...props} />
+        console.log(curForm);
+        if (curForm === "review") {
+          return (
+            <MainContainer>
+              <H1Title className="text-center">YLC BUDGETING APP</H1Title>
+              <Trail {...props} curForm={curForm} />
+              <Col className="justify-content-center">
+                <Row>
+                  <Col xs={4} sm={4} md={4} lg={4}>
+                    <MiniBudget {...props} />
+                  </Col>
+                  <Col>
+                    <Pie {...props} />
+                  </Col>
+                </Row>
+                <Row>
+                  <Container>
+                    <FormComponent {...props} />
+                  </Container>
+                </Row>
               </Col>
-              <Col xs={7} sm={7} md={7} lg={7}>
-                <Container>
-                  <FormComponent {...props} />
-                </Container>
-              </Col>
-            </Row>
-          </MainContainer>
-        );
+            </MainContainer>
+          );
+        } else {
+          return (
+            <MainContainer>
+              <H1Title className="text-center">YLC BUDGETING APP</H1Title>
+              <Trail {...props} curForm={curForm} />
+              <Row className="justify-content-center">
+                <Col xs={6} sm={6} md={6} lg={6}>
+                  <MiniBudget {...props} />
+                  <Pie {...props} />
+                </Col>
+                <Col xs={6} sm={6} md={6} lg={6}>
+                  <Container>
+                    <FormComponent {...props} />
+                  </Container>
+                </Col>
+              </Row>
+            </MainContainer>
+          );
+        }
       }}
     />
   );
