@@ -1,7 +1,8 @@
 import React from "react";
+
 import { Form, Row } from "reactstrap";
 
-import { BasicInput, LinkButton, SubmitButton } from "../components/index";
+import { LinkButton, SubmitButton } from "../components/index";
 
 export const FormComponent = ({
   values,

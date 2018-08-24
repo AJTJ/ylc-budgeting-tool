@@ -35,11 +35,12 @@ const Form = props => {
         props.addBudget({ values });
       }}
       render={({ ...props }) => {
-        console.log(curForm);
         if (curForm === "review") {
           return (
             <MainContainer>
-              <H1Title className="text-center">YLC BUDGETING APP</H1Title>
+              <H1Title className="text-center">
+                THE YLC BUDGETING APPLICATION
+              </H1Title>
               <Trail {...props} curForm={curForm} />
               <Col className="justify-content-center">
                 <Row>
