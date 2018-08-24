@@ -61,7 +61,9 @@ const Form = props => {
         } else {
           return (
             <MainContainer>
-              <H1Title className="text-center">YLC BUDGETING APP</H1Title>
+              <H1Title className="text-center">
+                THE YLC BUDGETING APPLICATION
+              </H1Title>
               <Trail {...props} curForm={curForm} />
               <Row className="justify-content-center">
                 <Col xs={6} sm={6} md={6} lg={6}>

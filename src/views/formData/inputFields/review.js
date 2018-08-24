@@ -18,7 +18,7 @@ export const FormComponent = ({
         <LinkButton to="/Form/personal" name="PREVIOUS" />
         <SubmitButton
           handleSubmit={handleSubmit}
-          name="Print a PDF of your budget!"
+          name="Create a printable version of your budget!"
           values={values}
         />
       </Row>

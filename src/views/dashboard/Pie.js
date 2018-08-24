@@ -52,25 +52,25 @@ const Pie = props => {
     },
     {
       id: "housing",
-      label: "Housing Expenses",
+      label: "Housing",
       value: housing(values),
       color: colors.color2
     },
     {
       id: "transportation",
-      label: "Transportation Expenses",
+      label: "Transportation",
       value: transportation(values),
       color: colors.color3
     },
     {
       id: "living",
-      label: "Living Expenses",
+      label: "Living",
       value: living(values),
       color: colors.color4
     },
     {
       id: "personal",
-      label: "Personal Expenses",
+      label: "Personal",
       value: personal(values),
       color: colors.color5
     }
