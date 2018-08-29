@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Pie as NivoPie } from "@nivo/pie";
+import { ResponsivePie as NivoPie } from "@nivo/pie";
 
 import styled from "react-emotion";
 import colors from "../../style/colors";
@@ -21,10 +21,17 @@ const Pie = props => {
   const { values } = props;
 
   const PieHolder = styled("div")`
+    height: 500px;
+    /* max-width: 500px; */
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+  `;
+
+  const columnFragment = styled("React.Fragment")`
+    display: flex;
+    flex-direction: column;
   `;
 
   const dynamicIncome =
@@ -84,11 +91,9 @@ const Pie = props => {
           margin={{
             top: 30,
             bottom: 30,
-            right: 80,
-            left: 80
+            right: 140,
+            left: 140
           }}
-          height={350}
-          width={500}
           innerRadius={0.1}
           padAngle={0.05}
           cornerRadius={10}
@@ -103,26 +108,16 @@ const Pie = props => {
             if (d.id === "placeholderPie") {
               return `${d.label}`;
             } else {
-              return `${d.label} $${d.value}`;
+              return `
+                  ${d.label} 
+                  $${d.value}
+                `;
             }
           }}
           enableRadialLabels={true}
           radialLabelsSkipAngle={1}
           radialLabelsLinkDiagonalLength={5}
           radialLabelsLinkHorizontalLength={5}
-          //TOOLTIP
-          // tooltip={d => {
-          //   if (d.id === "placeholderPie") {
-          //     return `${d.label}`;
-          //   } else {
-          //     return (
-          //       <p>
-          //         <ColorIdentifier fillColor={d.color} />
-          //         {d.label} ${d.value}
-          //       </p>
-          //     );
-          //   }
-          // }}
           //DATA
           data={
             income(values) === 0 && totalExpenses(values) === 0
@@ -137,3 +132,17 @@ const Pie = props => {
 };
 
 export default Pie;
+
+//TOOLTIP
+// tooltip={d => {
+//   if (d.id === "placeholderPie") {
+//     return `${d.label}`;
+//   } else {
+//     return (
+//       <p>
+//         <ColorIdentifier fillColor={d.color} />
+//         {d.label} ${d.value}
+//       </p>
+//     );
+//   }
+// }}
