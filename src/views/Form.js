@@ -22,7 +22,7 @@ const MainContainer = styled(Container)`
   padding: none;
 `;
 
-const ResponsiveRow = styled(Row)``;
+// const ResponsiveRow = styled(Row)``;
 
 const Form = props => {
   let curForm = props.match.params.formType;

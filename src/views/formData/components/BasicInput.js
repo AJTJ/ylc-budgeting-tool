@@ -21,7 +21,7 @@ const Question = styled("img")`
 `;
 
 const FormGroup = styled(RSFormGroup)`
-  margin: 20px 0;
+  margin: 10px 0 30px;
 `;
 
 const Input = ({ name, id, type = "number", ...props }) => (
