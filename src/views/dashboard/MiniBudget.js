@@ -15,8 +15,9 @@ import { Col } from "reactstrap";
 
 import { Container, Row } from "../../components/layout";
 import { ColorIdentifier } from "../../components/deco";
-
 import { H5Underline } from "../../style/typography";
+
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export const MiniBudget = props => {
   const { values } = props;
@@ -28,7 +29,10 @@ export const MiniBudget = props => {
 
       <Row underline="true" className="font-weight-bold">
         <ColorIdentifier fillColor={colors.color1} />
-        <Col>Monthly Income</Col>
+        <Col>
+          <FontAwesomeIcon icon="faDollarSign" />
+          Monthly Income
+        </Col>
         <Col xs={4} sm={4} md={4} lg={4}>
           ${income(values)}
         </Col>
@@ -36,7 +40,10 @@ export const MiniBudget = props => {
 
       <Row>
         <ColorIdentifier fillColor={colors.color2} />
-        <Col>Housing</Col>
+        <Col>
+          <FontAwesomeIcon icon="faHome" />
+          Housing
+        </Col>
         <Col xs={4} sm={4} md={4} lg={4}>
           ${housing(values)}
         </Col>
@@ -44,7 +51,10 @@ export const MiniBudget = props => {
 
       <Row>
         <ColorIdentifier fillColor={colors.color3} />
-        <Col>Transportation</Col>
+        <Col>
+          <FontAwesomeIcon icon="faCar" />
+          Transportation
+        </Col>
         <Col xs={4} sm={4} md={4} lg={4}>
           ${transportation(values)}
         </Col>
@@ -52,7 +62,10 @@ export const MiniBudget = props => {
 
       <Row>
         <ColorIdentifier fillColor={colors.color4} />
-        <Col>Living</Col>
+        <Col>
+          <FontAwesomeIcon icon="faWalking" />
+          Living
+        </Col>
         <Col xs={4} sm={4} md={4} lg={4}>
           ${living(values)}
         </Col>
@@ -60,7 +73,10 @@ export const MiniBudget = props => {
 
       <Row underline="true">
         <ColorIdentifier fillColor={colors.color5} />
-        <Col>Personal</Col>
+        <Col>
+          <FontAwesomeIcon icon="faUser" />
+          Personal
+        </Col>
         <Col xs={4} sm={4} md={4} lg={4}>
           ${personal(values)}
         </Col>

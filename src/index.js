@@ -7,9 +7,22 @@ import registerServiceWorker from "./registerServiceWorker";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./style/genericCss.css";
 
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faDollarSign,
+  faHome,
+  faCar,
+  faWalking,
+  faUser,
+  faChartPie
+} from "@fortawesome/free-solid-svg-icons";
+
 import { createStore, combineReducers } from "redux";
 
 import { reducers } from "./redux/index";
+
+library.add(faDollarSign, faHome, faCar, faWalking, faUser, faChartPie);
 
 export const store = createStore(
   combineReducers(reducers),

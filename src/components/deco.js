@@ -31,10 +31,15 @@ export const StyledButton = styled(RSButton)`
 `;
 
 export const StyledLink = styled("a")`
-  color: white;
-  border: solid 1px transparent;
-  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: black;
+  border: solid 1px white;
+  border-radius: 4px;
+  background: ${colors.softBorder};
   padding: 5px;
+  margin: 5px;
   transition: all 0.2s;
   &:hover {
     color: black;

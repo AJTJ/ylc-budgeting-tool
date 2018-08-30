@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 import { Progress as RSProgress } from "reactstrap";
 import styled from "react-emotion";
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 import colors from "../../style/colors";
 
 const StyledLink = styled(Link)`
@@ -43,7 +45,9 @@ export default props => {
         color={colors.color1}
         value="20"
       >
-        <StyledLink to="/Form/income">Income</StyledLink>
+        <StyledLink to="/Form/income">
+          Income <FontAwesomeIcon icon="faDollarSign" />
+        </StyledLink>
       </Progress>
       <Progress
         className={identifier(curForm, "housing")}
@@ -51,7 +55,9 @@ export default props => {
         color={colors.color2}
         value="20"
       >
-        <StyledLink to="/Form/housing">Housing</StyledLink>
+        <StyledLink to="/Form/housing">
+          Housing <FontAwesomeIcon icon="faHome" />
+        </StyledLink>
       </Progress>
       <Progress
         className={identifier(curForm, "transportation")}
@@ -59,7 +65,9 @@ export default props => {
         color={colors.color3}
         value="20"
       >
-        <StyledLink to="/Form/transportation">Transportation</StyledLink>
+        <StyledLink to="/Form/transportation">
+          Transportation <FontAwesomeIcon icon="faCar" />
+        </StyledLink>
       </Progress>
       <Progress
         className={identifier(curForm, "living")}
@@ -67,7 +75,9 @@ export default props => {
         color={colors.color4}
         value="20"
       >
-        <StyledLink to="/Form/living">Living</StyledLink>
+        <StyledLink to="/Form/living">
+          Living <FontAwesomeIcon icon="faWalking" />
+        </StyledLink>
       </Progress>
       <Progress
         className={identifier(curForm, "personal")}
@@ -75,7 +85,9 @@ export default props => {
         color={colors.color5}
         value="20"
       >
-        <StyledLink to="/Form/personal">Personal</StyledLink>
+        <StyledLink to="/Form/personal">
+          Personal <FontAwesomeIcon icon="faUser" />
+        </StyledLink>
       </Progress>
       <Progress
         className={identifier(curForm, "review")}
@@ -83,7 +95,9 @@ export default props => {
         color={colors.color6}
         value="20"
       >
-        <StyledLink to="/Form/review">Review</StyledLink>
+        <StyledLink to="/Form/review">
+          Review <FontAwesomeIcon icon="faChartPie" />
+        </StyledLink>
       </Progress>
     </MainProgress>
   );

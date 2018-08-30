@@ -1,5 +1,5 @@
 import React from "react";
-import { Container } from "reactstrap";
+import { Container as RSContainer } from "reactstrap";
 
 import styled from "react-emotion";
 
@@ -9,14 +9,22 @@ import { StyledLink } from "../../components/deco";
 import colors from "../../style/colors";
 
 const FooterBar = styled("div")`
-  background-color: ${colors.softBorder};
-  padding: 20px 0;
+  background-color: ${colors.gray};
+  height: 60px;
+`;
+
+const Container = styled(RSContainer)`
+  height: 100%;
+  display: flex;
+  align-content: center;
 `;
 
 export default () => (
   <FooterBar>
     <Container>
-      <StyledLink href="google.com">Download a budget workbook</StyledLink>
+      <StyledLink href="google.com">
+        <span>Download a budget workbook</span>
+      </StyledLink>
     </Container>
   </FooterBar>
 );
