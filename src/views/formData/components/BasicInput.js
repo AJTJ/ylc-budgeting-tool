@@ -1,6 +1,6 @@
 import React from "react";
 import {
-  FormGroup,
+  FormGroup as RSFormGroup,
   Label,
   Input as RSInput,
   Col,
@@ -18,6 +18,10 @@ const Question = styled("img")`
   height: 20px;
   width: 20px;
   margin: 5px;
+`;
+
+const FormGroup = styled(RSFormGroup)`
+  margin: 20px 0;
 `;
 
 const Input = ({ name, id, type = "number", ...props }) => (

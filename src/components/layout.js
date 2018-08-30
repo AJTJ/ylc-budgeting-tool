@@ -8,7 +8,7 @@ export const Container = styled(RSContainer)`
   border: solid ${colors.softBorder} 1px;
   border-radius: 10px;
   padding: 20px;
-  margin: 10px;
+  margin-bottom: 10px;
 `;
 
 export const Row = styled(RSRow)`

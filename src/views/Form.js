@@ -22,6 +22,8 @@ const MainContainer = styled(Container)`
   padding: none;
 `;
 
+const ResponsiveRow = styled(Row)``;
+
 const Form = props => {
   let curForm = props.match.params.formType;
   const FormComponent = formTypes[curForm].FormComponent;
@@ -45,15 +47,15 @@ const Form = props => {
               <Col className="justify-content-center">
                 <Row>
                   <Col xs={4} sm={4} md={4} lg={4}>
-                    <MiniBudget {...props} />
+                    <MiniBudget {...props} curForm={curForm} />
                   </Col>
                   <Col>
-                    <Pie {...props} />
+                    <Pie {...props} curForm={curForm} />
                   </Col>
                 </Row>
                 <Row>
                   <Container>
-                    <FormComponent {...props} />
+                    <FormComponent {...props} curForm={curForm} />
                   </Container>
                 </Row>
               </Col>

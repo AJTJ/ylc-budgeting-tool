@@ -21,17 +21,12 @@ const Pie = props => {
   const { values } = props;
 
   const PieHolder = styled("div")`
-    height: 500px;
+    height: 400px;
     /* max-width: 500px; */
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-  `;
-
-  const columnFragment = styled("React.Fragment")`
-    display: flex;
-    flex-direction: column;
   `;
 
   const dynamicIncome =
@@ -91,8 +86,8 @@ const Pie = props => {
           margin={{
             top: 30,
             bottom: 30,
-            right: 140,
-            left: 140
+            right: 115,
+            left: 115
           }}
           innerRadius={0.1}
           padAngle={0.05}
@@ -105,14 +100,15 @@ const Pie = props => {
           slicesLabelsSkipAngle={1}
           //RADIAL LABEL
           radialLabel={d => {
-            if (d.id === "placeholderPie") {
-              return `${d.label}`;
-            } else {
-              return `
-                  ${d.label} 
-                  $${d.value}
-                `;
-            }
+            return d.label;
+            // if (d.id === "placeholderPie") {
+            //   return `${d.label}`;
+            // } else {
+            //   return `
+            //       ${d.label}
+            //       $${d.value}
+            //     `;
+            // }
           }}
           enableRadialLabels={true}
           radialLabelsSkipAngle={1}
