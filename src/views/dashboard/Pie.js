@@ -29,12 +29,20 @@ const Pie = props => {
     justify-content: center;
   `;
 
+  const StyledH3 = styled("h3")`
+    padding-bottom: 30px;
+    font-weight: bold;
+    color: ${props => (props.dynamicIncome < 0 ? "red" : "black")};
+  `;
+
   const dynamicIncome =
     income(values) -
     housing(values) -
     transportation(values) -
     living(values) -
     personal(values);
+
+  console.log(dynamicIncome);
 
   const PlaceholderPie = [
     {
@@ -48,7 +56,7 @@ const Pie = props => {
   const PieData = [
     {
       id: "income",
-      label: "Remaining Income",
+      label: "Available Income",
       value: dynamicIncome,
       color: colors.color1
     },
@@ -121,7 +129,9 @@ const Pie = props => {
               : PieData
           }
         />
-        <h3>Available Income: ${dynamicIncome}</h3>
+        <StyledH3 dynamicIncome={dynamicIncome}>
+          Available Income: ${dynamicIncome}
+        </StyledH3>
       </PieHolder>
     </Container>
   );
