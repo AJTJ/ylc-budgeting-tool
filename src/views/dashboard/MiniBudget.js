@@ -13,11 +13,19 @@ import {
 
 import { Col } from "reactstrap";
 
+import styled from "react-emotion";
+
 import { Container, Row } from "../../components/layout";
 import { ColorIdentifier } from "../../components/deco";
 import { H5Underline } from "../../style/typography";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+const IconBox = styled("div")`
+  display: inline-block;
+  text-align: center;
+  width: 40px;
+`;
 
 export const MiniBudget = props => {
   const { values } = props;
@@ -30,7 +38,9 @@ export const MiniBudget = props => {
       <Row underline="true" className="font-weight-bold">
         <ColorIdentifier fillColor={colors.color1} />
         <Col>
-          <FontAwesomeIcon icon="faDollarSign" />
+          <IconBox>
+            <FontAwesomeIcon icon="dollar-sign" />
+          </IconBox>
           Monthly Income
         </Col>
         <Col xs={4} sm={4} md={4} lg={4}>
@@ -41,7 +51,9 @@ export const MiniBudget = props => {
       <Row>
         <ColorIdentifier fillColor={colors.color2} />
         <Col>
-          <FontAwesomeIcon icon="faHome" />
+          <IconBox>
+            <FontAwesomeIcon icon="home" />
+          </IconBox>
           Housing
         </Col>
         <Col xs={4} sm={4} md={4} lg={4}>
@@ -52,7 +64,9 @@ export const MiniBudget = props => {
       <Row>
         <ColorIdentifier fillColor={colors.color3} />
         <Col>
-          <FontAwesomeIcon icon="faCar" />
+          <IconBox>
+            <FontAwesomeIcon icon="car" />
+          </IconBox>
           Transportation
         </Col>
         <Col xs={4} sm={4} md={4} lg={4}>
@@ -63,7 +77,9 @@ export const MiniBudget = props => {
       <Row>
         <ColorIdentifier fillColor={colors.color4} />
         <Col>
-          <FontAwesomeIcon icon="faWalking" />
+          <IconBox>
+            <FontAwesomeIcon icon="walking" />
+          </IconBox>
           Living
         </Col>
         <Col xs={4} sm={4} md={4} lg={4}>
@@ -74,7 +90,9 @@ export const MiniBudget = props => {
       <Row underline="true">
         <ColorIdentifier fillColor={colors.color5} />
         <Col>
-          <FontAwesomeIcon icon="faUser" />
+          <IconBox>
+            <FontAwesomeIcon icon="user" />
+          </IconBox>
           Personal
         </Col>
         <Col xs={4} sm={4} md={4} lg={4}>
@@ -84,6 +102,7 @@ export const MiniBudget = props => {
 
       <Row className="font-weight-bold">
         <ColorIdentifier fillColor={"white"} />
+        <IconBox />
         <Col>Monthly Expenses</Col>
         <Col xs={4} sm={4} md={4} lg={4}>
           ${totalExpenses(values)}

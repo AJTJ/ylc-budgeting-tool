@@ -2,6 +2,8 @@ import React from "react";
 
 import { ResponsivePie as NivoPie } from "@nivo/pie";
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 import styled from "react-emotion";
 import colors from "../../style/colors";
 
@@ -58,31 +60,36 @@ const Pie = props => {
       id: "income",
       label: "Available Income",
       value: dynamicIncome,
-      color: colors.color1
+      color: colors.color1,
+      icon: "dollar-sign"
     },
     {
       id: "housing",
       label: "Housing",
       value: housing(values),
-      color: colors.color2
+      color: colors.color2,
+      icon: "home"
     },
     {
       id: "transportation",
       label: "Transportation",
       value: transportation(values),
-      color: colors.color3
+      color: colors.color3,
+      icon: "car"
     },
     {
       id: "living",
       label: "Living",
       value: living(values),
-      color: colors.color4
+      color: colors.color4,
+      icon: "walking"
     },
     {
       id: "personal",
       label: "Personal",
       value: personal(values),
-      color: colors.color5
+      color: colors.color5,
+      icon: "user"
     }
   ];
 
@@ -109,14 +116,6 @@ const Pie = props => {
           //RADIAL LABEL
           radialLabel={d => {
             return d.label;
-            // if (d.id === "placeholderPie") {
-            //   return `${d.label}`;
-            // } else {
-            //   return `
-            //       ${d.label}
-            //       $${d.value}
-            //     `;
-            // }
           }}
           enableRadialLabels={true}
           radialLabelsSkipAngle={1}
@@ -138,17 +137,3 @@ const Pie = props => {
 };
 
 export default Pie;
-
-//TOOLTIP
-// tooltip={d => {
-//   if (d.id === "placeholderPie") {
-//     return `${d.label}`;
-//   } else {
-//     return (
-//       <p>
-//         <ColorIdentifier fillColor={d.color} />
-//         {d.label} ${d.value}
-//       </p>
-//     );
-//   }
-// }}

@@ -26,6 +26,11 @@ const MainProgress = styled(Progress)`
   margin: 20px 0;
 `;
 
+const IconBox = styled("div")`
+  display: inline-block;
+  width: 30px;
+`;
+
 export default props => {
   const curForm = props.curForm;
 
@@ -46,7 +51,10 @@ export default props => {
         value="20"
       >
         <StyledLink to="/Form/income">
-          Income <FontAwesomeIcon icon="faDollarSign" />
+          Income{" "}
+          <IconBox>
+            <FontAwesomeIcon icon="dollar-sign" />
+          </IconBox>
         </StyledLink>
       </Progress>
       <Progress
@@ -56,7 +64,10 @@ export default props => {
         value="20"
       >
         <StyledLink to="/Form/housing">
-          Housing <FontAwesomeIcon icon="faHome" />
+          Housing{" "}
+          <IconBox>
+            <FontAwesomeIcon icon="home" />
+          </IconBox>
         </StyledLink>
       </Progress>
       <Progress
@@ -66,7 +77,10 @@ export default props => {
         value="20"
       >
         <StyledLink to="/Form/transportation">
-          Transportation <FontAwesomeIcon icon="faCar" />
+          Transportation{" "}
+          <IconBox>
+            <FontAwesomeIcon icon="car" />
+          </IconBox>
         </StyledLink>
       </Progress>
       <Progress
@@ -76,7 +90,10 @@ export default props => {
         value="20"
       >
         <StyledLink to="/Form/living">
-          Living <FontAwesomeIcon icon="faWalking" />
+          Living{" "}
+          <IconBox>
+            <FontAwesomeIcon icon="walking" />
+          </IconBox>
         </StyledLink>
       </Progress>
       <Progress
@@ -86,7 +103,10 @@ export default props => {
         value="20"
       >
         <StyledLink to="/Form/personal">
-          Personal <FontAwesomeIcon icon="faUser" />
+          Personal{" "}
+          <IconBox>
+            <FontAwesomeIcon icon="user" />
+          </IconBox>
         </StyledLink>
       </Progress>
       <Progress
@@ -96,7 +116,10 @@ export default props => {
         value="20"
       >
         <StyledLink to="/Form/review">
-          Review <FontAwesomeIcon icon="faChartPie" />
+          Review{" "}
+          <IconBox>
+            <FontAwesomeIcon icon="chart-pie" />
+          </IconBox>
         </StyledLink>
       </Progress>
     </MainProgress>
