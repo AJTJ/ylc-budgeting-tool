@@ -15,6 +15,7 @@ const StyledButton = styled(RSButton)`
   color: white;
   &:hover {
     color: black;
+    background: white;
     text-decoration: none;
   }
 `;
