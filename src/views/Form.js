@@ -69,13 +69,13 @@ const Form = props => {
               </H1Title>
               <Trail {...props} curForm={curForm} />
               <Row className="justify-content-center">
-                <Col xs={6} sm={6} md={6} lg={6}>
-                  <MiniBudget {...props} />
-                  <Pie {...props} />
+                <Col xs={5} sm={5} md={5} lg={5}>
+                  <MiniBudget {...props} curForm={curForm} />
+                  <Pie {...props} curForm={curForm} />
                 </Col>
-                <Col xs={6} sm={6} md={6} lg={6}>
+                <Col xs={7} sm={7} md={7} lg={7}>
                   <Container>
-                    <FormComponent {...props} />
+                    <FormComponent {...props} curForm={curForm} />
                   </Container>
                 </Col>
               </Row>

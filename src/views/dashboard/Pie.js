@@ -127,7 +127,9 @@ const Pie = props => {
           }
         />
         <StyledH3 dynamicIncome={dynamicIncome}>
-          Available Income: ${dynamicIncome}
+          {props.curForm === "review"
+            ? `Remaining Income: $${dynamicIncome}`
+            : `Available Income: $${dynamicIncome}`}
         </StyledH3>
       </PieHolder>
     </Container>
