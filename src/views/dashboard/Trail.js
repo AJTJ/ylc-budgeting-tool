@@ -11,6 +11,7 @@ import colors from "../../style/colors";
 const StyledLink = styled(Link)`
   color: white;
   font-size: 16px;
+  transition: all 0.2s;
   &:hover {
     color: black;
     text-decoration: none;

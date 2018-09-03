@@ -34,16 +34,23 @@ export const StyledLink = styled("a")`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  color: black;
-  border: solid 1px white;
-  border-radius: 4px;
-  background: ${colors.softBorder};
-  padding: 5px;
+  color: ${colors.darkBlue};
+  font-weight: 700;
+  /* border-bottom: solid 1px transparent; */
+  border-right: 1px solid ${colors.darkBlue};
+  border-left: 1px solid ${colors.darkBlue};
+  /* border-radius: 4px; */
+  background: transparent;
+  padding: 5px 20px;
   margin: 5px;
-  transition: all 0.2s;
+  transition: all 0.4s;
   &:hover {
     color: black;
-    border-color: black;
+    /* background: linear-gradient(transparent 70%, white); */
+    /* border-bottom: solid 1px white; */
     text-decoration: none;
+    border-right: 1px solid black;
+    border-left: 1px solid black;
+    border-radius: 10px;
   }
 `;

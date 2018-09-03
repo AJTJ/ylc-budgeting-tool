@@ -91,6 +91,12 @@ const Pie = props => {
     }
   ];
 
+  // const tooltipHandler = income => {
+  //   console.log(income);
+  //   if (income === 0) <span>Start by adding your income or expenses!</span>;
+  //   return null;
+  // };
+
   return (
     <Container>
       <PieHolder>
@@ -125,6 +131,8 @@ const Pie = props => {
               ? PlaceholderPie
               : PieData
           }
+          //TOOLTIP
+          // tooltipFormat={tooltipHandler(dynamicIncome)}
         />
         <StyledH3 dynamicIncome={dynamicIncome}>
           {props.curForm === "review"

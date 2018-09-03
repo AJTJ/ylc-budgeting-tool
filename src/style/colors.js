@@ -8,6 +8,9 @@ const color5 = "rosybrown";
 
 const color6 = "brown";
 const color7 = "sienna";
+const yellow = "yellow";
+const cyan = "cyan";
+const darkBlue = "darkblue";
 
 const gray = "gray";
 const softBorder = "lightgray";
@@ -20,6 +23,9 @@ export default {
   color5,
   color6,
   color7,
+  yellow,
+  cyan,
+  darkBlue,
   gray,
   softBorder
 };

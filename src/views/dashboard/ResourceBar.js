@@ -9,7 +9,7 @@ import { StyledLink } from "../../components/deco";
 import colors from "../../style/colors";
 
 const FooterBar = styled("div")`
-  background-color: ${colors.gray};
+  background-color: ${colors.cyan};
   height: 60px;
 `;
 
@@ -24,6 +24,9 @@ export default () => (
     <Container>
       <StyledLink href="google.com">
         <span>Download a budget workbook</span>
+      </StyledLink>
+      <StyledLink href="yukonliteracycoalition.com">
+        <span>The YLC Homepage</span>
       </StyledLink>
     </Container>
   </FooterBar>
