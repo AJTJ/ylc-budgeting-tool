@@ -2,7 +2,7 @@ import React from "react";
 
 import { ResponsivePie as NivoPie } from "@nivo/pie";
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import styled from "react-emotion";
 import colors from "../../style/colors";
@@ -43,8 +43,6 @@ const Pie = props => {
     transportation(values) -
     living(values) -
     personal(values);
-
-  console.log(dynamicIncome);
 
   const PlaceholderPie = [
     {

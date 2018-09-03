@@ -3,6 +3,10 @@ import React from "react";
 import { Form } from "reactstrap";
 
 import { BasicInput, LinkButton } from "../components/index";
+import { H5Underline } from "../../../style/typography";
+import { IconBox } from "../../../components/layout";
+
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export const FormComponent = ({
   values,
@@ -12,6 +16,12 @@ export const FormComponent = ({
 }) => {
   return (
     <Form>
+      <H5Underline>
+        Personal Expenses
+        <IconBox>
+          <FontAwesomeIcon icon="user" />
+        </IconBox>
+      </H5Underline>
       <BasicInput
         name="Recreation and Entertainment"
         id="recreation_entertainment"
@@ -25,7 +35,7 @@ export const FormComponent = ({
         onChange={handleChange}
       />
       <BasicInput
-        name="Cigaretted and alcohol"
+        name="Cigarettes and alcohol"
         id="cigarettes_alcohol"
         value={values.cigarettes_alcohol}
         onChange={handleChange}

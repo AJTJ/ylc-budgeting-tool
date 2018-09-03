@@ -2,6 +2,10 @@ import React from "react";
 import { Form } from "reactstrap";
 
 import { BasicInput, LinkButton } from "../components/index";
+import { H5Underline } from "../../../style/typography";
+import { IconBox } from "../../../components/layout";
+
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export const FormComponent = ({
   values,
@@ -11,6 +15,12 @@ export const FormComponent = ({
 }) => {
   return (
     <Form>
+      <H5Underline>
+        Transportation Expenses
+        <IconBox>
+          <FontAwesomeIcon icon="car" />
+        </IconBox>
+      </H5Underline>
       <BasicInput
         name="Car"
         id="car"

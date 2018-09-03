@@ -4,7 +4,8 @@ import colors from "./colors";
 export const H5Underline = styled("h5")`
   border-bottom: 1px solid ${colors.softBorder};
   width: 100%;
-  padding: 5px;
+  padding: 10px;
+  margin: 0 0 15px;
   text-align: center;
 `;
 

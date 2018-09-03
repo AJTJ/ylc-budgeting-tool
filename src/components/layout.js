@@ -17,3 +17,8 @@ export const Row = styled(RSRow)`
   border-bottom: ${props =>
     props.underline ? `1px solid ${colors.softBorder}` : "none"};
 `;
+
+export const IconBox = styled("div")`
+  display: inline-block;
+  width: 30px;
+`;
