@@ -5,7 +5,6 @@ import Form from "./views/Form";
 
 import { Container } from "reactstrap";
 import ResourceBar from "./views/dashboard/ResourceBar";
-// import BudgetPDF from "./views/pdf/BudgetPDF";
 
 class App extends Component {
   render() {

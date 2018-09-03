@@ -26,6 +26,7 @@ export const StyledButton = styled(RSButton)`
   transition: all 0.2s;
   &:hover {
     color: black;
+    background-color: white;
     text-decoration: none;
   }
 `;

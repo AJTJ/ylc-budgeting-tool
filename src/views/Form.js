@@ -22,8 +22,6 @@ const MainContainer = styled(Container)`
   padding: none;
 `;
 
-// const ResponsiveRow = styled(Row)``;
-
 const Form = props => {
   let curForm = props.match.params.formType;
   const FormComponent = formTypes[curForm].FormComponent;
@@ -35,6 +33,12 @@ const Form = props => {
         console.log("submitting");
         console.log(values);
         props.addBudget({ values });
+        /* 
+        open a new tab with the full-page budget component.
+        - it will take the 'values' prop
+        - it will be the exact size for printing 8.5 x 11 (no larger OR smaller)
+        - it can also take the pie, potentially
+        */
       }}
       render={({ ...props }) => {
         if (curForm === "review") {

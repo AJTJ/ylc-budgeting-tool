@@ -26,7 +26,7 @@ export default () => (
         <span>Download a budget workbook</span>
       </StyledLink>
       <StyledLink href="yukonliteracycoalition.com">
-        <span>The YLC Homepage</span>
+        <span>The YLC Financial Literacy Homepage</span>
       </StyledLink>
     </Container>
   </FooterBar>
