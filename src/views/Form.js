@@ -1,5 +1,7 @@
 import React from "react";
 
+// import { Link } from "react-router-dom";
+
 import { Formik } from "formik";
 import formTypes from "./formData/inputFields/index";
 import { values } from "./formData/values";
@@ -33,14 +35,11 @@ const Form = props => {
       initialValues={values}
       onSubmit={values => {
         props.addBudget({ values });
-        console.log(values);
-        /* 
-        open a new tab with the full-page budget component.
-        - it will take the 'values' prop
-        - it will be the exact size for printing 8.5 x 11 (no larger OR smaller)
-        - it can also take the pie, potentially
-        */
+        props.history.push("/budget");
       }}
+      // .then(() => {
+      //   this.props.history.push("/budget");
+      // });
       render={({ ...props }) => {
         if (curForm === "review") {
           return (
@@ -83,11 +82,6 @@ const Form = props => {
                     <FormComponent {...props} curForm={curForm} />
                   </Container>
                 </Col>
-              </Row>
-              <Row>
-                <a target="_blank" href="/budget">
-                  BUDGET BUTTON
-                </a>
               </Row>
             </MainContainer>
           );

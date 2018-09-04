@@ -26,9 +26,7 @@ const BudgetPDF = props => {
 };
 
 const mapStateToProps = state => {
-  return {
-    newBudget: state.budgetReducer
-  };
+  return { newBudget: state.budgetReducer };
 };
 
 export default connect(
