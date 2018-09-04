@@ -9,7 +9,7 @@ import {
   living,
   personal,
   totalExpenses
-} from "../formData/computation";
+} from "../formData/calculation";
 
 import { Col } from "reactstrap";
 

@@ -17,10 +17,10 @@ import {
   living,
   personal,
   totalExpenses
-} from "../formData/computation";
+} from "../formData/calculation";
 
 const Pie = props => {
-  const { values } = props;
+  const values = props.values;
 
   const PieHolder = styled("div")`
     height: 400px;
@@ -135,7 +135,7 @@ const Pie = props => {
           // tooltipFormat={tooltipHandler(dynamicIncome)}
         />
         <StyledH3 dynamicIncome={dynamicIncome}>
-          {props.curForm === "review"
+          {props.curForm === "review" || "budget"
             ? `Remaining Income: $${dynamicIncome}`
             : `Available Income: $${dynamicIncome}`}
         </StyledH3>

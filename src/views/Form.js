@@ -9,6 +9,7 @@ import { values } from "./formData/values";
 import Pie from "./dashboard/Pie";
 import { MiniBudget } from "./dashboard/MiniBudget";
 import Trail from "../views/dashboard/Trail";
+import Budget, { BudgetPrintLink } from "../views/budget/BudgetHtml";
 
 import { connect } from "react-redux";
 import { actions } from "../redux/index";
@@ -25,17 +26,17 @@ const MainContainer = styled(Container)`
 `;
 
 const Form = props => {
+  console.log(111, props);
   let curForm = props.match.params.formType;
-  const FormComponent = formTypes[curForm].FormComponent;
-
-  console.log(666, props);
+  let FormComponent =
+    curForm === "budget" ? null : formTypes[curForm].FormComponent;
 
   return (
     <Formik
       initialValues={values}
       onSubmit={values => {
         props.addBudget({ values });
-        props.history.push("/budget");
+        props.history.push("/Form/budget");
       }}
       // .then(() => {
       //   this.props.history.push("/budget");
@@ -63,6 +64,16 @@ const Form = props => {
                   </Container>
                 </Row>
               </Col>
+            </MainContainer>
+          );
+        } else if (curForm === "budget") {
+          return (
+            <MainContainer>
+              <H1Title className="text-center">
+                THE YLC BUDGETING APPLICATION
+              </H1Title>
+              <BudgetPrintLink />
+              <Budget />
             </MainContainer>
           );
         } else {
