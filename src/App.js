@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Route, Redirect } from "react-router-dom";
+import { Route, Redirect, Switch } from "react-router-dom";
 
 import Form from "./views/Form";
 
@@ -11,8 +11,10 @@ class App extends Component {
     return (
       <React.Fragment>
         <Container fluid>
-          <Redirect from="/" to="/Form/income" />
-          <Route path="/Form/:formType" component={Form} />
+          <Switch>
+            <Route path="/Form/:formType" component={Form} />
+            <Redirect to="/Form/income" />
+          </Switch>
         </Container>
         <ResourceBar />
       </React.Fragment>

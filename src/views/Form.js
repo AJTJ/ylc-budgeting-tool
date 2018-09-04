@@ -26,6 +26,8 @@ const Form = props => {
   let curForm = props.match.params.formType;
   const FormComponent = formTypes[curForm].FormComponent;
 
+  console.log(props);
+
   return (
     <Formik
       initialValues={values}
