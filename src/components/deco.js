@@ -37,18 +37,14 @@ export const StyledLink = styled("a")`
   justify-content: center;
   color: ${colors.darkBlue};
   font-weight: 700;
-  /* border-bottom: solid 1px transparent; */
   border-right: 1px solid ${colors.darkBlue};
   border-left: 1px solid ${colors.darkBlue};
-  /* border-radius: 4px; */
   background: transparent;
   padding: 5px 20px;
   margin: 5px;
   transition: all 0.4s;
   &:hover {
     color: black;
-    /* background: linear-gradient(transparent 70%, white); */
-    /* border-bottom: solid 1px white; */
     text-decoration: none;
     border-right: 1px solid black;
     border-left: 1px solid black;

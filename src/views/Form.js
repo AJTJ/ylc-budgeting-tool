@@ -26,15 +26,14 @@ const Form = props => {
   let curForm = props.match.params.formType;
   const FormComponent = formTypes[curForm].FormComponent;
 
-  console.log(props);
+  console.log(666, props);
 
   return (
     <Formik
       initialValues={values}
       onSubmit={values => {
-        console.log("submitting");
-        console.log(values);
         props.addBudget({ values });
+        console.log(values);
         /* 
         open a new tab with the full-page budget component.
         - it will take the 'values' prop
@@ -85,6 +84,11 @@ const Form = props => {
                   </Container>
                 </Col>
               </Row>
+              <Row>
+                <a target="_blank" href="/budget">
+                  BUDGET BUTTON
+                </a>
+              </Row>
             </MainContainer>
           );
         }
@@ -94,9 +98,7 @@ const Form = props => {
 };
 
 const mapStateToProps = state => {
-  return {
-    newBudget: state.budgetReducer
-  };
+  return { newBudget: state.budgetReducer };
 };
 
 const { addBudget } = actions;

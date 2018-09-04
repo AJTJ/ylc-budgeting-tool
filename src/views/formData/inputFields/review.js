@@ -18,6 +18,8 @@ export const FormComponent = ({
       >
         <LinkButton to="/Form/personal" name="PREVIOUS" />
         <SubmitButton
+          target="_blank"
+          href="http://www.yukonliteracy.com/"
           handleSubmit={handleSubmit}
           name="Create a printable version of your budget!"
           values={values}

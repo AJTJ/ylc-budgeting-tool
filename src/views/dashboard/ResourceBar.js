@@ -3,7 +3,6 @@ import { Container as RSContainer } from "reactstrap";
 
 import styled from "react-emotion";
 
-// import { Row } from "../../components/layout";
 import { StyledLink } from "../../components/deco";
 
 import colors from "../../style/colors";
@@ -25,7 +24,7 @@ export default () => (
       <StyledLink href="google.com">
         <span>Download a budget workbook</span>
       </StyledLink>
-      <StyledLink href="yukonliteracycoalition.com">
+      <StyledLink target="_blank" href="http://www.yukonliteracy.com/">
         <span>The YLC Financial Literacy Homepage</span>
       </StyledLink>
     </Container>
