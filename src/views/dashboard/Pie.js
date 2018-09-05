@@ -98,49 +98,47 @@ const Pie = props => {
   // };
 
   return (
-    <Container>
-      <PieHolder>
-        <NivoPie
-          //DIMENSIONS
-          margin={{
-            top: 30,
-            bottom: 30,
-            right: 115,
-            left: 115
-          }}
-          innerRadius={0.1}
-          padAngle={0.05}
-          cornerRadius={10}
-          colorBy={d => d.color}
-          //SLICE LABEL
-          sliceLabel={d => `$${d.value}`}
-          enableSlicesLabels={income(values) === 0 ? false : true}
-          slicesLabelsTextColor={"white"}
-          slicesLabelsSkipAngle={1}
-          //RADIAL LABEL
-          radialLabel={d => {
-            return d.label;
-          }}
-          enableRadialLabels={true}
-          radialLabelsSkipAngle={1}
-          radialLabelsLinkDiagonalLength={5}
-          radialLabelsLinkHorizontalLength={5}
-          //DATA
-          data={
-            income(values) === 0 && totalExpenses(values) === 0
-              ? PlaceholderPie
-              : PieData
-          }
-          //TOOLTIP
-          // tooltipFormat={tooltipHandler(dynamicIncome)}
-        />
-        <StyledH3 dynamicIncome={dynamicIncome}>
-          {props.curForm === "review" || "budget"
-            ? `Remaining Income: $${dynamicIncome}`
-            : `Available Income: $${dynamicIncome}`}
-        </StyledH3>
-      </PieHolder>
-    </Container>
+    <PieHolder>
+      <NivoPie
+        //DIMENSIONS
+        margin={{
+          top: 30,
+          bottom: 30,
+          right: 115,
+          left: 115
+        }}
+        innerRadius={0.1}
+        padAngle={0.05}
+        cornerRadius={10}
+        colorBy={d => d.color}
+        //SLICE LABEL
+        sliceLabel={d => `$${d.value}`}
+        enableSlicesLabels={income(values) === 0 ? false : true}
+        slicesLabelsTextColor={"white"}
+        slicesLabelsSkipAngle={1}
+        //RADIAL LABEL
+        radialLabel={d => {
+          return d.label;
+        }}
+        enableRadialLabels={true}
+        radialLabelsSkipAngle={1}
+        radialLabelsLinkDiagonalLength={5}
+        radialLabelsLinkHorizontalLength={5}
+        //DATA
+        data={
+          income(values) === 0 && totalExpenses(values) === 0
+            ? PlaceholderPie
+            : PieData
+        }
+        //TOOLTIP
+        // tooltipFormat={tooltipHandler(dynamicIncome)}
+      />
+      <StyledH3 dynamicIncome={dynamicIncome}>
+        {props.curForm === "review" || "budget"
+          ? `Remaining Income: $${dynamicIncome}`
+          : `Available Income: $${dynamicIncome}`}
+      </StyledH3>
+    </PieHolder>
   );
 };
 

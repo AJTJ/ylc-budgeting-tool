@@ -9,7 +9,7 @@ import { values } from "./formData/values";
 import Pie from "./dashboard/Pie";
 import { MiniBudget } from "./dashboard/MiniBudget";
 import Trail from "../views/dashboard/Trail";
-import Budget, { BudgetPrintLink } from "../views/budget/BudgetHtml";
+import Budget from "../views/budget/BudgetHtml";
 
 import { connect } from "react-redux";
 import { actions } from "../redux/index";
@@ -55,7 +55,9 @@ const Form = props => {
                     <MiniBudget {...props} curForm={curForm} />
                   </Col>
                   <Col>
-                    <Pie {...props} curForm={curForm} />
+                    <Container>
+                      <Pie {...props} curForm={curForm} />
+                    </Container>
                   </Col>
                 </Row>
                 <Row>
@@ -69,10 +71,6 @@ const Form = props => {
         } else if (curForm === "budget") {
           return (
             <MainContainer>
-              <H1Title className="text-center">
-                THE YLC BUDGETING APPLICATION
-              </H1Title>
-              <BudgetPrintLink />
               <Budget />
             </MainContainer>
           );
@@ -86,7 +84,9 @@ const Form = props => {
               <Row className="justify-content-center">
                 <Col xs={5} sm={5} md={5} lg={5}>
                   <MiniBudget {...props} curForm={curForm} />
-                  <Pie {...props} curForm={curForm} />
+                  <Container>
+                    <Pie {...props} curForm={curForm} />
+                  </Container>
                 </Col>
                 <Col xs={7} sm={7} md={7} lg={7}>
                   <Container>
