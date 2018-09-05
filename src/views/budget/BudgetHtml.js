@@ -7,12 +7,14 @@ import { Row, Col } from "reactstrap";
 import { H5Underline } from "../../style/typography";
 
 import colors from "../../style/colors";
-import { H1Title } from "../../style/typography";
+import { StyledSolidLink } from "../../components/deco";
+import { LinkButton } from "../formData/components/index";
+
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import Pie from "../dashboard/Pie";
 
 import ReactToPrint from "react-to-print";
-// import { Container } from "../../components/layout";
 
 import {
   income,
@@ -27,6 +29,12 @@ const Under = styled(Col)`
   border-bottom: 1px solid ${colors.softBorder};
   /* margin: 0 15px; */
   /* padding: 0; */
+`;
+
+const IconBox = styled("div")`
+  display: inline-block;
+  text-align: center;
+  width: 40px;
 `;
 
 const ColHeaders = styled(Row)`
@@ -68,7 +76,12 @@ class PrintableBudget extends Component {
         <Row>
           <Col xs={6} sm={6} md={6} lg={6}>
             <Container>
-              <H5Underline>Income</H5Underline>
+              <H5Underline>
+                <IconBox>
+                  <FontAwesomeIcon icon="dollar-sign" />
+                </IconBox>
+                Monthly Income
+              </H5Underline>
               <ColHeaders>
                 <Col />
                 <Col xs={3} sm={3} md={3} lg={3}>
@@ -122,7 +135,12 @@ class PrintableBudget extends Component {
               </TotalContentRow>
             </Container>
             <Container>
-              <H5Underline>Transportation</H5Underline>
+              <H5Underline>
+                <IconBox>
+                  <FontAwesomeIcon icon="car" />
+                </IconBox>
+                Transportation
+              </H5Underline>
               <ColHeaders>
                 <Col />
                 <Col xs={3} sm={3} md={3} lg={3}>
@@ -183,7 +201,12 @@ class PrintableBudget extends Component {
               </TotalContentRow>
             </Container>
             <Container>
-              <H5Underline>Personal</H5Underline>
+              <H5Underline>
+                <IconBox>
+                  <FontAwesomeIcon icon="user" />
+                </IconBox>
+                Personal
+              </H5Underline>
               <ColHeaders>
                 <Col />
                 <Col xs={3} sm={3} md={3} lg={3}>
@@ -286,7 +309,12 @@ class PrintableBudget extends Component {
           </Col>
           <Col xs={6} sm={6} md={6} lg={6}>
             <Container>
-              <H5Underline>Housing</H5Underline>
+              <H5Underline>
+                <IconBox>
+                  <FontAwesomeIcon icon="home" />
+                </IconBox>
+                Housing
+              </H5Underline>
               <ColHeaders>
                 <Col />
                 <Col xs={3} sm={3} md={3} lg={3}>
@@ -347,7 +375,12 @@ class PrintableBudget extends Component {
               </TotalContentRow>
             </Container>
             <Container>
-              <H5Underline>Living</H5Underline>
+              <H5Underline>
+                <IconBox>
+                  <FontAwesomeIcon icon="walking" />
+                </IconBox>
+                Living
+              </H5Underline>
               <ColHeaders>
                 <Col />
                 <Col xs={3} sm={3} md={3} lg={3}>
@@ -435,10 +468,17 @@ const Budget = props => {
   console.log("budgwrapper", props);
   return (
     <React.Fragment>
-      <ReactToPrint
-        trigger={() => <a href="#">Print your budget!</a>}
-        content={() => this.componentRef}
-      />
+      <Container>
+        <Row style={{ paddingLeft: "15px" }}>
+          <LinkButton to="/Form/review" name="PREVIOUS" />
+          <ReactToPrint
+            trigger={() => (
+              <StyledSolidLink href="#">Print your budget!</StyledSolidLink>
+            )}
+            content={() => this.componentRef}
+          />
+        </Row>
+      </Container>
       <PrintableBudget
         values={props.newBudget}
         ref={el => (this.componentRef = el)}

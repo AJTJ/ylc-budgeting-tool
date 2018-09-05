@@ -21,14 +21,14 @@ const Container = styled(RSContainer)`
 export default () => (
   <FooterBar>
     <Container>
+      <StyledLink target="_blank" href="http://www.google.com/">
+        <span>Start a new budget</span>
+      </StyledLink>
       <StyledLink href="http://www.google.com/">
         <span>Download a budget workbook</span>
       </StyledLink>
       <StyledLink target="_blank" href="http://www.yukonliteracy.com/">
         <span>The YLC Financial Literacy Homepage</span>
-      </StyledLink>
-      <StyledLink target="_blank" href="http://www.google.com/">
-        <span>Start a new budget</span>
       </StyledLink>
     </Container>
   </FooterBar>

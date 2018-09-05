@@ -31,6 +31,21 @@ export const StyledButton = styled(RSButton)`
   }
 `;
 
+export const StyledSolidLink = styled("a")`
+  border: solid 1px ${colors.softBorder};
+  padding: 15px;
+  margin: 0 15px 0 0;
+  background-color: ${colors.color1};
+  border-radius: 10px;
+  color: white;
+  transition: all 0.2s;
+  &:hover {
+    color: black;
+    background: white;
+    text-decoration: none;
+  }
+`;
+
 export const StyledLink = styled("a")`
   display: flex;
   flex-direction: column;
