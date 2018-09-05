@@ -1,5 +1,6 @@
 {
   "name": "ylc-budget",
+  "homepage": "http://www.aaronjanke.com/testBudgetApp",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

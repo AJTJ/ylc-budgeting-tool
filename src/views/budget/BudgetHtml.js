@@ -468,6 +468,10 @@ const Budget = props => {
   console.log("budgwrapper", props);
   return (
     <React.Fragment>
+      <PrintableBudget
+        values={props.newBudget}
+        ref={el => (this.componentRef = el)}
+      />
       <Container>
         <Row style={{ paddingLeft: "15px" }}>
           <LinkButton to="/Form/review" name="PREVIOUS" />
@@ -479,10 +483,6 @@ const Budget = props => {
           />
         </Row>
       </Container>
-      <PrintableBudget
-        values={props.newBudget}
-        ref={el => (this.componentRef = el)}
-      />
     </React.Fragment>
   );
 };
