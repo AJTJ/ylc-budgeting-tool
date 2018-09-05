@@ -22,10 +22,17 @@ export const FormComponent = ({
         </IconBox>
       </H5Underline>
       <BasicInput
-        name="Wage Income"
+        name="Wage income"
         id="wage_income"
-        text="Type your average monthly paycheck or wage here."
+        text="Your net pay, not gross pay."
         value={values.wage_income}
+        onChange={handleChange}
+      />
+      <BasicInput
+        name="Bi-weekly paycheck"
+        id="bi_weekly_paycheck"
+        text="Do you receive a bi-weekly paycheck? Type the check amount here and your approximate monthly income will appear beside it."
+        value={values.bi_weekly_paycheck}
         onChange={handleChange}
       />
       <BasicInput

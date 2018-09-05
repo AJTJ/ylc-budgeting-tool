@@ -99,6 +99,13 @@ class PrintableBudget extends Component {
                 <Under xs={3} sm={3} md={3} lg={3} />
               </ContentRow>
               <ContentRow>
+                <Col>Bi-weekly paycheck</Col>
+                <Col xs={3} sm={3} md={3} lg={3}>
+                  ${values.bi_weekly_paycheck || 0}
+                </Col>
+                <Under xs={3} sm={3} md={3} lg={3} />
+              </ContentRow>
+              <ContentRow>
                 <Col>Self Employment Income</Col>
                 <Col xs={3} sm={3} md={3} lg={3}>
                   ${values.self_employment_income || 0}
@@ -158,6 +165,13 @@ class PrintableBudget extends Component {
                 <Under xs={3} sm={3} md={3} lg={3} />
               </ContentRow>
               <ContentRow>
+                <Col>Insurance</Col>
+                <Col xs={3} sm={3} md={3} lg={3}>
+                  ${values.transportation_insurance || 0}
+                </Col>
+                <Under xs={3} sm={3} md={3} lg={3} />
+              </ContentRow>
+              <ContentRow>
                 <Col>Gas</Col>
                 <Col xs={3} sm={3} md={3} lg={3}>
                   ${values.gas || 0}
@@ -168,6 +182,13 @@ class PrintableBudget extends Component {
                 <Col>Parking</Col>
                 <Col xs={3} sm={3} md={3} lg={3}>
                   ${values.parking || 0}
+                </Col>
+                <Under xs={3} sm={3} md={3} lg={3} />
+              </ContentRow>
+              <ContentRow>
+                <Col>Bicycle</Col>
+                <Col xs={3} sm={3} md={3} lg={3}>
+                  ${values.bicycle || 0}
                 </Col>
                 <Under xs={3} sm={3} md={3} lg={3} />
               </ContentRow>
@@ -436,6 +457,20 @@ class PrintableBudget extends Component {
                 <Col>Pets</Col>
                 <Col xs={3} sm={3} md={3} lg={3}>
                   ${values.pets || 0}
+                </Col>
+                <Under xs={3} sm={3} md={3} lg={3} />
+              </ContentRow>
+              <ContentRow>
+                <Col>Insurance</Col>
+                <Col xs={3} sm={3} md={3} lg={3}>
+                  ${values.living_insurance || 0}
+                </Col>
+                <Under xs={3} sm={3} md={3} lg={3} />
+              </ContentRow>
+              <ContentRow>
+                <Col>Municipal taxes</Col>
+                <Col xs={3} sm={3} md={3} lg={3}>
+                  ${values.municipal_taxes || 0}
                 </Col>
                 <Under xs={3} sm={3} md={3} lg={3} />
               </ContentRow>

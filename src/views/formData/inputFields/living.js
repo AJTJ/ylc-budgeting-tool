@@ -71,6 +71,20 @@ export const FormComponent = ({
         onChange={handleChange}
       />
       <BasicInput
+        name="Insurance"
+        id="living_insurance"
+        text="This is for any health or other personal insurance you are paying."
+        value={values.living_insurance}
+        onChange={handleChange}
+      />
+      <BasicInput
+        name="Municipal taxes"
+        id="municipal_taxes"
+        text="Any municipal taxes you are paying go here."
+        value={values.municipal_taxes}
+        onChange={handleChange}
+      />
+      <BasicInput
         name="Other"
         id="other_living_expenses"
         text="An extra space for any other living expenses you have! :)"

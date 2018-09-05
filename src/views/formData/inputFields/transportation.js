@@ -29,6 +29,13 @@ export const FormComponent = ({
         onChange={handleChange}
       />
       <BasicInput
+        name="Insurance"
+        id="transportation_insurance"
+        text="This is for any vehicle insurance you are paying."
+        value={values.transportation_insurance}
+        onChange={handleChange}
+      />
+      <BasicInput
         name="Gas"
         id="gas"
         text="The average amount you pay for gas every month"
@@ -40,6 +47,13 @@ export const FormComponent = ({
         id="parking"
         text="Parking meter costs, parking spaces and parking tickets."
         value={values.parking}
+        onChange={handleChange}
+      />
+      <BasicInput
+        name="Bicycle"
+        id="bicycle"
+        text="Here you type your bicycle repair and maintenance fees."
+        value={values.bicycle}
         onChange={handleChange}
       />
       <BasicInput

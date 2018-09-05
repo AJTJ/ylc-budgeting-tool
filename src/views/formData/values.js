@@ -1,12 +1,12 @@
 export const values = {
   //income
   wage_income: "",
+  //
+  bi_weekly_paycheck: "",
   self_employment_income: "",
   government_benefits: "",
   other_income: "",
-  other_income_name: "",
   other_income_2: "",
-  other_income_2_name: "",
 
   //EXPENSES
   //housing
@@ -16,16 +16,18 @@ export const values = {
   cable_internet: "",
   phone: "",
   other_housing: "",
-  other_housing_name: "",
 
   //transportation
   car: "",
+  //
+  transportation_insurance: "",
   gas: "",
   parking: "",
+  //
+  bicycle: "",
   public_transport: "",
   taxi: "",
   other_transport: "",
-  other_transport_name: "",
 
   //living expenses
   food: "",
@@ -35,8 +37,11 @@ export const values = {
   credit_card: "",
   prescription_drugs: "",
   pets: "",
+  //
+  living_insurance: "",
+  //
+  municipal_taxes: "",
   other_living_expenses: "",
-  other_living_expenses_name: "",
 
   //personal expenses
   recreation_entertainment: "",
