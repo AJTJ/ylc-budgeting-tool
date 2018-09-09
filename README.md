@@ -1,6 +1,6 @@
 An online budgeting tool for the Yukon Literacy Coalition http://www.yukonliteracy.com/
 
-Goal: An accessible, user-friendly personal budgeting tool. Focus on accessibility, ease-of-use and data visualization for a wide range of individuals. The user will input their values and have the option of saving a PDF version of their budget.
+Goal: An accessible, user-friendly personal budgeting tool. Focus on accessibility, ease-of-use and data visualization for a wide range of individuals. The user will input their values and have the option of printing a version of their budget.
 
 Project Stack
 
@@ -11,8 +11,6 @@ Structure
   - redux-actions
   - redux-logic?
   - thunk?
-- @Reactions?
-- Preact?
 
 Styling
 - emotion
@@ -24,8 +22,8 @@ Forms
 Data visualization
 - nivo
 
-PDF creation
-- react-pdf
+Printing/PDF functionality
+- react-print
 
 ...
 
