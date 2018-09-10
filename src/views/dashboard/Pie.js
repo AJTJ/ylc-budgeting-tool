@@ -24,7 +24,6 @@ const Pie = props => {
 
   const PieHolder = styled("div")`
     height: 400px;
-    /* max-width: 500px; */
     display: flex;
     flex-direction: column;
     align-items: center;

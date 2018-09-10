@@ -8,10 +8,13 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import colors from "../../style/colors";
 
+import { TrailFontSizes, TrailTextMq } from "../../style/mediaQueries";
+
 const StyledLink = styled(Link)`
   color: white;
-  font-size: 16px;
+  padding: 0 5px;
   transition: all 0.2s;
+  ${TrailFontSizes};
   &:hover {
     color: black;
     text-decoration: none;
@@ -25,6 +28,10 @@ const Progress = styled(RSProgress)`
 
 const MainProgress = styled(Progress)`
   margin: 20px 0;
+`;
+
+const TrailText = styled("span")`
+  ${TrailTextMq};
 `;
 
 const IconBox = styled("div")`
@@ -52,7 +59,7 @@ export default props => {
         value="20"
       >
         <StyledLink to="/Form/income">
-          Income{" "}
+          <TrailText>Income </TrailText>
           <IconBox>
             <FontAwesomeIcon icon="dollar-sign" />
           </IconBox>
@@ -65,7 +72,7 @@ export default props => {
         value="20"
       >
         <StyledLink to="/Form/housing">
-          Housing{" "}
+          <TrailText>Housing </TrailText>
           <IconBox>
             <FontAwesomeIcon icon="home" />
           </IconBox>
@@ -78,7 +85,7 @@ export default props => {
         value="20"
       >
         <StyledLink to="/Form/transportation">
-          Transportation{" "}
+          <TrailText>Transportation </TrailText>
           <IconBox>
             <FontAwesomeIcon icon="car" />
           </IconBox>
@@ -91,7 +98,7 @@ export default props => {
         value="20"
       >
         <StyledLink to="/Form/living">
-          Living{" "}
+          <TrailText>Living </TrailText>
           <IconBox>
             <FontAwesomeIcon icon="walking" />
           </IconBox>
@@ -104,7 +111,7 @@ export default props => {
         value="20"
       >
         <StyledLink to="/Form/personal">
-          Personal{" "}
+          <TrailText>Personal </TrailText>
           <IconBox>
             <FontAwesomeIcon icon="user" />
           </IconBox>
@@ -117,7 +124,7 @@ export default props => {
         value="20"
       >
         <StyledLink to="/Form/review">
-          Review{" "}
+          <TrailText>Review </TrailText>
           <IconBox>
             <FontAwesomeIcon icon="chart-pie" />
           </IconBox>
