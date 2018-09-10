@@ -3,6 +3,8 @@ import colors from "../style/colors";
 
 import { Button as RSButton } from "reactstrap";
 
+import { ButtonFontSizes } from "../style/mediaQueries";
+
 export const ColorIdentifier = styled("span")`
   align-self: center;
   height: 12px;
@@ -24,6 +26,7 @@ export const StyledButton = styled(RSButton)`
   }};
   color: white;
   transition: all 0.2s;
+  ${ButtonFontSizes};
   &:hover {
     color: black;
     background-color: white;
@@ -39,6 +42,7 @@ export const StyledSolidLink = styled("a")`
   border-radius: 10px;
   color: white;
   transition: all 0.2s;
+  ${ButtonFontSizes};
   &:hover {
     color: black;
     background: white;
@@ -58,6 +62,7 @@ export const StyledLink = styled("a")`
   padding: 5px 20px;
   margin: 5px;
   transition: all 0.4s;
+  ${ButtonFontSizes};
   &:hover {
     color: black;
     text-decoration: none;

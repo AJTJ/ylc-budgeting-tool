@@ -29,13 +29,18 @@ const FormGroup = styled(RSFormGroup)`
   margin: 10px 0 30px;
 `;
 
-const Input = ({ name, id, type = "number", ...props }) => (
+const InputComponent = ({ name, id, type = "number", ...props }) => (
   <InputGroup>
     <InputGroupAddon addonType="prepend">$</InputGroupAddon>
     <RSInput {...props} placeholder={name} name={id} type={type} />
     <InputGroupAddon addonType="append">.00</InputGroupAddon>
   </InputGroup>
 );
+
+const Input = styled(InputComponent)`
+  ${ComponentFontSizes};
+  color: red;
+`;
 
 export default ({ Component = Input, ...props }) => (
   <FormGroup row>
