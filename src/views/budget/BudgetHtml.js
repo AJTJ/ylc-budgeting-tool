@@ -499,25 +499,33 @@ class PrintableBudget extends Component {
   }
 }
 
+const ButtonBar = () => (
+  <Container>
+    <Row
+      className="d-flex justify-content-between"
+      style={{ paddingLeft: "15px" }}
+    >
+      <LinkButton to="/Form/review" name="PREVIOUS" />
+      <ReactToPrint
+        trigger={() => (
+          <StyledSolidLink href="#">Print your budget!</StyledSolidLink>
+        )}
+        content={() => this.componentRef}
+      />
+    </Row>
+  </Container>
+);
+
 const Budget = props => {
   console.log("budgwrapper", props);
   return (
     <React.Fragment>
+      <ButtonBar />
       <PrintableBudget
         values={props.newBudget}
         ref={el => (this.componentRef = el)}
       />
-      <Container>
-        <Row style={{ paddingLeft: "15px" }}>
-          <LinkButton to="/Form/review" name="PREVIOUS" />
-          <ReactToPrint
-            trigger={() => (
-              <StyledSolidLink href="#">Print your budget!</StyledSolidLink>
-            )}
-            content={() => this.componentRef}
-          />
-        </Row>
-      </Container>
+      <ButtonBar />
     </React.Fragment>
   );
 };

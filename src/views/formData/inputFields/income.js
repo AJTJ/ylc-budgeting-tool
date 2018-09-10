@@ -1,5 +1,5 @@
 import React from "react";
-import { Form } from "reactstrap";
+import { Form, Row } from "reactstrap";
 
 import { BasicInput, LinkButton } from "../components/index";
 import { H5Underline } from "../../../style/typography";
@@ -63,7 +63,9 @@ export const FormComponent = ({
         value={values.other_income_2}
         onChange={handleChange}
       />
-      <LinkButton to="/Form/housing" name="NEXT" />
+      <Row className="d-flex flex-row-reverse" style={{ paddingLeft: "15px" }}>
+        <LinkButton to="/Form/housing" name="NEXT" />
+      </Row>
     </Form>
   );
 };

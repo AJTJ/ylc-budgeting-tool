@@ -1,7 +1,7 @@
 import React from "react";
 import {
   FormGroup as RSFormGroup,
-  Label,
+  Label as RSLabel,
   Input as RSInput,
   Col,
   InputGroup,
@@ -9,15 +9,20 @@ import {
 } from "reactstrap";
 
 import styled from "react-emotion";
+import { ComponentFontSizes } from "../../../style/mediaQueries";
 
 import help from "../../../assets/help.svg";
 
 import { Tooltip } from "../../dashboard/Tooltip";
 
+const Label = styled(RSLabel)`
+  ${ComponentFontSizes};
+`;
+
 const Question = styled("img")`
   height: 20px;
   width: 20px;
-  margin: 5px;
+  margin: 2px;
 `;
 
 const FormGroup = styled(RSFormGroup)`

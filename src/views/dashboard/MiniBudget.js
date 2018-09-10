@@ -15,9 +15,10 @@ import { Col } from "reactstrap";
 
 import styled from "react-emotion";
 
-import { Container, Row } from "../../components/layout";
+import { Container, Row as StyledRow } from "../../components/layout";
 import { ColorIdentifier } from "../../components/deco";
 import { H5Underline } from "../../style/typography";
+import { ComponentFontSizes } from "../../style/mediaQueries";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -25,6 +26,10 @@ const IconBox = styled("div")`
   display: inline-block;
   text-align: center;
   width: 40px;
+`;
+
+const Row = styled(StyledRow)`
+  ${ComponentFontSizes};
 `;
 
 export const MiniBudget = props => {

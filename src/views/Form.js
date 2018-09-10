@@ -17,6 +17,8 @@ import { actions } from "../redux/index";
 import { Col, Row } from "reactstrap";
 import { Container } from "../components/layout";
 import { H1Title } from "../style/typography";
+import { reverseCol } from "../style/mediaQueries";
+
 import styled from "react-emotion";
 
 const MainContainer = styled(Container)`
@@ -25,8 +27,11 @@ const MainContainer = styled(Container)`
   padding: none;
 `;
 
+const ResponsiveRow = styled(Row)`
+  ${reverseCol};
+`;
+
 const Form = props => {
-  console.log(111, props);
   let curForm = props.match.params.formType;
   let FormComponent =
     curForm === "budget" ? null : formTypes[curForm].FormComponent;
@@ -51,19 +56,19 @@ const Form = props => {
               <Trail {...props} curForm={curForm} />
               <Col className="justify-content-center">
                 <Row>
-                  <Col xs={5} sm={5} md={5} lg={5}>
+                  <Container>
+                    <FormComponent {...props} curForm={curForm} />
+                  </Container>
+                </Row>
+                <Row>
+                  <Col xs={12} sm={12} md={12} lg={5}>
                     <MiniBudget {...props} curForm={curForm} />
                   </Col>
-                  <Col>
+                  <Col xs={12} sm={12} md={12} lg={7}>
                     <Container>
                       <Pie {...props} curForm={curForm} />
                     </Container>
                   </Col>
-                </Row>
-                <Row>
-                  <Container>
-                    <FormComponent {...props} curForm={curForm} />
-                  </Container>
                 </Row>
               </Col>
             </MainContainer>
@@ -81,14 +86,14 @@ const Form = props => {
                 THE YLC BUDGETING APPLICATION
               </H1Title>
               <Trail {...props} curForm={curForm} />
-              <Row className="justify-content-center">
-                <Col xs={5} sm={5} md={5} lg={5}>
+              <Row className="d-flex justify-content-center">
+                <Col xs={12} sm={12} md={12} lg={5}>
                   <MiniBudget {...props} curForm={curForm} />
                   <Container>
                     <Pie {...props} curForm={curForm} />
                   </Container>
                 </Col>
-                <Col xs={7} sm={7} md={7} lg={7}>
+                <Col xs={12} sm={12} md={12} lg={7}>
                   <Container>
                     <FormComponent {...props} curForm={curForm} />
                   </Container>
