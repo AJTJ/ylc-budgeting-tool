@@ -14,12 +14,14 @@ import Budget from "../views/budget/BudgetHtml";
 import { connect } from "react-redux";
 import { actions } from "../redux/index";
 
-import { Col, Row } from "reactstrap";
+import { Col, Row, Container as RSContainer } from "reactstrap";
 import { Container } from "../components/layout";
 import { H1Title } from "../style/typography";
-import { reverseCol } from "../style/mediaQueries";
+// import { reverseCol } from "../style/mediaQueries";
 
 import styled from "react-emotion";
+
+import ylcLogo from "../assets/ylcLogo.png";
 
 const MainContainer = styled(Container)`
   border: none;
@@ -27,8 +29,15 @@ const MainContainer = styled(Container)`
   padding: none;
 `;
 
-const ResponsiveRow = styled(Row)`
-  ${reverseCol};
+// const ResponsiveRow = styled(Row)`
+//   ${reverseCol};
+// `;
+
+const ImageContainer = styled(RSContainer)`
+  text-align: center;
+  img {
+    max-width: 100%;
+  }
 `;
 
 const Form = props => {
@@ -50,9 +59,10 @@ const Form = props => {
         if (curForm === "review") {
           return (
             <MainContainer>
-              <H1Title className="text-center">
-                THE YLC BUDGETING APPLICATION
-              </H1Title>
+              <ImageContainer>
+                <img src={ylcLogo} alt="" />
+              </ImageContainer>
+              {/* <H1Title className="text-center">Budgeting Application</H1Title> */}
               <Trail {...props} curForm={curForm} />
               <Col className="justify-content-center">
                 <Row>
@@ -82,9 +92,10 @@ const Form = props => {
         } else {
           return (
             <MainContainer>
-              <H1Title className="text-center">
-                THE YLC BUDGETING APPLICATION
-              </H1Title>
+              <ImageContainer>
+                <img src={ylcLogo} alt="" />
+              </ImageContainer>
+              {/* <H1Title className="text-center">Budgeting Application</H1Title> */}
               <Trail {...props} curForm={curForm} />
               <Row className="d-flex justify-content-center">
                 <Col xs={12} sm={12} md={12} lg={5}>

@@ -20,6 +20,7 @@ import {
 } from "../formData/calculation";
 
 const Pie = props => {
+  // console.log(typeof colors.color1);
   const values = props.values;
 
   const PieHolder = styled("div")`
@@ -110,6 +111,7 @@ const Pie = props => {
         padAngle={0.05}
         cornerRadius={10}
         colorBy={d => d.color}
+        // colorBy={'color'}
         //SLICE LABEL
         sliceLabel={d => `$${d.value}`}
         enableSlicesLabels={income(values) === 0 ? false : true}
