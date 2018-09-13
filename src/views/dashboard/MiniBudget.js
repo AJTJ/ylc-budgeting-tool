@@ -32,6 +32,21 @@ const Row = styled(StyledRow)`
   ${ComponentFontSizes};
 `;
 
+const BudgetRow = props => (
+  <Row underline={props.underline} className={props.class}>
+    <ColorIdentifier fillColor={props.fillColor} />
+    <Col>
+      <IconBox>
+        <FontAwesomeIcon icon={props.icon} />
+      </IconBox>
+      {props.title}
+    </Col>
+    <Col xs={3} sm={3} md={3} lg={4}>
+      ${props.amount}
+    </Col>
+  </Row>
+);
+
 export const MiniBudget = props => {
   const { values } = props;
   return (
@@ -39,80 +54,46 @@ export const MiniBudget = props => {
       <Row className="justify-content-center">
         <H5Underline>Monthly Budget</H5Underline>
       </Row>
-
-      <Row underline="true" className="font-weight-bold">
-        <ColorIdentifier fillColor={colors.color1} />
-        <Col>
-          <IconBox>
-            <FontAwesomeIcon icon="dollar-sign" />
-          </IconBox>
-          Monthly Income
-        </Col>
-        <Col xs={4} sm={4} md={4} lg={4}>
-          ${income(values)}
-        </Col>
-      </Row>
-
-      <Row>
-        <ColorIdentifier fillColor={colors.color2} />
-        <Col>
-          <IconBox>
-            <FontAwesomeIcon icon="home" />
-          </IconBox>
-          Housing
-        </Col>
-        <Col xs={4} sm={4} md={4} lg={4}>
-          ${housing(values)}
-        </Col>
-      </Row>
-
-      <Row>
-        <ColorIdentifier fillColor={colors.color3} />
-        <Col>
-          <IconBox>
-            <FontAwesomeIcon icon="car" />
-          </IconBox>
-          Transportation
-        </Col>
-        <Col xs={4} sm={4} md={4} lg={4}>
-          ${transportation(values)}
-        </Col>
-      </Row>
-
-      <Row>
-        <ColorIdentifier fillColor={colors.color4} />
-        <Col>
-          <IconBox>
-            <FontAwesomeIcon icon="walking" />
-          </IconBox>
-          Living
-        </Col>
-        <Col xs={4} sm={4} md={4} lg={4}>
-          ${living(values)}
-        </Col>
-      </Row>
-
-      <Row underline="true">
-        <ColorIdentifier fillColor={colors.color5} />
-        <Col>
-          <IconBox>
-            <FontAwesomeIcon icon="user" />
-          </IconBox>
-          Personal
-        </Col>
-        <Col xs={4} sm={4} md={4} lg={4}>
-          ${personal(values)}
-        </Col>
-      </Row>
-
-      <Row className="font-weight-bold">
-        <ColorIdentifier fillColor={"white"} />
-        <IconBox />
-        <Col>Monthly Expenses</Col>
-        <Col xs={4} sm={4} md={4} lg={4}>
-          ${totalExpenses(values)}
-        </Col>
-      </Row>
+      <BudgetRow
+        underline="true"
+        class="font-weight-bold"
+        fillColor={colors.color1}
+        icon="dollar-sign"
+        title="Monthly Income"
+        amount={income(values)}
+      />
+      <BudgetRow
+        fillColor={colors.color2}
+        icon="home"
+        title="Housing"
+        amount={housing(values)}
+      />
+      <BudgetRow
+        fillColor={colors.color3}
+        icon="car"
+        title="Transportation"
+        amount={transportation(values)}
+      />
+      <BudgetRow
+        fillColor={colors.color4}
+        icon="walking"
+        title="Living"
+        amount={living(values)}
+      />
+      <BudgetRow
+        underline="true"
+        fillColor={colors.color5}
+        icon="user"
+        title="Personal"
+        amount={personal(values)}
+      />
+      <BudgetRow
+        class="font-weight-bold"
+        fillColor={"transparent"}
+        icon="user"
+        title="Monthly Expenses"
+        amount={totalExpenses(values)}
+      />
     </Container>
   );
 };

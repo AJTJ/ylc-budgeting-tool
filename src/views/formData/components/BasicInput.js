@@ -44,7 +44,7 @@ const Input = styled(InputComponent)`
 
 export default ({ Component = Input, ...props }) => (
   <FormGroup row>
-    <Col className="d-flex align-items-center" xs={5} sm={5} md={5} lg={5}>
+    <Col className="d-flex align-items-center" xs={12} sm={12} md={12} lg={5}>
       {props.text ? (
         <React.Fragment>
           <Col xs={10} sm={10} md={10} lg={10}>
@@ -57,7 +57,7 @@ export default ({ Component = Input, ...props }) => (
         <Label className="m-0">{props.name}</Label>
       )}
     </Col>
-    <Col xs={7} sm={7} md={7} lg={7}>
+    <Col xs={12} sm={12} md={12} lg={7}>
       <Component {...props} />
     </Col>
   </FormGroup>
