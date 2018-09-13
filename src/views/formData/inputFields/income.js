@@ -1,7 +1,7 @@
 import React from "react";
 import { Form, Row } from "reactstrap";
 
-import { BasicInput, LinkButton } from "../components/index";
+import { BasicInput, LinkButton, BiWeeklyInput } from "../components/index";
 import { H5Underline } from "../../../style/typography";
 import { IconBox } from "../../../components/layout";
 
@@ -28,10 +28,11 @@ export const FormComponent = ({
         value={values.wage_income}
         onChange={handleChange}
       />
-      <BasicInput
+      <BiWeeklyInput
         name="Bi-weekly paycheck"
         id="bi_weekly_paycheck"
         text="Do you receive a bi-weekly paycheck? Type the check amount here and your approximate monthly income will appear beside it."
+        // biWeekly="true"
         value={values.bi_weekly_paycheck}
         onChange={handleChange}
       />
