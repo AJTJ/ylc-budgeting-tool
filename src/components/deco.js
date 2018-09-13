@@ -5,6 +5,8 @@ import { Button as RSButton } from "reactstrap";
 
 import { ButtonFontSizes } from "../style/mediaQueries";
 
+import { ComponentFontSizes } from "../style/mediaQueries";
+
 export const ColorIdentifier = styled("span")`
   align-self: center;
   height: 12px;
@@ -15,8 +17,8 @@ export const ColorIdentifier = styled("span")`
 
 export const StyledButton = styled(RSButton)`
   border-radius: 10px;
-  padding: 15px;
-  margin: 0 15px 0 0;
+  padding: 10px 10px;
+  margin: 0 5px 0 0;
   background-color: ${props => {
     if (props.name) {
       return props.name === "PREVIOUS" ? colors.color6 : colors.color7;
@@ -36,8 +38,8 @@ export const StyledButton = styled(RSButton)`
 
 export const StyledSolidLink = styled("a")`
   border: solid 1px ${colors.softBorder};
-  padding: 15px;
-  margin: 0 15px 0 0;
+  padding: 10px 10px;
+  margin: 0 5px 0 0;
   background-color: ${colors.color1};
   border-radius: 10px;
   color: white;
@@ -59,8 +61,8 @@ export const StyledLink = styled("a")`
   border-right: 1px solid ${colors.darkBlue};
   border-left: 1px solid ${colors.darkBlue};
   background: transparent;
-  padding: 5px 20px;
-  margin: 5px;
+  padding: 10px 10px;
+  margin: 0 5px 0 0;
   transition: all 0.4s;
   ${ButtonFontSizes};
   &:hover {

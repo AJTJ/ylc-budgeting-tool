@@ -34,8 +34,8 @@ const Row = styled(StyledRow)`
 
 const BudgetRow = props => (
   <Row underline={props.underline} className={props.class}>
-    <ColorIdentifier fillColor={props.fillColor} />
-    <Col>
+    <ColorIdentifier xs={1} sm={1} md={1} fillColor={props.fillColor} />
+    <Col className="p-0">
       <IconBox>
         <FontAwesomeIcon icon={props.icon} />
       </IconBox>

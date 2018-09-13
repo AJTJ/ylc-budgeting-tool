@@ -70,10 +70,10 @@ const Form = props => {
                   </Container>
                 </Row>
                 <Row>
-                  <Col xs={12} sm={12} md={12} lg={5}>
+                  <Col className="p-0" xs={12} sm={12} md={12} lg={5}>
                     <MiniBudget {...props} curForm={curForm} />
                   </Col>
-                  <Col xs={12} sm={12} md={12} lg={7}>
+                  <Col className="p-0" xs={12} sm={12} md={12} lg={7}>
                     <Container>
                       <H5Underline>Review</H5Underline>
                       <Pie {...props} curForm={curForm} />

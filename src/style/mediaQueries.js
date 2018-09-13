@@ -16,7 +16,7 @@ export const ComponentFontSizes = css(
 );
 
 export const ButtonFontSizes = css(
-  mqFp({ fontSize: ["12px", "14px", "16px", "18px"] })
+  mqFp({ fontSize: ["10px", "12px", "14px", "16px"] })
 );
 
 export const TrailTextMq = css(
