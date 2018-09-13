@@ -70,7 +70,7 @@ class PrintableBudget extends Component {
     const values = this.props.values;
     console.log("printablebudg", this.props);
     return (
-      <div>
+      <div style={{ minWidth: "1000px" }}>
         <BudgetHeader>My Budget</BudgetHeader>
         <Row>
           <Col xs={6} sm={6} md={6} lg={6}>

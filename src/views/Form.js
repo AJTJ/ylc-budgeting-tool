@@ -95,18 +95,17 @@ const Form = props => {
               <ImageContainer>
                 <img src={ylcLogo} alt="" />
               </ImageContainer>
-              {/* <H1Title className="text-center">Budgeting Application</H1Title> */}
               <Trail {...props} curForm={curForm} />
               <Row className="d-flex justify-content-center">
+                <Col xs={12} sm={12} md={12} lg={7}>
+                  <Container>
+                    <FormComponent {...props} curForm={curForm} />
+                  </Container>
+                </Col>
                 <Col xs={12} sm={12} md={12} lg={5}>
                   <MiniBudget {...props} curForm={curForm} />
                   <Container>
                     <Pie {...props} curForm={curForm} />
-                  </Container>
-                </Col>
-                <Col xs={12} sm={12} md={12} lg={7}>
-                  <Container>
-                    <FormComponent {...props} curForm={curForm} />
                   </Container>
                 </Col>
               </Row>
