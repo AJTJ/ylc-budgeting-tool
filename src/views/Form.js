@@ -40,6 +40,7 @@ const ImageContainer = styled(RSContainer)`
 `;
 
 const Form = props => {
+  console.log(11, props);
   let curForm = props.match.params.formType;
   let FormComponent =
     curForm === "budget" ? null : formTypes[curForm].FormComponent;
