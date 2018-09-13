@@ -16,6 +16,7 @@ import { actions } from "../redux/index";
 
 import { Col, Row, Container as RSContainer } from "reactstrap";
 import { Container } from "../components/layout";
+import { H5Underline } from "../style/typography";
 
 import styled from "react-emotion";
 
@@ -74,6 +75,7 @@ const Form = props => {
                   </Col>
                   <Col xs={12} sm={12} md={12} lg={7}>
                     <Container>
+                      <H5Underline>Review</H5Underline>
                       <Pie {...props} curForm={curForm} />
                     </Container>
                   </Col>
