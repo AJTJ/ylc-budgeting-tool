@@ -16,8 +16,6 @@ import { actions } from "../redux/index";
 
 import { Col, Row, Container as RSContainer } from "reactstrap";
 import { Container } from "../components/layout";
-import { H1Title } from "../style/typography";
-// import { reverseCol } from "../style/mediaQueries";
 
 import styled from "react-emotion";
 

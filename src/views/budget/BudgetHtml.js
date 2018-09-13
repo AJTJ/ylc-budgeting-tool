@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import styled from "react-emotion";
-import { Link } from "react-router-dom";
 
 import { Row, Col } from "reactstrap";
 import { H5Underline } from "../../style/typography";

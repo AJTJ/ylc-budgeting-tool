@@ -32,8 +32,8 @@ const color5 = "rgba(23, 104, 172, 1)";
 
 const color6 = "brown";
 const color7 = "sienna";
-const yellow = "yellow";
-const cyan = "cyan";
+const yellow = "rgba(255, 255, 100, 0.3)";
+const cyan = "rgba(100, 255, 255, 0.3)";
 const darkBlue = "darkblue";
 
 const gray = "gray";

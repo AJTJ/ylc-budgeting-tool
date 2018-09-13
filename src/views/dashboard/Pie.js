@@ -2,13 +2,8 @@ import React from "react";
 
 import { ResponsivePie as NivoPie } from "@nivo/pie";
 
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
 import styled from "react-emotion";
 import colors from "../../style/colors";
-
-import { Container } from "../../components/layout";
-// import { ColorIdentifier } from "../../components/deco";
 
 import {
   income,
@@ -19,23 +14,22 @@ import {
   totalExpenses
 } from "../formData/calculation";
 
+const PieHolder = styled("div")`
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+`;
+
+const StyledH3 = styled("h3")`
+  padding-bottom: 30px;
+  font-weight: bold;
+  color: ${props => (props.dynamicIncome < 0 ? "red" : "black")};
+`;
+
 const Pie = props => {
-  // console.log(typeof colors.color1);
   const values = props.values;
-
-  const PieHolder = styled("div")`
-    height: 400px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  `;
-
-  const StyledH3 = styled("h3")`
-    padding-bottom: 30px;
-    font-weight: bold;
-    color: ${props => (props.dynamicIncome < 0 ? "red" : "black")};
-  `;
 
   const dynamicIncome =
     income(values) -
@@ -49,7 +43,7 @@ const Pie = props => {
       id: "placeholderPie",
       label: "Add your income or expenses!",
       value: 1,
-      color: "yellow"
+      color: colors.yellow
     }
   ];
 
@@ -102,10 +96,10 @@ const Pie = props => {
       <NivoPie
         //DIMENSIONS
         margin={{
-          top: 30,
-          bottom: 30,
-          right: 115,
-          left: 115
+          top: 30
+          // bottom: 30,
+          // right: 115,
+          // left: 115
         }}
         innerRadius={0.1}
         padAngle={0.05}
@@ -113,7 +107,7 @@ const Pie = props => {
         colorBy={d => d.color}
         // colorBy={'color'}
         //SLICE LABEL
-        sliceLabel={d => `$${d.value}`}
+        sliceLabel={d => `$${d.value} ${d.label}`}
         enableSlicesLabels={income(values) === 0 ? false : true}
         slicesLabelsTextColor={"white"}
         slicesLabelsSkipAngle={1}
@@ -134,6 +128,7 @@ const Pie = props => {
         //TOOLTIP
         // tooltipFormat={tooltipHandler(dynamicIncome)}
       />
+
       <StyledH3 dynamicIncome={dynamicIncome}>
         {props.curForm === "review" || "budget"
           ? `Remaining Income: $${dynamicIncome}`
