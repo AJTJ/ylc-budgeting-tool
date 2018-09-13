@@ -16,7 +16,7 @@ import { actions } from "../redux/index";
 
 import { Col, Row, Container as RSContainer } from "reactstrap";
 import { Container } from "../components/layout";
-import { H5Underline } from "../style/typography";
+import { H5Underline, H4Title } from "../style/typography";
 
 import styled from "react-emotion";
 
@@ -60,8 +60,8 @@ const Form = props => {
             <MainContainer>
               <ImageContainer>
                 <img src={ylcLogo} alt="" />
+                <H4Title>Budgeting Application</H4Title>
               </ImageContainer>
-              {/* <H1Title className="text-center">Budgeting Application</H1Title> */}
               <Trail {...props} curForm={curForm} />
               <Col className="justify-content-center">
                 <Row>
@@ -70,10 +70,10 @@ const Form = props => {
                   </Container>
                 </Row>
                 <Row>
-                  <Col className="p-0" xs={12} sm={12} md={12} lg={5}>
+                  <Col xs={12} sm={12} md={12} lg={5}>
                     <MiniBudget {...props} curForm={curForm} />
                   </Col>
-                  <Col className="p-0" xs={12} sm={12} md={12} lg={7}>
+                  <Col xs={12} sm={12} md={12} lg={7}>
                     <Container>
                       <H5Underline>Review</H5Underline>
                       <Pie {...props} curForm={curForm} />
@@ -94,6 +94,7 @@ const Form = props => {
             <MainContainer>
               <ImageContainer>
                 <img src={ylcLogo} alt="" />
+                <H4Title>Budgeting Application</H4Title>
               </ImageContainer>
               <Trail {...props} curForm={curForm} />
               <Row className="d-flex justify-content-center">
