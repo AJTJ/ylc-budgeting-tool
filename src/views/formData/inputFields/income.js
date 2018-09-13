@@ -45,21 +45,21 @@ export const FormComponent = ({
       <BasicInput
         name="Government Benefits"
         id="government_benefits"
-        text="If you receive government benefits, then put your average monthly benefits here."
+        text="Such as child care, pension, disability, worker's compensation etc..."
         value={values.government_benefits}
         onChange={handleChange}
       />
       <BasicInput
         name="Other Income"
         id="other_income"
-        text="This is an extra space for any other type of income you receive. :)"
+        text="Such as babysitting, dog walking, gifts etc..."
         value={values.other_income}
         onChange={handleChange}
       />
       <BasicInput
         name="Other Income"
         id="other_income_2"
-        text="And here is ANOTHER extra space for any other money you are making! :)"
+        text="Such as babysitting, dog walking, gifts etc..."
         value={values.other_income_2}
         onChange={handleChange}
       />
