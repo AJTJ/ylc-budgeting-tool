@@ -15,6 +15,7 @@ export const FormComponent = ({
 }) => {
   return (
     <Form>
+      <input type="hidden" value="something" />
       <H5Underline>
         Income
         <IconBox>

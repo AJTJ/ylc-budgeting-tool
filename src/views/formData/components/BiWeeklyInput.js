@@ -36,7 +36,13 @@ const FormGroup = styled(RSFormGroup)`
 const InputComponent = ({ name, id, type = "number", ...props }) => (
   <InputGroup>
     <InputGroupAddon addonType="prepend">$</InputGroupAddon>
-    <RSInput {...props} placeholder={name} name={id} type={type} />
+    <RSInput
+      {...props}
+      placeholder={name}
+      name={id}
+      type={type}
+      autoComplete="off"
+    />
     <InputGroupAddon addonType="append">.00</InputGroupAddon>
   </InputGroup>
 );
@@ -46,10 +52,10 @@ const Input = styled(InputComponent)`
   color: red;
 `;
 
-const BiWeeklyDisplay = money => {
-  // const totalIncome = biWeeklyIncome / 14 * 30
-  return <Row>{money}</Row>;
-};
+// const BiWeeklyDisplay = money => {
+//   // const totalIncome = biWeeklyIncome / 14 * 30
+//   return <Row>{money}</Row>;
+// };
 
 export default ({ InputComponent = Input, ...props }) => (
   <Component initialState={{ biWeekly: 0 }}>
@@ -79,11 +85,11 @@ export default ({ InputComponent = Input, ...props }) => (
             <InputComponent
               {...props}
               onChange={e => {
-                console.log(e);
+                console.log(e.target.value);
                 setState(state => ({ biWeekly: state.biWeekly + 1 }));
               }}
             />
-            {state.biWeekly}
+            Bi-weekly income per month: {state.biWeekly}
           </Col>
         </FormGroup>
       </React.Fragment>

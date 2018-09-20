@@ -110,7 +110,7 @@ const Pie = props => {
         sliceLabel={d => `$${d.value} ${d.label}`}
         enableSlicesLabels={income(values) === 0 ? false : true}
         slicesLabelsTextColor={"white"}
-        slicesLabelsSkipAngle={1}
+        slicesLabelsSkipAngle={5}
         //RADIAL LABEL
         radialLabel={d => {
           return d.label;

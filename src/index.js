@@ -32,7 +32,7 @@ window.store = store;
 
 render(
   <Provider store={store}>
-    <BrowserRouter>
+    <BrowserRouter basename="/ylcBudget">
       <App />
     </BrowserRouter>
   </Provider>,

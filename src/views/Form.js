@@ -1,7 +1,5 @@
 import React from "react";
 
-// import { Link } from "react-router-dom";
-
 import { Formik } from "formik";
 import formTypes from "./formData/inputFields/index";
 import { values } from "./formData/values";
@@ -27,10 +25,6 @@ const MainContainer = styled(Container)`
   margin: 10px auto;
   padding: none;
 `;
-
-// const ResponsiveRow = styled(Row)`
-//   ${reverseCol};
-// `;
 
 const ImageContainer = styled(RSContainer)`
   text-align: center;

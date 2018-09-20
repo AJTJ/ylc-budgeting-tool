@@ -32,7 +32,13 @@ const FormGroup = styled(RSFormGroup)`
 const InputComponent = ({ name, id, type = "number", ...props }) => (
   <InputGroup>
     <InputGroupAddon addonType="prepend">$</InputGroupAddon>
-    <RSInput {...props} placeholder={name} name={id} type={type} />
+    <RSInput
+      {...props}
+      placeholder={name}
+      name={id}
+      type={type}
+      autoComplete="off"
+    />
     <InputGroupAddon addonType="append">.00</InputGroupAddon>
   </InputGroup>
 );
