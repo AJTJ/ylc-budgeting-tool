@@ -50,6 +50,10 @@ const Form = props => {
       //   this.props.history.push("/budget");
       // });
       render={({ ...props }) => {
+        console.log(
+          "formik props for paycheck",
+          props.values.bi_weekly_paycheck
+        );
         if (curForm === "review") {
           return (
             <MainContainer>

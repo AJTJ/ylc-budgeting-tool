@@ -11,6 +11,7 @@ export const FormComponent = ({
   values,
   handleChange,
   handleSubmit,
+  setFieldValue,
   ...props
 }) => {
   return (
@@ -34,8 +35,11 @@ export const FormComponent = ({
         id="bi_weekly_paycheck"
         text="Do you receive a bi-weekly paycheck? Type the check amount here and your approximate monthly income will appear beside it."
         // biWeekly="true"
-        value={values.bi_weekly_paycheck}
-        onChange={handleChange}
+        calculatedvalue={values.bi_weekly_paycheck}
+        onChange={e => {
+          const newValue = parseFloat((e.target.value / 14) * 30).toFixed(0);
+          setFieldValue("bi_weekly_paycheck", newValue);
+        }}
       />
       <BasicInput
         name="Self Employment Income"
