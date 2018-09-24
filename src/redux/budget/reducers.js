@@ -1,19 +1,17 @@
 import { addBudget } from "./constants";
 
-import { handleActions } from "redux-actions";
-
 import { values } from "../../views/formData/values";
 
 const defaultState = values;
 
-const budgetReducer = handleActions(
-  {
-    [addBudget]: (state, { payload: { values } }) => {
-      return { ...values };
-    }
-  },
-  defaultState
-);
+const budgetReducer = (state = defaultState, action) => {
+  switch (action.type) {
+    case addBudget:
+      return { ...state, ...action.payload.values };
+    default:
+      return state;
+  }
+};
 
 export default {
   budgetReducer

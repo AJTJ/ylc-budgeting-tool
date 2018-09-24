@@ -1,8 +1,6 @@
 import * as constants from "./constants";
 
-import { createAction } from "redux-actions";
-
-const addBudget = createAction([constants.addBudget], budget => budget);
+const addBudget = values => ({ type: constants.addBudget, payload: values });
 
 export default {
   addBudget

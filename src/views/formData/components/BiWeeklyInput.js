@@ -51,11 +51,6 @@ const Input = styled(InputComponent)`
   color: red;
 `;
 
-// const BiWeeklyDisplay = money => {
-//   // const totalIncome = biWeeklyIncome / 14 * 30
-//   return <Row>{money}</Row>;
-// };
-
 export default ({ InputComponent = Input, ...props }) => {
   // const calculatedvalue = parseFloat(props.calculatedvalue).toFixed(0);
   return (

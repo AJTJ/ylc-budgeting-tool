@@ -8,7 +8,6 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./style/genericCss.css";
 
 import { library } from "@fortawesome/fontawesome-svg-core";
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faDollarSign,
   faHome,
@@ -18,7 +17,8 @@ import {
   faChartPie
 } from "@fortawesome/free-solid-svg-icons";
 
-import { createStore, combineReducers } from "redux";
+import { createStore, combineReducers, applyMiddleware } from "redux";
+import thunk from "redux-thunk";
 
 import { reducers } from "./redux/index";
 
@@ -26,6 +26,7 @@ library.add(faDollarSign, faHome, faCar, faWalking, faUser, faChartPie);
 
 export const store = createStore(
   combineReducers(reducers),
+  applyMiddleware(thunk),
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 );
 window.store = store;

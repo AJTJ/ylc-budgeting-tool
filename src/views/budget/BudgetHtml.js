@@ -68,7 +68,6 @@ const TotalsContainer = styled(Container)`
 class PrintableBudget extends Component {
   render() {
     const values = this.props.values;
-    console.log("printablebudg", this.props);
     return (
       <div style={{ minWidth: "1000px" }}>
         <BudgetHeader>My Budget</BudgetHeader>
@@ -516,7 +515,6 @@ const ButtonBar = () => (
 );
 
 const Budget = props => {
-  console.log("budgwrapper", props);
   return (
     <React.Fragment>
       <ButtonBar />

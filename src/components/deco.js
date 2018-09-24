@@ -5,7 +5,7 @@ import { Button as RSButton } from "reactstrap";
 
 import { ButtonFontSizes } from "../style/mediaQueries";
 
-import { ComponentFontSizes } from "../style/mediaQueries";
+// import { ComponentFontSizes } from "../style/mediaQueries";
 
 export const ColorIdentifier = styled("span")`
   align-self: center;

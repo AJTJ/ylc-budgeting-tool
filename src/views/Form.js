@@ -34,7 +34,6 @@ const ImageContainer = styled(RSContainer)`
 `;
 
 const Form = props => {
-  console.log(11, props);
   let curForm = props.match.params.formType;
   let FormComponent =
     curForm === "budget" ? null : formTypes[curForm].FormComponent;
@@ -50,10 +49,6 @@ const Form = props => {
       //   this.props.history.push("/budget");
       // });
       render={({ ...props }) => {
-        console.log(
-          "formik props for paycheck",
-          props.values.bi_weekly_paycheck
-        );
         if (curForm === "review") {
           return (
             <MainContainer>
