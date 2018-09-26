@@ -33,7 +33,7 @@ export const FormComponent = ({
       <BiWeeklyInput
         name="Bi-weekly paycheck"
         id="bi_weekly_paycheck"
-        text="Do you receive a bi-weekly paycheck? Type the check amount here and your approximate monthly income will appear beside it."
+        text="Do you receive a bi-weekly paycheck? Type the check amount here and your approximate monthly income will appear below."
         // biWeekly="true"
         calculatedvalue={values.bi_weekly_paycheck}
         onChange={e => {

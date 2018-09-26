@@ -9,10 +9,13 @@ import {
   Col,
   InputGroup,
   InputGroupAddon
+  // Container
 } from "reactstrap";
 
 import styled from "react-emotion";
 import { ComponentFontSizes } from "../../../style/mediaQueries";
+
+import { Container as PREContainer } from "../../../components/layout";
 
 import help from "../../../assets/help.svg";
 
@@ -51,6 +54,10 @@ const Input = styled(InputComponent)`
   color: red;
 `;
 
+const Container = styled(PREContainer)`
+  padding: 10px;
+`;
+
 export default ({ InputComponent = Input, ...props }) => {
   // const calculatedvalue = parseFloat(props.calculatedvalue).toFixed(0);
   return (
@@ -82,8 +89,22 @@ export default ({ InputComponent = Input, ...props }) => {
             </Col>
           </FormGroup>
           <FormGroup row>
-            Monthly income from bi-weekly paycheck: ${" "}
-            {props.calculatedvalue === "" ? 0 : props.calculatedvalue}
+            <Col
+              className="d-flex align-items-center"
+              xs={12}
+              sm={12}
+              md={12}
+              lg={5}
+            >
+              <Col xs={10} sm={10} md={10} lg={10}>
+                <Label>Monthly income from bi-weekly paycheck</Label>
+              </Col>
+            </Col>
+            <Col xs={12} sm={12} md={12} lg={7}>
+              <Container className="d-flex align-content-center">
+                $ {props.calculatedvalue === "" ? 0 : props.calculatedvalue}
+              </Container>
+            </Col>
           </FormGroup>
         </React.Fragment>
       )}

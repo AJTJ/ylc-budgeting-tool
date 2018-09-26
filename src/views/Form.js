@@ -45,9 +45,9 @@ const Form = props => {
         props.addBudget({ values });
         props.history.push("/Form/budget");
       }}
-      // .then(() => {
-      //   this.props.history.push("/budget");
-      // });
+      // onSubmit={values => {
+      //   props.addBudget({ values }).then(props.history.push("/Form/budget"));
+      // }}
       render={({ ...props }) => {
         if (curForm === "review") {
           return (
