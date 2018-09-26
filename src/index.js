@@ -4,9 +4,13 @@ import { Provider } from "react-redux";
 import App from "./App";
 import { BrowserRouter } from "react-router-dom";
 import registerServiceWorker from "./registerServiceWorker";
+import { store } from "./store";
+
+//CSS
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./style/genericCss.css";
 
+//FONT AWESOME
 import { library } from "@fortawesome/fontawesome-svg-core";
 import {
   faDollarSign,
@@ -16,20 +20,7 @@ import {
   faUser,
   faChartPie
 } from "@fortawesome/free-solid-svg-icons";
-
-import { createStore, combineReducers, applyMiddleware } from "redux";
-import thunk from "redux-thunk";
-
-import { reducers } from "./redux/index";
-
 library.add(faDollarSign, faHome, faCar, faWalking, faUser, faChartPie);
-
-export const store = createStore(
-  combineReducers(reducers),
-  applyMiddleware(thunk),
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-);
-window.store = store;
 
 render(
   <Provider store={store}>

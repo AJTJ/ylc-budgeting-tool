@@ -1,9 +1,8 @@
 import React, { Component } from "react";
-import { Route, Redirect, Switch } from "react-router-dom";
+import { Switch } from "react-router-dom";
 
 import { Container } from "reactstrap";
-
-import Form from "./views/Form";
+import { Routes } from "./Routes";
 import ResourceBar from "./views/dashboard/ResourceBar";
 
 class App extends Component {
@@ -11,8 +10,7 @@ class App extends Component {
     return (
       <Container fluid>
         <Switch>
-          <Route path="/Form/:formType" component={Form} />
-          <Redirect to="/Form/income" />
+          <Routes />
         </Switch>
         <ResourceBar />
       </Container>
