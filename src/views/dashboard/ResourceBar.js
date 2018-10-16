@@ -22,13 +22,7 @@ const Container = styled(RSContainer)`
 
 export default () => (
   <FooterBar>
-    <Container>
-      {/* <StyledLink target="_blank" href="http://www.google.com/">
-        <span>Start a new budget</span>
-      </StyledLink> */}
-      {/* <StyledLink href="http://www.google.com/">
-        <span>Download a budget workbook</span>
-      </StyledLink> */}
+    <Container className="d-flex justify-content-around">
       <StyledLink
         target="_blank"
         href="http://www.yukonliteracy.com/financial-literacy-workshops.html"
