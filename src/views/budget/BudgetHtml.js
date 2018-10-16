@@ -26,8 +26,7 @@ import {
 
 const Under = styled(Col)`
   border-bottom: 1px solid ${colors.softBorder};
-  /* margin: 0 15px; */
-  /* padding: 0; */
+  margin-right: 10px;
 `;
 
 const IconBox = styled("div")`
@@ -67,7 +66,8 @@ const TotalsContainer = styled(Container)`
 
 const darkbackground = css({
   background: colors.softBorder,
-  fontWeight: "bold"
+  fontWeight: "bold",
+  marginRight: "5px"
 });
 
 const ValueCol = props => {
@@ -80,7 +80,7 @@ const ValueCol = props => {
     );
   } else {
     return (
-      <Col xs={3} sm={3} md={3} lg={3}>
+      <Col style={{ marginRight: "5px" }} xs={3} sm={3} md={3} lg={3}>
         $0
       </Col>
     );
