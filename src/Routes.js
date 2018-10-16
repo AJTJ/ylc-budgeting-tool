@@ -1,10 +1,10 @@
 import React from "react";
-import { Route, Redirect } from "react-router-dom";
+import { Route, Redirect, Switch } from "react-router-dom";
 import Form from "./views/Form";
 
 export const Routes = () => (
-  <React.Fragment>
+  <Switch>
     <Route path="/Form/:formType" component={Form} />
     <Redirect to="/Form/income" />
-  </React.Fragment>
+  </Switch>
 );

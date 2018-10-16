@@ -115,7 +115,7 @@ const Pie = props => {
         radialLabel={d => {
           return d.label;
         }}
-        enableRadialLabels={true}
+        enableRadialLabels={false}
         radialLabelsSkipAngle={1}
         radialLabelsLinkDiagonalLength={5}
         radialLabelsLinkHorizontalLength={5}

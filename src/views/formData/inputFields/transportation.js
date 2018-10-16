@@ -24,8 +24,15 @@ export const FormComponent = ({
       <BasicInput
         name="Car"
         id="car"
-        text="This space is for any vehicle repair costs and vehicle payments."
+        text="This space is for any vehicle payments and repair costs."
         value={values.car}
+        onChange={handleChange}
+      />
+      <BasicInput
+        name="Snowmobile or other vehicle"
+        id="snowmobile"
+        text="This space is for any snowmobile or other vehicle payments and repair costs."
+        value={values.snowmobile}
         onChange={handleChange}
       />
       <BasicInput

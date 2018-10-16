@@ -16,6 +16,7 @@ export const housing = values =>
 
 export const transportation = values =>
   Number(values.car) +
+  Number(values.snowmobile) +
   Number(values.transportation_insurance) +
   Number(values.gas) +
   Number(values.parking) +

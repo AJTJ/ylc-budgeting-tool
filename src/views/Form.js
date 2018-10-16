@@ -113,7 +113,6 @@ const Form = props => {
 };
 
 const mapStateToProps = state => {
-  console.log("state in mapstate in Form", state);
   return { newBudget: state.budgetReducer };
 };
 

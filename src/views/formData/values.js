@@ -1,7 +1,6 @@
 export const values = {
   //income
   wage_income: "",
-  //
   bi_weekly_paycheck: "",
   self_employment_income: "",
   government_benefits: "",
@@ -19,11 +18,10 @@ export const values = {
 
   //transportation
   car: "",
-  //
+  snowmobile: "",
   transportation_insurance: "",
   gas: "",
   parking: "",
-  //
   bicycle: "",
   public_transport: "",
   taxi: "",
@@ -37,9 +35,7 @@ export const values = {
   credit_card: "",
   prescription_drugs: "",
   pets: "",
-  //
   living_insurance: "",
-  //
   municipal_taxes: "",
   other_living_expenses: "",
 

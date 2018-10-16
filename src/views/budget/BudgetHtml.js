@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import styled from "react-emotion";
+import styled, { css } from "react-emotion";
 
 import { Row, Col } from "reactstrap";
 import { H5Underline } from "../../style/typography";
@@ -65,9 +65,32 @@ const TotalsContainer = styled(Container)`
   font-weight: 700;
 `;
 
+const darkbackground = css({
+  background: colors.softBorder,
+  fontWeight: "bold"
+});
+
+const ValueCol = props => {
+  console.log("value in comp", props.value);
+  if (typeof props.value === "number") {
+    return (
+      <Col className={darkbackground} xs={3} sm={3} md={3} lg={3}>
+        ${props.value}
+      </Col>
+    );
+  } else {
+    return (
+      <Col xs={3} sm={3} md={3} lg={3}>
+        $0
+      </Col>
+    );
+  }
+};
+
 class PrintableBudget extends Component {
   render() {
     const values = this.props.values;
+    console.log("wage income", typeof values.wage_income);
     return (
       <div style={{ minWidth: "1000px" }}>
         <BudgetHeader>My Budget</BudgetHeader>
@@ -91,51 +114,37 @@ class PrintableBudget extends Component {
               </ColHeaders>
               <ContentRow>
                 <Col>Wage Income</Col>
-                <Col xs={3} sm={3} md={3} lg={3}>
-                  ${values.wage_income || 0}
-                </Col>
+                <ValueCol value={values.wage_income} />
                 <Under xs={3} sm={3} md={3} lg={3} />
               </ContentRow>
               <ContentRow>
                 <Col>Bi-weekly paycheck</Col>
-                <Col xs={3} sm={3} md={3} lg={3}>
-                  ${values.bi_weekly_paycheck || 0}
-                </Col>
+                <ValueCol value={values.bi_weekly_paycheck} />
                 <Under xs={3} sm={3} md={3} lg={3} />
               </ContentRow>
               <ContentRow>
                 <Col>Self Employment Income</Col>
-                <Col xs={3} sm={3} md={3} lg={3}>
-                  ${values.self_employment_income || 0}
-                </Col>
+                <ValueCol value={values.self_employment_income} />
                 <Under xs={3} sm={3} md={3} lg={3} />
               </ContentRow>
               <ContentRow>
                 <Col>Government Benefits</Col>
-                <Col xs={3} sm={3} md={3} lg={3}>
-                  ${values.government_benefits || 0}
-                </Col>
+                <ValueCol value={values.government_benefits} />
                 <Under xs={3} sm={3} md={3} lg={3} />
               </ContentRow>
               <ContentRow>
                 <Col>Other Income</Col>
-                <Col xs={3} sm={3} md={3} lg={3}>
-                  ${values.other_income || 0}
-                </Col>
+                <ValueCol value={values.other_income} />
                 <Under xs={3} sm={3} md={3} lg={3} />
               </ContentRow>
               <ContentRow>
                 <Col>Other Income</Col>
-                <Col xs={3} sm={3} md={3} lg={3}>
-                  ${values.other_income_2 || 0}
-                </Col>
+                <ValueCol value={values.other_income_2} />
                 <Under xs={3} sm={3} md={3} lg={3} />
               </ContentRow>
               <TotalContentRow>
                 <Col>Total Income</Col>
-                <Col xs={3} sm={3} md={3} lg={3}>
-                  ${income(values)}
-                </Col>
+                <ValueCol value={income(values)} />
                 <Under xs={3} sm={3} md={3} lg={3} />
               </TotalContentRow>
             </Container>
@@ -157,65 +166,47 @@ class PrintableBudget extends Component {
               </ColHeaders>
               <ContentRow>
                 <Col>Car</Col>
-                <Col xs={3} sm={3} md={3} lg={3}>
-                  ${values.car || 0}
-                </Col>
+                <ValueCol value={values.car} />
                 <Under xs={3} sm={3} md={3} lg={3} />
               </ContentRow>
               <ContentRow>
                 <Col>Insurance</Col>
-                <Col xs={3} sm={3} md={3} lg={3}>
-                  ${values.transportation_insurance || 0}
-                </Col>
+                <ValueCol value={values.transportation_insurance} />
                 <Under xs={3} sm={3} md={3} lg={3} />
               </ContentRow>
               <ContentRow>
                 <Col>Gas</Col>
-                <Col xs={3} sm={3} md={3} lg={3}>
-                  ${values.gas || 0}
-                </Col>
+                <ValueCol value={values.gas} />
                 <Under xs={3} sm={3} md={3} lg={3} />
               </ContentRow>
               <ContentRow>
                 <Col>Parking</Col>
-                <Col xs={3} sm={3} md={3} lg={3}>
-                  ${values.parking || 0}
-                </Col>
+                <ValueCol value={values.parking} />
                 <Under xs={3} sm={3} md={3} lg={3} />
               </ContentRow>
               <ContentRow>
                 <Col>Bicycle</Col>
-                <Col xs={3} sm={3} md={3} lg={3}>
-                  ${values.bicycle || 0}
-                </Col>
+                <ValueCol value={values.bicycle} />
                 <Under xs={3} sm={3} md={3} lg={3} />
               </ContentRow>
               <ContentRow>
                 <Col>Public Transport</Col>
-                <Col xs={3} sm={3} md={3} lg={3}>
-                  ${values.public_transport || 0}
-                </Col>
+                <ValueCol value={values.public_transport} />
                 <Under xs={3} sm={3} md={3} lg={3} />
               </ContentRow>
               <ContentRow>
                 <Col>Taxi</Col>
-                <Col xs={3} sm={3} md={3} lg={3}>
-                  ${values.taxi || 0}
-                </Col>
+                <ValueCol value={values.taxi} />
                 <Under xs={3} sm={3} md={3} lg={3} />
               </ContentRow>
               <ContentRow>
                 <Col>Other Transport</Col>
-                <Col xs={3} sm={3} md={3} lg={3}>
-                  ${values.other_transport || 0}
-                </Col>
+                <ValueCol value={values.other_transport} />
                 <Under xs={3} sm={3} md={3} lg={3} />
               </ContentRow>
               <TotalContentRow>
                 <Col>Total Transportation</Col>
-                <Col xs={3} sm={3} md={3} lg={3}>
-                  ${transportation(values)}
-                </Col>
+                <ValueCol value={transportation(values)} />
                 <Under xs={3} sm={3} md={3} lg={3} />
               </TotalContentRow>
             </Container>
@@ -237,65 +228,47 @@ class PrintableBudget extends Component {
               </ColHeaders>
               <ContentRow>
                 <Col>Recreation and Entertainment</Col>
-                <Col xs={3} sm={3} md={3} lg={3}>
-                  ${values.recreation_entertainment || 0}
-                </Col>
+                <ValueCol value={values.recreation_entertainment} />
                 <Under xs={3} sm={3} md={3} lg={3} />
               </ContentRow>
               <ContentRow>
                 <Col>Eating Out</Col>
-                <Col xs={3} sm={3} md={3} lg={3}>
-                  ${values.eating_out || 0}
-                </Col>
+                <ValueCol value={values.eating_out} />
                 <Under xs={3} sm={3} md={3} lg={3} />
               </ContentRow>
               <ContentRow>
                 <Col>Cigarettes and Alcohol</Col>
-                <Col xs={3} sm={3} md={3} lg={3}>
-                  ${values.cigarettes_alcohol || 0}
-                </Col>
+                <ValueCol value={values.cigarettes_alcohol} />
                 <Under xs={3} sm={3} md={3} lg={3} />
               </ContentRow>
               <ContentRow>
                 <Col>Personal Grooming</Col>
-                <Col xs={3} sm={3} md={3} lg={3}>
-                  ${values.personal_grooming || 0}
-                </Col>
+                <ValueCol value={values.personal_grooming} />
                 <Under xs={3} sm={3} md={3} lg={3} />
               </ContentRow>
               <ContentRow>
                 <Col>Magazines and Newspapers</Col>
-                <Col xs={3} sm={3} md={3} lg={3}>
-                  ${values.magazines_newspapers || 0}
-                </Col>
+                <ValueCol value={values.magazines_newspapers} />
                 <Under xs={3} sm={3} md={3} lg={3} />
               </ContentRow>
               <ContentRow>
                 <Col>Gifts and Donations</Col>
-                <Col xs={3} sm={3} md={3} lg={3}>
-                  ${values.gifts_donations || 0}
-                </Col>
+                <ValueCol value={values.gifts_donations} />
                 <Under xs={3} sm={3} md={3} lg={3} />
               </ContentRow>
               <ContentRow>
                 <Col>Vacation and Travel</Col>
-                <Col xs={3} sm={3} md={3} lg={3}>
-                  ${values.vacation_travel || 0}
-                </Col>
+                <ValueCol value={values.vacation_travel} />
                 <Under xs={3} sm={3} md={3} lg={3} />
               </ContentRow>
               <ContentRow>
                 <Col>Saving Goals</Col>
-                <Col xs={3} sm={3} md={3} lg={3}>
-                  ${values.saving_goals || 0}
-                </Col>
+                <ValueCol value={values.saving_goals} />
                 <Under xs={3} sm={3} md={3} lg={3} />
               </ContentRow>
               <TotalContentRow>
                 <Col>Total Personal Expenses</Col>
-                <Col xs={3} sm={3} md={3} lg={3}>
-                  ${personal(values)}
-                </Col>
+                <ValueCol value={personal(values)} />
                 <Under xs={3} sm={3} md={3} lg={3} />
               </TotalContentRow>
             </Container>
@@ -312,16 +285,12 @@ class PrintableBudget extends Component {
               </ColHeaders>
               <ContentRow>
                 <Col>Total Income</Col>
-                <Col xs={3} sm={3} md={3} lg={3}>
-                  ${income(values) || 0}
-                </Col>
+                <ValueCol value={income(values)} />
                 <Under xs={3} sm={3} md={3} lg={3} />
               </ContentRow>
               <TotalContentRow>
                 <Col>Total Expenses</Col>
-                <Col xs={3} sm={3} md={3} lg={3}>
-                  ${totalExpenses(values) || 0}
-                </Col>
+                <ValueCol value={totalExpenses(values)} />
                 <Under xs={3} sm={3} md={3} lg={3} />
               </TotalContentRow>
             </TotalsContainer>
@@ -345,51 +314,37 @@ class PrintableBudget extends Component {
               </ColHeaders>
               <ContentRow>
                 <Col>Rent or Mortgage</Col>
-                <Col xs={3} sm={3} md={3} lg={3}>
-                  ${values.rent_mortgage || 0}
-                </Col>
+                <ValueCol value={values.rent_mortgage} />
                 <Under xs={3} sm={3} md={3} lg={3} />
               </ContentRow>
               <ContentRow>
                 <Col>Heat</Col>
-                <Col xs={3} sm={3} md={3} lg={3}>
-                  ${values.heat || 0}
-                </Col>
+                <ValueCol value={values.heat} />
                 <Under xs={3} sm={3} md={3} lg={3} />
               </ContentRow>
               <ContentRow>
                 <Col>Hydro</Col>
-                <Col xs={3} sm={3} md={3} lg={3}>
-                  ${values.hydro || 0}
-                </Col>
+                <ValueCol value={values.hydro} />
                 <Under xs={3} sm={3} md={3} lg={3} />
               </ContentRow>
               <ContentRow>
                 <Col>Cable and Internet</Col>
-                <Col xs={3} sm={3} md={3} lg={3}>
-                  ${values.cable_internet || 0}
-                </Col>
+                <ValueCol value={values.cable_internet} />
                 <Under xs={3} sm={3} md={3} lg={3} />
               </ContentRow>
               <ContentRow>
                 <Col>Phone</Col>
-                <Col xs={3} sm={3} md={3} lg={3}>
-                  ${values.phone || 0}
-                </Col>
+                <ValueCol value={values.phone} />
                 <Under xs={3} sm={3} md={3} lg={3} />
               </ContentRow>
               <ContentRow>
                 <Col>Other Housing</Col>
-                <Col xs={3} sm={3} md={3} lg={3}>
-                  ${values.other_housing || 0}
-                </Col>
+                <ValueCol value={values.other_housing} />
                 <Under xs={3} sm={3} md={3} lg={3} />
               </ContentRow>
               <TotalContentRow>
                 <Col>Total Housing Expenses</Col>
-                <Col xs={3} sm={3} md={3} lg={3}>
-                  ${housing(values)}
-                </Col>
+                <ValueCol value={housing(values)} />
                 <Under xs={3} sm={3} md={3} lg={3} />
               </TotalContentRow>
             </Container>
@@ -411,79 +366,57 @@ class PrintableBudget extends Component {
               </ColHeaders>
               <ContentRow>
                 <Col>Food</Col>
-                <Col xs={3} sm={3} md={3} lg={3}>
-                  ${values.food || 0}
-                </Col>
+                <ValueCol value={values.food} />
                 <Under xs={3} sm={3} md={3} lg={3} />
               </ContentRow>
               <ContentRow>
                 <Col>Clothing and Laundry</Col>
-                <Col xs={3} sm={3} md={3} lg={3}>
-                  ${values.clothing_laundry || 0}
-                </Col>
+                <ValueCol value={values.clothing_laundry} />
                 <Under xs={3} sm={3} md={3} lg={3} />
               </ContentRow>
               <ContentRow>
                 <Col>Childcare</Col>
-                <Col xs={3} sm={3} md={3} lg={3}>
-                  ${values.childcare || 0}
-                </Col>
+                <ValueCol value={values.childcare} />
                 <Under xs={3} sm={3} md={3} lg={3} />
               </ContentRow>
               <ContentRow>
                 <Col>Loan Payment</Col>
-                <Col xs={3} sm={3} md={3} lg={3}>
-                  ${values.loan_payment || 0}
-                </Col>
+                <ValueCol value={values.loan_payment} />
                 <Under xs={3} sm={3} md={3} lg={3} />
               </ContentRow>
               <ContentRow>
                 <Col>Credit Card</Col>
-                <Col xs={3} sm={3} md={3} lg={3}>
-                  ${values.credit_card || 0}
-                </Col>
+                <ValueCol value={values.credit_card} />
                 <Under xs={3} sm={3} md={3} lg={3} />
               </ContentRow>
               <ContentRow>
                 <Col>Prescription Drugs</Col>
-                <Col xs={3} sm={3} md={3} lg={3}>
-                  ${values.prescription_drugs || 0}
-                </Col>
+                <ValueCol value={values.prescription_drugs} />
                 <Under xs={3} sm={3} md={3} lg={3} />
               </ContentRow>
               <ContentRow>
                 <Col>Pets</Col>
-                <Col xs={3} sm={3} md={3} lg={3}>
-                  ${values.pets || 0}
-                </Col>
+                <ValueCol value={values.pets} />
                 <Under xs={3} sm={3} md={3} lg={3} />
               </ContentRow>
               <ContentRow>
                 <Col>Insurance</Col>
-                <Col xs={3} sm={3} md={3} lg={3}>
-                  ${values.living_insurance || 0}
-                </Col>
+                <ValueCol value={values.living_insurance} />
                 <Under xs={3} sm={3} md={3} lg={3} />
               </ContentRow>
               <ContentRow>
                 <Col>Municipal taxes</Col>
-                <Col xs={3} sm={3} md={3} lg={3}>
-                  ${values.municipal_taxes || 0}
-                </Col>
+                <ValueCol value={values.municipal_taxes} />
                 <Under xs={3} sm={3} md={3} lg={3} />
               </ContentRow>
               <ContentRow>
                 <Col>Other Living Expenses</Col>
-                <Col xs={3} sm={3} md={3} lg={3}>
-                  ${values.other_living_expenses || 0}
-                </Col>
+                <ValueCol value={values.other_living_expenses} />
                 <Under xs={3} sm={3} md={3} lg={3} />
               </ContentRow>
               <TotalContentRow>
                 <Col>Total Living Expenses</Col>
-                <Col xs={3} sm={3} md={3} lg={3}>
-                  ${living(values)}
-                </Col>
+                <ValueCol value={living(values)} />
                 <Under xs={3} sm={3} md={3} lg={3} />
               </TotalContentRow>
             </Container>
