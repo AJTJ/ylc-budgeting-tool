@@ -21,7 +21,7 @@ export const FormComponent = ({
           target="_blank"
           href="http://www.yukonliteracy.com/"
           handleSubmit={handleSubmit}
-          name="View the Full Budget!"
+          name="Press this button to view and PRINT the Full Budget!"
           values={values}
         />
       </Row>
