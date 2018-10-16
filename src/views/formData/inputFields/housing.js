@@ -22,7 +22,7 @@ export const FormComponent = ({
         </IconBox>
       </H5Underline>
       <BasicInput
-        name="Rent/Mortgage"
+        name="Rent or mortgage"
         id="rent_mortgage"
         text="Your monthly rent or mortgage payments go here."
         value={values.rent_mortgage}
@@ -43,14 +43,14 @@ export const FormComponent = ({
         onChange={handleChange}
       />
       <BasicInput
-        name="Cable and Internet"
+        name="Cable and internet"
         id="cable_internet"
         text="If you pay for cable, internet, or Netflix, then put that here."
         value={values.cable_internet}
         onChange={handleChange}
       />
       <BasicInput
-        name="Telephone and Cell Phone"
+        name="Telephone and cell phone"
         id="phone"
         text="Your cellphone and land-line bills go here. Make sure to include any extra fees if you go over your limits."
         value={values.phone}

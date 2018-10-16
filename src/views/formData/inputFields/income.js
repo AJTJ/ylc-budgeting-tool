@@ -42,28 +42,28 @@ export const FormComponent = ({
         }}
       />
       <BasicInput
-        name="Self Employment Income"
+        name="Self employment income"
         id="self_employment_income"
         text="If you are self-employed, then this is where you put the average amount you make a month."
         value={values.self_employment_income}
         onChange={handleChange}
       />
       <BasicInput
-        name="Government Benefits"
+        name="Government benefits"
         id="government_benefits"
         text="Such as child care, pension, disability, worker's compensation etc..."
         value={values.government_benefits}
         onChange={handleChange}
       />
       <BasicInput
-        name="Other Income"
+        name="Other income"
         id="other_income"
         text="Such as babysitting, dog walking, gifts etc..."
         value={values.other_income}
         onChange={handleChange}
       />
       <BasicInput
-        name="Other Income"
+        name="Other income"
         id="other_income_2"
         text="Such as babysitting, dog walking, gifts etc..."
         value={values.other_income_2}

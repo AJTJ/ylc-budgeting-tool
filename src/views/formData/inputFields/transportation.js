@@ -64,7 +64,7 @@ export const FormComponent = ({
         onChange={handleChange}
       />
       <BasicInput
-        name="Public Transport"
+        name="Public transport"
         id="public_transport"
         text="This space is for bus fares and any other public transport you use."
         value={values.public_transport}

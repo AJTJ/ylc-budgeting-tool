@@ -11,6 +11,7 @@ const color7 = "sienna";
 const yellow = "rgba(255, 255, 100, 0.3)";
 const cyan = "rgba(100, 255, 255, 0.3)";
 const darkBlue = "darkblue";
+const white = "rgb(255,255,255)";
 
 const gray = "gray";
 const softBorder = "rgba(211,211,211,0.4)";
@@ -27,5 +28,6 @@ export default {
   cyan,
   darkBlue,
   gray,
-  softBorder
+  softBorder,
+  white
 };

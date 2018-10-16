@@ -51,6 +51,7 @@ const InputComponent = ({ name, id, type = "number", ...props }) => (
 );
 
 const Input = styled(InputComponent)`
+  ${ComponentFontSizes};
   color: red;
 `;
 
@@ -111,14 +112,3 @@ export default ({ InputComponent = Input, ...props }) => {
     </Component>
   );
 };
-
-// onChange={e => {
-//   let currentNum = e.target.value;
-//   // // console.log(props);
-//   // props.onChange(currentNum);
-//   // console.log("currentNum", currentNum);
-//   setState(() => ({
-//     biWeekly: currentNum
-//   }));
-//   props.onChange;
-// }}

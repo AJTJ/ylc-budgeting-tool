@@ -29,7 +29,7 @@ export const FormComponent = ({
         onChange={handleChange}
       />
       <BasicInput
-        name="Clothing and Laundry"
+        name="Clothing and laundry"
         id="clothing_laundry"
         text="This space is for the cost of clothing, and cleaning clothing."
         value={values.clothing_laundry}
@@ -43,21 +43,21 @@ export const FormComponent = ({
         onChange={handleChange}
       />
       <BasicInput
-        name="Loan Payment"
+        name="Loan payment"
         id="loan_payment"
         text="A space for any loans you are paying back."
         value={values.loan_payment}
         onChange={handleChange}
       />
       <BasicInput
-        name="Credit Card Payments"
+        name="Credit card payments"
         id="credit_card"
         text="This is where you put your credit card fees. They can be late fees or interest payments."
         value={values.credit_card}
         onChange={handleChange}
       />
       <BasicInput
-        name="Prescription Drugs"
+        name="Prescription drugs"
         id="prescription_drugs"
         text="If you take prescription drugs, then put those costs here."
         value={values.prescription_drugs}

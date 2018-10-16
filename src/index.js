@@ -18,9 +18,18 @@ import {
   faCar,
   faWalking,
   faUser,
-  faChartPie
+  faChartPie,
+  faFileInvoice
 } from "@fortawesome/free-solid-svg-icons";
-library.add(faDollarSign, faHome, faCar, faWalking, faUser, faChartPie);
+library.add(
+  faDollarSign,
+  faHome,
+  faCar,
+  faWalking,
+  faUser,
+  faChartPie,
+  faFileInvoice
+);
 
 render(
   <Provider store={store}>

@@ -23,14 +23,14 @@ export const FormComponent = ({
         </IconBox>
       </H5Underline>
       <BasicInput
-        name="Recreation and Entertainment"
+        name="Recreation and entertainment"
         id="recreation_entertainment"
         text="This is for the costs of at live shows, movies, festivals, parties, gym memberships and any other activities you do for fun."
         value={values.recreation_entertainment}
         onChange={handleChange}
       />
       <BasicInput
-        name="Eating Out"
+        name="Eating out"
         id="eating_out"
         text="This is for any money you spend on food that isn't your groceries."
         value={values.eating_out}
@@ -44,7 +44,7 @@ export const FormComponent = ({
         onChange={handleChange}
       />
       <BasicInput
-        name="Personal Grooming"
+        name="Personal grooming"
         id="personal_grooming"
         text="This space is for haircuts, hygiene products, and any other costs related to being clean and looking good. ;) (but not clothing)"
         value={values.personal_grooming}

@@ -90,7 +90,7 @@ export const MiniBudget = props => {
       <BudgetRow
         class="font-weight-bold"
         fillColor={"transparent"}
-        icon="user"
+        icon="file-invoice"
         title="Monthly Expenses"
         amount={totalExpenses(values)}
       />
