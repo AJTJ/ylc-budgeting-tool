@@ -170,6 +170,11 @@ class PrintableBudget extends Component {
                 <Under xs={3} sm={3} md={3} lg={3} />
               </ContentRow>
               <ContentRow>
+                <Col>Snowmobile or other vehicle</Col>
+                <ValueCol value={values.snowmobile} />
+                <Under xs={3} sm={3} md={3} lg={3} />
+              </ContentRow>
+              <ContentRow>
                 <Col>Insurance</Col>
                 <ValueCol value={values.transportation_insurance} />
                 <Under xs={3} sm={3} md={3} lg={3} />

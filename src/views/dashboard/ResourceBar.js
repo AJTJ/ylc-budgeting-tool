@@ -29,7 +29,10 @@ export default () => (
       {/* <StyledLink href="http://www.google.com/">
         <span>Download a budget workbook</span>
       </StyledLink> */}
-      <StyledLink target="_blank" href="http://www.yukonliteracy.com/">
+      <StyledLink
+        target="_blank"
+        href="http://www.yukonliteracy.com/financial-literacy-workshops.html"
+      >
         <span>The YLC Financial Literacy Homepage</span>
       </StyledLink>
     </Container>
