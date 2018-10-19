@@ -25,7 +25,7 @@ export default () => (
     <Container className="d-flex justify-content-around">
       <StyledLink
         target="_blank"
-        href="http://www.yukonliteracy.com/financial-literacy-workshops.html"
+        href="https://www.yukonliteracy.com/financial-literacy.html"
       >
         <span>The YLC Financial Literacy Homepage</span>
       </StyledLink>

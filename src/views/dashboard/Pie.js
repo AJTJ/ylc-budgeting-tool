@@ -85,12 +85,6 @@ const Pie = props => {
     }
   ];
 
-  // const tooltipHandler = income => {
-  //   console.log(income);
-  //   if (income === 0) <span>Start by adding your income or expenses!</span>;
-  //   return null;
-  // };
-
   return (
     <PieHolder>
       <NivoPie

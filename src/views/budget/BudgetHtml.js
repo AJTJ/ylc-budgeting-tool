@@ -71,7 +71,6 @@ const darkbackground = css({
 });
 
 const ValueCol = props => {
-  console.log("value in comp", props.value);
   if (typeof props.value === "number") {
     return (
       <Col className={darkbackground} xs={3} sm={3} md={3} lg={3}>
@@ -90,7 +89,6 @@ const ValueCol = props => {
 class PrintableBudget extends Component {
   render() {
     const values = this.props.values;
-    console.log("wage income", typeof values.wage_income);
     return (
       <div style={{ minWidth: "1000px" }}>
         <BudgetHeader>My Budget</BudgetHeader>
