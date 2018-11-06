@@ -1,12 +1,16 @@
 # BEGIN WordPress
 
 <IfModule mod_rewrite.c>
+
   RewriteEngine On
-  RewriteBase "/ylcBudget"
-  RewriteRule "something..." - [L]
+  RewriteBase /
+  RewriteRule ^index\.html$ - [L]
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_FILENAME} !-d
-  RewriteRule "somewhere..." [L]
+  RewriteCond %{REQUEST_FILENAME} !-l
+  RewriteRule . /ylcBudget/index.html [L]
+
 </IfModule>
 
 # END WordPress
+

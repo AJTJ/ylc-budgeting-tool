@@ -33,10 +33,20 @@ library.add(
 
 render(
   <Provider store={store}>
-    <BrowserRouter basename="/">
+    <BrowserRouter basename="/ylcBudget">
       <App />
     </BrowserRouter>
   </Provider>,
   document.getElementById("root")
 );
 registerServiceWorker();
+
+{
+  /* <IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase "/ylcBudget"
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule "/ylcBudget/index.html"
+</IfModule> */
+}
