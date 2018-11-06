@@ -58,8 +58,14 @@ export default props => {
             get more information.
           </p>
           <p>
-            When you filled out all the boxes you can, click the "NEXT" button
-            to go to the next page.
+            <strong>
+              None of the information you share will be saved in the budgeting
+              tool after you close the browser window.
+            </strong>
+          </p>
+          <p>
+            When you have filled out all the boxes you can, click the "NEXT"
+            button to go to the next page.
           </p>
           <Tooltip target={"test"} text={"Aren't I helpful? 🙂"} />
         </ModalBody>

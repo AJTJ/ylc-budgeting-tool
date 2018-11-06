@@ -5,7 +5,7 @@ import { StyledButton } from "../../../components/deco";
 
 export default ({ to, name }) => {
   return (
-    <Link to={to ? to : null}>
+    <Link to={to}>
       <StyledButton name={name}>{name}</StyledButton>
     </Link>
   );

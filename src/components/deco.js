@@ -58,18 +58,17 @@ export const StyledLink = styled("a")`
   justify-content: center;
   color: ${colors.darkBlue};
   font-weight: 700;
-  border-right: 1px solid ${colors.darkBlue};
-  border-left: 1px solid ${colors.darkBlue};
-  background: transparent;
+  border: 1px solid transparent;
   padding: 10px 10px;
-  margin: 0 5px 0 0;
-  transition: all 0.4s;
+  /* margin: 5px; */
+  transition: all 0.2s;
+  border-radius: 2px;
   ${ButtonFontSizes};
   &:hover {
-    color: black;
     text-decoration: none;
-    border-right: 1px solid black;
-    border-left: 1px solid black;
-    border-radius: 10px;
+    /* border-right: 1px solid black;
+    border-left: 1px solid black; */
+    border-radius: 5px;
+    border: 1px solid ${colors.darkBlue};
   }
 `;

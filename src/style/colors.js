@@ -10,7 +10,7 @@ const color6 = "brown";
 const color7 = "sienna";
 const yellow = "rgba(255, 255, 100, 0.3)";
 const cyan = "rgba(100, 255, 255, 0.3)";
-const darkBlue = "darkblue";
+const darkBlue = "rgba(0,0,139,0.5)";
 const white = "rgb(255,255,255)";
 
 const gray = "gray";
