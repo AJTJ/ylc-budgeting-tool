@@ -13,7 +13,7 @@ import { ComponentFontSizes } from "../../../style/mediaQueries";
 
 import help from "../../../assets/help.svg";
 
-import { Tooltip } from "../../dashboard/Tooltip";
+import { Tooltip } from "../../components/Tooltip";
 
 const Label = styled(RSLabel)`
   ${ComponentFontSizes};

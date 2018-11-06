@@ -1,24 +1,25 @@
 import React from "react";
+import Component from "@reactions/component";
 
 import { Formik } from "formik";
 import formTypes from "./formData/inputFields/index";
 import { values } from "./formData/values";
 
-import Pie from "./dashboard/Pie";
-import { MiniBudget } from "./dashboard/MiniBudget";
-import Trail from "../views/dashboard/Trail";
-import Budget from "../views/budget/BudgetHtml";
+import Trail from "./components/Trail";
+import Budget from "./components/BudgetHtml";
 
 import { connect } from "react-redux";
 import { actions } from "../redux/index";
 
-import { Col, Row, Container as RSContainer } from "reactstrap";
 import { Container } from "../components/layout";
-import { H5Underline, H4Title } from "../style/typography";
-
 import styled from "react-emotion";
 
-import ylcLogo from "../assets/ylcLogo.png";
+import {
+  GeneralLayout,
+  ReviewLayout,
+  TitleLayout,
+  IncomeLayout
+} from "./layouts/index";
 
 const MainContainer = styled(Container)`
   border: none;
@@ -26,89 +27,76 @@ const MainContainer = styled(Container)`
   padding: none;
 `;
 
-const ImageContainer = styled(RSContainer)`
-  text-align: center;
-  img {
-    max-width: 100%;
-  }
-`;
-
 const Form = props => {
   let curForm = props.match.params.formType;
-  let FormComponent =
-    curForm === "budget" ? null : formTypes[curForm].FormComponent;
+  let FormPage = curForm === "budget" ? null : formTypes[curForm].FormComponent;
 
   return (
-    <Formik
-      initialValues={values}
-      onSubmit={values => {
-        props.addBudget({ values });
-        props.history.push("/Form/budget");
+    <Component initialState={{ modal: true }}>
+      {({ setState, state }) => {
+        let toggle = () => {
+          setState({
+            modal: !state.modal
+          });
+        };
+        return (
+          <Formik
+            initialValues={values}
+            onSubmit={values => {
+              props.addBudget({ values });
+              props.history.push("/Form/budget");
+            }}
+            render={({ ...props }) => {
+              if (curForm === "review") {
+                return (
+                  <MainContainer>
+                    <TitleLayout />
+                    <Trail {...props} curForm={curForm} />
+                    <ReviewLayout
+                      {...props}
+                      curForm={curForm}
+                      FormPage={FormPage}
+                    />
+                  </MainContainer>
+                );
+              } else if (curForm === "income") {
+                return (
+                  <MainContainer>
+                    <TitleLayout />
+                    <Trail {...props} curForm={curForm} />
+                    <IncomeLayout
+                      {...props}
+                      state={state}
+                      toggle={toggle}
+                      curForm={curForm}
+                      FormPage={FormPage}
+                    />
+                  </MainContainer>
+                );
+              } else if (curForm === "budget") {
+                return (
+                  <MainContainer>
+                    <Budget />
+                  </MainContainer>
+                );
+              } else {
+                return (
+                  <MainContainer>
+                    <TitleLayout />
+                    <Trail {...props} curForm={curForm} />
+                    <GeneralLayout
+                      {...props}
+                      curForm={curForm}
+                      FormPage={FormPage}
+                    />
+                  </MainContainer>
+                );
+              }
+            }}
+          />
+        );
       }}
-      // onSubmit={values => {
-      //   props.addBudget({ values }).then(props.history.push("/Form/budget"));
-      // }}
-      render={({ ...props }) => {
-        if (curForm === "review") {
-          return (
-            <MainContainer>
-              <ImageContainer>
-                <img src={ylcLogo} alt="" />
-                <H4Title>Budgeting Application</H4Title>
-              </ImageContainer>
-              <Trail {...props} curForm={curForm} />
-              <Col className="justify-content-center">
-                <Row>
-                  <Container>
-                    <FormComponent {...props} curForm={curForm} />
-                  </Container>
-                </Row>
-                <Row>
-                  <Col xs={12} sm={12} md={12} lg={5}>
-                    <MiniBudget {...props} curForm={curForm} />
-                  </Col>
-                  <Col xs={12} sm={12} md={12} lg={7}>
-                    <Container>
-                      <H5Underline>Review</H5Underline>
-                      <Pie {...props} curForm={curForm} />
-                    </Container>
-                  </Col>
-                </Row>
-              </Col>
-            </MainContainer>
-          );
-        } else if (curForm === "budget") {
-          return (
-            <MainContainer>
-              <Budget />
-            </MainContainer>
-          );
-        } else {
-          return (
-            <MainContainer>
-              <ImageContainer>
-                <img src={ylcLogo} alt="" />
-                <H4Title>Budgeting Application</H4Title>
-              </ImageContainer>
-              <Trail {...props} curForm={curForm} />
-              <Row className="d-flex justify-content-center">
-                <Col xs={12} sm={12} md={12} lg={7}>
-                  <Container>
-                    <FormComponent {...props} curForm={curForm} />
-                  </Container>
-                </Col>
-                <Col xs={12} sm={12} md={12} lg={5}>
-                  <MiniBudget {...props} curForm={curForm} />
-                  <Container>
-                    <Pie {...props} curForm={curForm} />
-                  </Container>
-                </Col>
-              </Row>
-            </MainContainer>
-          );
-        }
-      }}
-    />
+    </Component>
   );
 };
 

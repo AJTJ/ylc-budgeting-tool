@@ -1,9 +1,8 @@
 import React, { Component } from "react";
-// import { Switch } from "react-router-dom";
 
 import { Container } from "reactstrap";
 import { Routes } from "./Routes";
-import ResourceBar from "./views/dashboard/ResourceBar";
+import ResourceBar from "./views/components/ResourceBar";
 
 class App extends Component {
   render() {

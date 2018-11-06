@@ -19,7 +19,7 @@ import { Container as PREContainer } from "../../../components/layout";
 
 import help from "../../../assets/help.svg";
 
-import { Tooltip } from "../../dashboard/Tooltip";
+import { Tooltip } from "../../components/Tooltip";
 
 const Label = styled(RSLabel)`
   ${ComponentFontSizes};

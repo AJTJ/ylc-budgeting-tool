@@ -3,15 +3,15 @@ import { connect } from "react-redux";
 import styled, { css } from "react-emotion";
 
 import { Row, Col } from "reactstrap";
-import { H5Underline } from "../../style/typography";
+import { H5Underline } from "../../../style/typography";
 
-import colors from "../../style/colors";
-import { StyledSolidLink } from "../../components/deco";
-import { LinkButton } from "../formData/components/index";
+import colors from "../../../style/colors";
+import { StyledSolidLink } from "../../../components/deco";
+import { LinkButton } from "../../formData/components/index";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-import Pie from "../dashboard/Pie";
+import Pie from "../../components/Pie";
 
 import ReactToPrint from "react-to-print";
 
@@ -22,7 +22,7 @@ import {
   living,
   personal,
   totalExpenses
-} from "../formData/calculation";
+} from "../../formData/calculation";
 
 const Under = styled(Col)`
   border-bottom: 1px solid ${colors.softBorder};
