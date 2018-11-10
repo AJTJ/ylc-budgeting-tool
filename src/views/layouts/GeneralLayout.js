@@ -1,7 +1,7 @@
 import React from "react";
 
 import { Col, Row } from "reactstrap";
-import { Container } from "../../components/layout";
+import { Container } from "../../style/layout";
 
 import Pie from "../components/Pie";
 import { MiniBudget } from "../components/MiniBudget";

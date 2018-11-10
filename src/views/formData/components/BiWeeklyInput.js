@@ -15,7 +15,7 @@ import {
 import styled from "react-emotion";
 import { ComponentFontSizes } from "../../../style/mediaQueries";
 
-import { Container as PREContainer } from "../../../components/layout";
+import { Container as PREContainer } from "../../../style/layout";
 
 import help from "../../../assets/help.svg";
 

@@ -1,12 +1,10 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import styled, { css } from "react-emotion";
 
 import { Row, Col } from "reactstrap";
 import { H5Underline } from "../../style/typography";
 
-import colors from "../../style/colors";
-import { StyledSolidLink } from "../../components/deco";
+import { StyledSolidLink } from "../../style/deco";
 import { LinkButton } from "../formData/components/index";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -16,6 +14,18 @@ import Pie from "./Pie";
 import ReactToPrint from "react-to-print";
 
 import {
+  Under,
+  IconBox,
+  ColHeaders,
+  ContentRow,
+  TotalContentRow,
+  Container,
+  BudgetHeader,
+  TotalsContainer,
+  darkbackground
+} from "./budgetHtmlStyles";
+
+import {
   income,
   housing,
   transportation,
@@ -23,52 +33,6 @@ import {
   personal,
   totalExpenses
 } from "../formData/calculation";
-
-const Under = styled(Col)`
-  border-bottom: 1px solid ${colors.softBorder};
-  margin-right: 10px;
-`;
-
-const IconBox = styled("div")`
-  display: inline-block;
-  text-align: center;
-  width: 40px;
-`;
-
-const ColHeaders = styled(Row)`
-  text-align: center;
-  margin: 0 0 10px;
-`;
-
-const ContentRow = styled(Row)`
-  padding: 5px 0;
-`;
-
-const TotalContentRow = styled(ContentRow)`
-  font-weight: 700;
-`;
-
-const Container = styled("div")`
-  border: solid ${colors.softBorder} 1px;
-  border-radius: 10px;
-  padding: 20px;
-  margin-bottom: 10px;
-`;
-
-const BudgetHeader = styled("h1")`
-  padding: 25px 0;
-  text-align: center;
-`;
-
-const TotalsContainer = styled(Container)`
-  font-weight: 700;
-`;
-
-const darkbackground = css({
-  background: colors.softBorder,
-  fontWeight: "bold",
-  marginRight: "5px"
-});
 
 const ValueCol = props => {
   if (typeof props.value === "number") {
@@ -85,6 +49,22 @@ const ValueCol = props => {
     );
   }
 };
+
+const BudgetItem = props => (
+  <ContentRow>
+    <Col>{props.title}</Col>
+    <ValueCol value={props.value} />
+    <Under xs={3} sm={3} md={3} lg={3} />
+  </ContentRow>
+);
+
+const BudgetTotal = props => (
+  <TotalContentRow>
+    <Col>{props.title}</Col>
+    <ValueCol value={props.value} />
+    <Under xs={3} sm={3} md={3} lg={3} />
+  </TotalContentRow>
+);
 
 class PrintableBudget extends Component {
   render() {
@@ -110,41 +90,29 @@ class PrintableBudget extends Component {
                   Actual
                 </Col>
               </ColHeaders>
-              <ContentRow>
-                <Col>Wage Income</Col>
-                <ValueCol value={values.wage_income} />
-                <Under xs={3} sm={3} md={3} lg={3} />
-              </ContentRow>
-              <ContentRow>
-                <Col>Bi-weekly paycheck</Col>
-                <ValueCol value={values.bi_weekly_paycheck} />
-                <Under xs={3} sm={3} md={3} lg={3} />
-              </ContentRow>
-              <ContentRow>
-                <Col>Self Employment Income</Col>
-                <ValueCol value={values.self_employment_income} />
-                <Under xs={3} sm={3} md={3} lg={3} />
-              </ContentRow>
-              <ContentRow>
-                <Col>Government Benefits</Col>
-                <ValueCol value={values.government_benefits} />
-                <Under xs={3} sm={3} md={3} lg={3} />
-              </ContentRow>
-              <ContentRow>
-                <Col>Other Income</Col>
-                <ValueCol value={values.other_income} />
-                <Under xs={3} sm={3} md={3} lg={3} />
-              </ContentRow>
-              <ContentRow>
-                <Col>Other Income</Col>
-                <ValueCol value={values.other_income_2} />
-                <Under xs={3} sm={3} md={3} lg={3} />
-              </ContentRow>
-              <TotalContentRow>
-                <Col>Total Income</Col>
-                <ValueCol value={income(values)} />
-                <Under xs={3} sm={3} md={3} lg={3} />
-              </TotalContentRow>
+              <BudgetItem title={"Wage Income"} value={values.wage_income} />
+              <BudgetItem
+                title={"Bi-weekly paycheck"}
+                value={values.bi_weekly_paycheck}
+              />
+              <BudgetItem
+                title={"Self Employment Income"}
+                value={values.self_employment_income}
+              />
+              <BudgetItem
+                title={"Government Benefits"}
+                value={values.government_benefits}
+              />
+              <BudgetItem title={"Other Income"} value={values.other_income} />
+              <BudgetItem
+                title={"Other Income"}
+                value={values.other_income_2}
+              />
+              <BudgetItem
+                title={"Other Income"}
+                value={values.other_income_2}
+              />
+              <BudgetTotal title={"Total Income"} value={income(values)} />
             </Container>
             <Container>
               <H5Underline>
@@ -162,56 +130,31 @@ class PrintableBudget extends Component {
                   Actual
                 </Col>
               </ColHeaders>
-              <ContentRow>
-                <Col>Car</Col>
-                <ValueCol value={values.car} />
-                <Under xs={3} sm={3} md={3} lg={3} />
-              </ContentRow>
-              <ContentRow>
-                <Col>Snowmobile or other vehicle</Col>
-                <ValueCol value={values.snowmobile} />
-                <Under xs={3} sm={3} md={3} lg={3} />
-              </ContentRow>
-              <ContentRow>
-                <Col>Insurance</Col>
-                <ValueCol value={values.transportation_insurance} />
-                <Under xs={3} sm={3} md={3} lg={3} />
-              </ContentRow>
-              <ContentRow>
-                <Col>Gas</Col>
-                <ValueCol value={values.gas} />
-                <Under xs={3} sm={3} md={3} lg={3} />
-              </ContentRow>
-              <ContentRow>
-                <Col>Parking</Col>
-                <ValueCol value={values.parking} />
-                <Under xs={3} sm={3} md={3} lg={3} />
-              </ContentRow>
-              <ContentRow>
-                <Col>Bicycle</Col>
-                <ValueCol value={values.bicycle} />
-                <Under xs={3} sm={3} md={3} lg={3} />
-              </ContentRow>
-              <ContentRow>
-                <Col>Public Transport</Col>
-                <ValueCol value={values.public_transport} />
-                <Under xs={3} sm={3} md={3} lg={3} />
-              </ContentRow>
-              <ContentRow>
-                <Col>Taxi</Col>
-                <ValueCol value={values.taxi} />
-                <Under xs={3} sm={3} md={3} lg={3} />
-              </ContentRow>
-              <ContentRow>
-                <Col>Other Transport</Col>
-                <ValueCol value={values.other_transport} />
-                <Under xs={3} sm={3} md={3} lg={3} />
-              </ContentRow>
-              <TotalContentRow>
-                <Col>Total Transportation</Col>
-                <ValueCol value={transportation(values)} />
-                <Under xs={3} sm={3} md={3} lg={3} />
-              </TotalContentRow>
+              <BudgetItem title={"Car"} value={values.car} />
+              <BudgetItem
+                title={"Snowmobile or other vehicle"}
+                value={values.snowmobile}
+              />
+              <BudgetItem
+                title={"Insurance"}
+                value={values.transportation_insurance}
+              />
+              <BudgetItem title={"Gas"} value={values.gas} />
+              <BudgetItem title={"Parking"} value={values.parking} />
+              <BudgetItem title={"Bicycle"} value={values.bicycle} />
+              <BudgetItem
+                title={"Public Transport"}
+                value={values.public_transport}
+              />
+              <BudgetItem title={"Taxi"} value={values.taxi} />
+              <BudgetItem
+                title={"Other Transport"}
+                value={values.other_transport}
+              />
+              <BudgetTotal
+                title={"Total Transportation"}
+                value={transportation(values)}
+              />
             </Container>
             <Container>
               <H5Underline>
@@ -229,51 +172,36 @@ class PrintableBudget extends Component {
                   Actual
                 </Col>
               </ColHeaders>
-              <ContentRow>
-                <Col>Recreation and Entertainment</Col>
-                <ValueCol value={values.recreation_entertainment} />
-                <Under xs={3} sm={3} md={3} lg={3} />
-              </ContentRow>
-              <ContentRow>
-                <Col>Eating Out</Col>
-                <ValueCol value={values.eating_out} />
-                <Under xs={3} sm={3} md={3} lg={3} />
-              </ContentRow>
-              <ContentRow>
-                <Col>Cigarettes and Alcohol</Col>
-                <ValueCol value={values.cigarettes_alcohol} />
-                <Under xs={3} sm={3} md={3} lg={3} />
-              </ContentRow>
-              <ContentRow>
-                <Col>Personal Grooming</Col>
-                <ValueCol value={values.personal_grooming} />
-                <Under xs={3} sm={3} md={3} lg={3} />
-              </ContentRow>
-              <ContentRow>
-                <Col>Magazines and Newspapers</Col>
-                <ValueCol value={values.magazines_newspapers} />
-                <Under xs={3} sm={3} md={3} lg={3} />
-              </ContentRow>
-              <ContentRow>
-                <Col>Gifts and Donations</Col>
-                <ValueCol value={values.gifts_donations} />
-                <Under xs={3} sm={3} md={3} lg={3} />
-              </ContentRow>
-              <ContentRow>
-                <Col>Vacation and Travel</Col>
-                <ValueCol value={values.vacation_travel} />
-                <Under xs={3} sm={3} md={3} lg={3} />
-              </ContentRow>
-              <ContentRow>
-                <Col>Saving Goals</Col>
-                <ValueCol value={values.saving_goals} />
-                <Under xs={3} sm={3} md={3} lg={3} />
-              </ContentRow>
-              <TotalContentRow>
-                <Col>Total Personal Expenses</Col>
-                <ValueCol value={personal(values)} />
-                <Under xs={3} sm={3} md={3} lg={3} />
-              </TotalContentRow>
+              <BudgetItem
+                title={"Recreation and Entertainment"}
+                value={values.recreation_entertainment}
+              />
+              <BudgetItem title={"Eating Out"} value={values.eating_out} />
+              <BudgetItem
+                title={"Cigaretted and Alcohol"}
+                value={values.cigarettes_alcohol}
+              />
+              <BudgetItem
+                title={"Personal Grooming"}
+                value={values.personal_grooming}
+              />
+              <BudgetItem
+                title={"Magazines and Newspapers"}
+                value={values.magazines_newspapers}
+              />
+              <BudgetItem
+                title={"Gifts and Donations"}
+                value={values.gifts_donations}
+              />
+              <BudgetItem
+                title={"Vacation and Travel"}
+                value={values.vacation_travel}
+              />
+              <BudgetItem title={"Saving Goals"} value={values.saving_goals} />
+              <BudgetTotal
+                title={"Total Personal Expenses"}
+                value={personal(values)}
+              />
             </Container>
             <TotalsContainer>
               <H5Underline>Totals</H5Underline>
@@ -286,16 +214,11 @@ class PrintableBudget extends Component {
                   Actual
                 </Col>
               </ColHeaders>
-              <ContentRow>
-                <Col>Total Income</Col>
-                <ValueCol value={income(values)} />
-                <Under xs={3} sm={3} md={3} lg={3} />
-              </ContentRow>
-              <TotalContentRow>
-                <Col>Total Expenses</Col>
-                <ValueCol value={totalExpenses(values)} />
-                <Under xs={3} sm={3} md={3} lg={3} />
-              </TotalContentRow>
+              <BudgetTotal title={"Total Income"} value={income(values)} />
+              <BudgetTotal
+                title={"Total Expenses"}
+                value={totalExpenses(values)}
+              />
             </TotalsContainer>
           </Col>
           <Col xs={6} sm={6} md={6} lg={6}>
@@ -315,41 +238,29 @@ class PrintableBudget extends Component {
                   Actual
                 </Col>
               </ColHeaders>
-              <ContentRow>
-                <Col>Rent or Mortgage</Col>
-                <ValueCol value={values.rent_mortgage} />
-                <Under xs={3} sm={3} md={3} lg={3} />
-              </ContentRow>
-              <ContentRow>
-                <Col>Heat</Col>
-                <ValueCol value={values.heat} />
-                <Under xs={3} sm={3} md={3} lg={3} />
-              </ContentRow>
-              <ContentRow>
-                <Col>Hydro</Col>
-                <ValueCol value={values.hydro} />
-                <Under xs={3} sm={3} md={3} lg={3} />
-              </ContentRow>
-              <ContentRow>
-                <Col>Cable and Internet</Col>
-                <ValueCol value={values.cable_internet} />
-                <Under xs={3} sm={3} md={3} lg={3} />
-              </ContentRow>
-              <ContentRow>
-                <Col>Phone</Col>
-                <ValueCol value={values.phone} />
-                <Under xs={3} sm={3} md={3} lg={3} />
-              </ContentRow>
-              <ContentRow>
-                <Col>Other Housing</Col>
-                <ValueCol value={values.other_housing} />
-                <Under xs={3} sm={3} md={3} lg={3} />
-              </ContentRow>
-              <TotalContentRow>
-                <Col>Total Housing Expenses</Col>
-                <ValueCol value={housing(values)} />
-                <Under xs={3} sm={3} md={3} lg={3} />
-              </TotalContentRow>
+              <BudgetItem
+                title={"Rent or Mortgage"}
+                value={values.rent_mortgage}
+              />
+              <BudgetItem
+                title={"Municipal Taxes"}
+                value={values.municipal_taxes}
+              />
+              <BudgetItem title={"Heat"} value={values.heat} />
+              <BudgetItem title={"Hydro"} value={values.hydro} />
+              <BudgetItem
+                title={"Cable and Internet"}
+                value={values.cable_internet}
+              />
+              <BudgetItem title={"Phone"} value={values.phone} />
+              <BudgetItem
+                title={"Other Housing"}
+                value={values.other_housing}
+              />
+              <BudgetTotal
+                title={"Total Housing Expenses"}
+                value={housing(values)}
+              />
             </Container>
             <Container>
               <H5Underline>
@@ -367,64 +278,38 @@ class PrintableBudget extends Component {
                   Actual
                 </Col>
               </ColHeaders>
-              <ContentRow>
-                <Col>Food</Col>
-                <ValueCol value={values.food} />
-                <Under xs={3} sm={3} md={3} lg={3} />
-              </ContentRow>
-              <ContentRow>
-                <Col>Clothing and Laundry</Col>
-                <ValueCol value={values.clothing_laundry} />
-                <Under xs={3} sm={3} md={3} lg={3} />
-              </ContentRow>
-              <ContentRow>
-                <Col>Childcare</Col>
-                <ValueCol value={values.childcare} />
-                <Under xs={3} sm={3} md={3} lg={3} />
-              </ContentRow>
-              <ContentRow>
-                <Col>Loan Payment</Col>
-                <ValueCol value={values.loan_payment} />
-                <Under xs={3} sm={3} md={3} lg={3} />
-              </ContentRow>
-              <ContentRow>
-                <Col>Credit Card</Col>
-                <ValueCol value={values.credit_card} />
-                <Under xs={3} sm={3} md={3} lg={3} />
-              </ContentRow>
-              <ContentRow>
-                <Col>Prescription Drugs</Col>
-                <ValueCol value={values.prescription_drugs} />
-                <Under xs={3} sm={3} md={3} lg={3} />
-              </ContentRow>
-              <ContentRow>
-                <Col>Pets</Col>
-                <ValueCol value={values.pets} />
-                <Under xs={3} sm={3} md={3} lg={3} />
-              </ContentRow>
-              <ContentRow>
-                <Col>Insurance</Col>
-                <ValueCol value={values.living_insurance} />
-                <Under xs={3} sm={3} md={3} lg={3} />
-              </ContentRow>
-              <ContentRow>
-                <Col>Municipal taxes</Col>
-                <ValueCol value={values.municipal_taxes} />
-                <Under xs={3} sm={3} md={3} lg={3} />
-              </ContentRow>
-              <ContentRow>
-                <Col>Other Living Expenses</Col>
-                <ValueCol value={values.other_living_expenses} />
-                <Under xs={3} sm={3} md={3} lg={3} />
-              </ContentRow>
-              <TotalContentRow>
-                <Col>Total Living Expenses</Col>
-                <ValueCol value={living(values)} />
-                <Under xs={3} sm={3} md={3} lg={3} />
-              </TotalContentRow>
+              <BudgetItem title={"Food"} value={values.food} />
+              <BudgetItem
+                title={"Clothing and Laundry"}
+                value={values.clothing_laundry}
+              />
+              <BudgetItem title={"Childcare"} value={values.childcare} />
+              <BudgetItem title={"Loan Payment"} value={values.loan_payment} />
+              <BudgetItem title={"Credit Card"} value={values.credit_card} />
+              <BudgetItem
+                title={"Prescription Drugs"}
+                value={values.prescription_drugs}
+              />
+              <BudgetItem title={"Pets"} value={values.pets} />
+              <BudgetItem title={"Insurance"} value={values.living_insurance} />
+              <BudgetItem
+                title={"Other Living Expenses"}
+                value={values.other_living_expenses}
+              />
+              <BudgetTotal
+                title={"Total Living Expenses"}
+                value={living(values)}
+              />
             </Container>
             <Container>
               <Pie values={values} />
+            </Container>
+            <Container>
+              <Col>
+                <em>Budgeting tip:</em> Use the empty spaces under{" "}
+                <strong>Actual</strong> to write down the amounts you actually
+                spend on every category. This will help with future budgets!
+              </Col>
             </Container>
           </Col>
         </Row>

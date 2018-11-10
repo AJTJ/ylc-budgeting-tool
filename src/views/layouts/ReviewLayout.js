@@ -1,7 +1,7 @@
 import React from "react";
 
 import { Col, Row } from "reactstrap";
-import { Container } from "../../components/layout";
+import { Container } from "../../style/layout";
 import { H5Underline } from "../../style/typography";
 
 import Pie from "../components/Pie";
@@ -22,7 +22,7 @@ export default props => {
         </Col>
         <Col xs={12} sm={12} md={12} lg={7}>
           <Container>
-            <H5Underline>Review</H5Underline>
+            <H5Underline>Monthly Budget Review</H5Underline>
             <Pie {...props} curForm={curForm} />
           </Container>
         </Col>

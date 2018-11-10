@@ -3,7 +3,7 @@ import { Container as RSContainer } from "reactstrap";
 
 import styled from "react-emotion";
 
-import { StyledLink } from "../../components/deco";
+import { StyledLink } from "../../style/deco";
 import { ComponentFontSizes } from "../../style/mediaQueries";
 
 import colors from "../../style/colors";

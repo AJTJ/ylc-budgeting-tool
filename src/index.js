@@ -1,9 +1,10 @@
 import React from "react";
 import { render } from "react-dom";
-import { Provider } from "react-redux";
 import App from "./App";
 import { BrowserRouter } from "react-router-dom";
 import registerServiceWorker from "./registerServiceWorker";
+
+import { Provider } from "react-redux";
 import { store } from "./store";
 
 //CSS
@@ -40,13 +41,3 @@ render(
   document.getElementById("root")
 );
 registerServiceWorker();
-
-{
-  /* <IfModule mod_rewrite.c>
-  RewriteEngine On
-  RewriteBase "/ylcBudget"
-  RewriteCond %{REQUEST_FILENAME} !-f
-  RewriteCond %{REQUEST_FILENAME} !-d
-  RewriteRule "/ylcBudget/index.html"
-</IfModule> */
-}

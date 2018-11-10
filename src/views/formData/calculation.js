@@ -8,6 +8,7 @@ export const income = values =>
 
 export const housing = values =>
   Number(values.rent_mortgage) +
+  Number(values.municipal_taxes) +
   Number(values.heat) +
   Number(values.hydro) +
   Number(values.cable_internet) +
@@ -34,7 +35,6 @@ export const living = values =>
   Number(values.prescription_drugs) +
   Number(values.pets) +
   Number(values.living_insurance) +
-  Number(values.municipal_taxes) +
   Number(values.other_living_expenses);
 
 export const personal = values =>

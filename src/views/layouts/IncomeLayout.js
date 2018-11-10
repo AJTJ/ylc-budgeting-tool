@@ -14,8 +14,8 @@ import { MiniBudget } from "../components/MiniBudget";
 import Pie from "../components/Pie";
 import { Tooltip } from "../components/Tooltip";
 
-import { Container } from "../../components/layout";
-import { StyledButton } from "../../components/deco";
+import { Container } from "../../style/layout";
+import { StyledButton } from "../../style/deco";
 
 import help from "../../assets/help.svg";
 
@@ -43,13 +43,19 @@ export default props => {
       </Col>
       <Modal isOpen={state.modal} toggle={toggle} className={props.className}>
         <ModalHeader toggle={toggle}>
-          Welcome to the YLC Budgeting Application!
+          Welcome to the YLC Budgeting Tool!
         </ModalHeader>
         <ModalBody>
           <p>
-            Fill out each box to the best of your knowledge. Don't worry about a
-            box that doesn't apply to you: you don't have to fill out
-            everything!
+            The <strong>Yukon Literacy Coalition's Budgeting Tool</strong> can
+            be used to create a single-page, printable budget. The printed
+            budget can also be used to write down and compare the actual amounts
+            to the budgeted amount.
+          </p>
+          <p>
+            Fill out each box to the best of your knowledge. Don't worry about
+            filling out every box if it doesn't apply to you. You don't have to
+            fill every box!
           </p>
           <p>
             If you're uncertain about what something means, hover your mouse
@@ -59,13 +65,15 @@ export default props => {
           </p>
           <p>
             <strong>
-              None of the information you share will be saved in the budgeting
-              tool after you close the browser window.
+              PRIVACY NOTE: None of the information you type into the budgeting
+              tool is saved anywhere. It disappears when you close the browser
+              window.
             </strong>
           </p>
           <p>
-            When you have filled out all the boxes you can, click the "NEXT"
-            button to go to the next page.
+            When you have filled out everything that applies to you, click the
+            "NEXT" button to go to the next page. Eventually, you will have the
+            option to print your budget.
           </p>
           <Tooltip target={"test"} text={"Aren't I helpful? 🙂"} />
         </ModalBody>

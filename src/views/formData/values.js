@@ -1,3 +1,11 @@
+/*
+In order to alter any of the values, you will need to change them:
+- here
+- calculation
+- in the forData/inputFields that it is associated with the values.
+- in components/BudgetHtml
+*/
+
 export const values = {
   //income
   wage_income: "",
@@ -10,6 +18,7 @@ export const values = {
   //EXPENSES
   //housing
   rent_mortgage: "",
+  municipal_taxes: "",
   heat: "",
   hydro: "",
   cable_internet: "",
@@ -36,7 +45,6 @@ export const values = {
   prescription_drugs: "",
   pets: "",
   living_insurance: "",
-  municipal_taxes: "",
   other_living_expenses: "",
 
   //personal expenses

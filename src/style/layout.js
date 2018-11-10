@@ -1,6 +1,6 @@
 import styled from "react-emotion";
 
-import colors from "../style/colors";
+import colors from "./colors";
 
 import { Container as RSContainer, Row as RSRow } from "reactstrap";
 

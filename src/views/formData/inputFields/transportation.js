@@ -3,7 +3,7 @@ import { Form, Row } from "reactstrap";
 
 import { BasicInput, LinkButton } from "../components/index";
 import { H5Underline } from "../../../style/typography";
-import { IconBox } from "../../../components/layout";
+import { IconBox } from "../../../style/layout";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 

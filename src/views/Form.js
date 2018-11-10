@@ -11,7 +11,7 @@ import Budget from "./components/BudgetHtml";
 import { connect } from "react-redux";
 import { actions } from "../redux/index";
 
-import { Container } from "../components/layout";
+import { Container } from "../style/layout";
 import styled from "react-emotion";
 
 import {

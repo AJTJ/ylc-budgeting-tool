@@ -1,6 +1,6 @@
 import React from "react";
 
-import { StyledSolidLink } from "../../../components/deco";
+import { StyledSolidLink } from "../../../style/deco";
 
 export default ({ name, href, target, handleSubmit }) => {
   return (

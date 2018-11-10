@@ -1,9 +1,9 @@
 import styled from "react-emotion";
-import colors from "../style/colors";
+import colors from "./colors";
 
 import { Button as RSButton } from "reactstrap";
 
-import { ButtonFontSizes } from "../style/mediaQueries";
+import { ButtonFontSizes } from "./mediaQueries";
 
 // import { ComponentFontSizes } from "../style/mediaQueries";
 

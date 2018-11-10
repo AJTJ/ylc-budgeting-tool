@@ -15,8 +15,8 @@ import { Col } from "reactstrap";
 
 import styled from "react-emotion";
 
-import { Container, Row as StyledRow } from "../../components/layout";
-import { ColorIdentifier } from "../../components/deco";
+import { Container, Row as StyledRow } from "../../style/layout";
+import { ColorIdentifier } from "../../style/deco";
 import { H5Underline } from "../../style/typography";
 import { ComponentFontSizes } from "../../style/mediaQueries";
 

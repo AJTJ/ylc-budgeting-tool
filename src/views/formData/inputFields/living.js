@@ -3,7 +3,7 @@ import { Form, Row } from "reactstrap";
 
 import { BasicInput, LinkButton } from "../components/index";
 import { H5Underline } from "../../../style/typography";
-import { IconBox } from "../../../components/layout";
+import { IconBox } from "../../../style/layout";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -16,7 +16,7 @@ export const FormComponent = ({
   return (
     <Form>
       <H5Underline>
-        Living expenses
+        Monthly Living Expenses
         <IconBox>
           <FontAwesomeIcon icon="walking" />
         </IconBox>
@@ -75,13 +75,6 @@ export const FormComponent = ({
         id="living_insurance"
         text="This is for any health or other personal insurance you are paying."
         value={values.living_insurance}
-        onChange={handleChange}
-      />
-      <BasicInput
-        name="Municipal taxes"
-        id="municipal_taxes"
-        text="Any municipal taxes you are paying go here."
-        value={values.municipal_taxes}
         onChange={handleChange}
       />
       <BasicInput

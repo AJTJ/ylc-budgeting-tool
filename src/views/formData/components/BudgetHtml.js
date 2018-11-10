@@ -6,7 +6,7 @@ import { Row, Col } from "reactstrap";
 import { H5Underline } from "../../../style/typography";
 
 import colors from "../../../style/colors";
-import { StyledSolidLink } from "../../../components/deco";
+import { StyledSolidLink } from "../../../style/deco";
 import { LinkButton } from "../../formData/components/index";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -321,6 +321,11 @@ class PrintableBudget extends Component {
                 <Under xs={3} sm={3} md={3} lg={3} />
               </ContentRow>
               <ContentRow>
+                <Col>Municipal taxes</Col>
+                <ValueCol value={values.municipal_taxes} />
+                <Under xs={3} sm={3} md={3} lg={3} />
+              </ContentRow>
+              <ContentRow>
                 <Col>Heat</Col>
                 <ValueCol value={values.heat} />
                 <Under xs={3} sm={3} md={3} lg={3} />
@@ -405,11 +410,6 @@ class PrintableBudget extends Component {
               <ContentRow>
                 <Col>Insurance</Col>
                 <ValueCol value={values.living_insurance} />
-                <Under xs={3} sm={3} md={3} lg={3} />
-              </ContentRow>
-              <ContentRow>
-                <Col>Municipal taxes</Col>
-                <ValueCol value={values.municipal_taxes} />
                 <Under xs={3} sm={3} md={3} lg={3} />
               </ContentRow>
               <ContentRow>
