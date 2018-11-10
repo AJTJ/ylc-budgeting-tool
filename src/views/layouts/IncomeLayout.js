@@ -81,7 +81,11 @@ export default props => {
           <Tooltip target={"test"} text={"Aren't I helpful? 🙂"} />
         </ModalBody>
         <ModalFooter>
-          <a target="_blank" href="https://www.yukonliteracy.com/contact.html">
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://www.yukonliteracy.com/contact.html"
+          >
             <em>Let us know if you need anything!</em>
           </a>
           {
