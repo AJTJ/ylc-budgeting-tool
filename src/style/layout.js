@@ -5,7 +5,8 @@ import colors from "./colors";
 import { Container as RSContainer, Row as RSRow } from "reactstrap";
 
 export const Container = styled(RSContainer)`
-  border: solid ${colors.softBorder} 1px;
+  border: solid
+    ${props => (props.borderColor ? props.borderColor : colors.softBorder)} 1px;
   border-radius: 10px;
   padding: 20px;
   margin-bottom: 10px;

@@ -15,6 +15,7 @@ const white = "rgb(255,255,255)";
 
 const gray = "gray";
 const softBorder = "rgba(211,211,211,0.4)";
+const red = "red";
 
 export default {
   color1,
@@ -29,5 +30,6 @@ export default {
   darkBlue,
   gray,
   softBorder,
-  white
+  white,
+  red
 };

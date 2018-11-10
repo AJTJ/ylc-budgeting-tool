@@ -16,6 +16,7 @@ import { Tooltip } from "../components/Tooltip";
 
 import { Container } from "../../style/layout";
 import { StyledButton } from "../../style/deco";
+import colors from "../../style/colors";
 
 import help from "../../assets/help.svg";
 
@@ -53,6 +54,7 @@ export default props => {
             to the budgeted amount.
           </p>
           <p>
+            <strong>How to use it: </strong>
             Fill out boxes that apply to you and to the best of your knowledge.
             When you've filled out all your applicable information, go on the
             review tab, click the "View Full Budget" where you can print your
@@ -64,13 +66,13 @@ export default props => {
             {<Question src={help} alt="Question Mark Icon" id={"test"} />} to
             get more information.
           </p>
-          <p>
-            <strong>
+          <Container borderColor={colors.red}>
+            <strong style={{ color: "red" }}>
               PRIVACY NOTE: None of the information you type into the budgeting
               tool is saved anywhere. It disappears when you close the browser
               window.
             </strong>
-          </p>
+          </Container>
           <p>
             When you have filled out everything that applies to you, click the
             "NEXT" button to go to the next page. Eventually, you will have the
@@ -79,7 +81,9 @@ export default props => {
           <Tooltip target={"test"} text={"Aren't I helpful? 🙂"} />
         </ModalBody>
         <ModalFooter>
-          <em>Let us know if you need anything!</em>
+          <a target="_blank" href="https://www.yukonliteracy.com/contact.html">
+            <em>Let us know if you need anything!</em>
+          </a>
           {
             <StyledButton name="NEXT" onClick={toggle}>
               NEXT
