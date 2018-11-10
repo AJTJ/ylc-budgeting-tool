@@ -34,7 +34,7 @@ library.add(
 
 render(
   <Provider store={store}>
-    <BrowserRouter basename="/ylcBudget">
+    <BrowserRouter basename="/">
       <App />
     </BrowserRouter>
   </Provider>,
