@@ -69,6 +69,11 @@ const BudgetTotal = props => (
 class PrintableBudget extends Component {
   render() {
     const values = this.props.values;
+    console.log(
+      "biweek",
+      typeof values.bi_weekly_paycheck,
+      typeof values.wage_income
+    );
     return (
       <div style={{ minWidth: "1000px" }}>
         <BudgetHeader>My Budget</BudgetHeader>
@@ -92,7 +97,7 @@ class PrintableBudget extends Component {
               </ColHeaders>
               <BudgetItem title={"Wage Income"} value={values.wage_income} />
               <BudgetItem
-                title={"Bi-weekly paycheck"}
+                title={"Bi-weekly Paycheck"}
                 value={values.bi_weekly_paycheck}
               />
               <BudgetItem
@@ -108,10 +113,7 @@ class PrintableBudget extends Component {
                 title={"Other Income"}
                 value={values.other_income_2}
               />
-              <BudgetItem
-                title={"Other Income"}
-                value={values.other_income_2}
-              />
+
               <BudgetTotal title={"Total Income"} value={income(values)} />
             </Container>
             <Container>
@@ -119,7 +121,7 @@ class PrintableBudget extends Component {
                 <IconBox>
                   <FontAwesomeIcon icon="car" />
                 </IconBox>
-                Transportation
+                Monthly Transportation Expenses
               </H5Underline>
               <ColHeaders>
                 <Col />
@@ -132,7 +134,7 @@ class PrintableBudget extends Component {
               </ColHeaders>
               <BudgetItem title={"Car"} value={values.car} />
               <BudgetItem
-                title={"Snowmobile or other vehicle"}
+                title={"Snowmobile or Other vehicle"}
                 value={values.snowmobile}
               />
               <BudgetItem
@@ -161,7 +163,7 @@ class PrintableBudget extends Component {
                 <IconBox>
                   <FontAwesomeIcon icon="user" />
                 </IconBox>
-                Personal
+                Monthly Personal Expenses
               </H5Underline>
               <ColHeaders>
                 <Col />
@@ -227,7 +229,7 @@ class PrintableBudget extends Component {
                 <IconBox>
                   <FontAwesomeIcon icon="home" />
                 </IconBox>
-                Housing
+                Monthly Housing Expenses
               </H5Underline>
               <ColHeaders>
                 <Col />
@@ -267,7 +269,7 @@ class PrintableBudget extends Component {
                 <IconBox>
                   <FontAwesomeIcon icon="walking" />
                 </IconBox>
-                Living
+                Monthly Living Expenses
               </H5Underline>
               <ColHeaders>
                 <Col />

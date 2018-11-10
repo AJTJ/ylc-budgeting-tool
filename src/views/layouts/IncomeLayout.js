@@ -53,9 +53,10 @@ export default props => {
             to the budgeted amount.
           </p>
           <p>
-            Fill out each box to the best of your knowledge. Don't worry about
-            filling out every box if it doesn't apply to you. You don't have to
-            fill every box!
+            Fill out boxes that apply to you and to the best of your knowledge.
+            When you've filled out all your applicable information, go on the
+            review tab, click the "View Full Budget" where you can print your
+            budget.
           </p>
           <p>
             If you're uncertain about what something means, hover your mouse

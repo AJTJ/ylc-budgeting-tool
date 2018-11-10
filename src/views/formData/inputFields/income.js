@@ -38,7 +38,7 @@ export const FormComponent = ({
         calculatedvalue={values.bi_weekly_paycheck}
         onChange={e => {
           const newValue = parseFloat((e.target.value / 14) * 30).toFixed(0);
-          setFieldValue("bi_weekly_paycheck", newValue);
+          setFieldValue("bi_weekly_paycheck", parseInt(newValue));
         }}
       />
       <BasicInput
